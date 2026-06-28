@@ -7,19 +7,20 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import React, { useEffect, type ReactNode, Suspense } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { ThemeProvider } from "../components/ThemeProvider";
 import { Navbar } from "../components/Navbar";
-import { Footer } from "../components/Footer";
 import { ScrollProgress } from "../components/ScrollProgress";
-import { BackToTop } from "../components/BackToTop";
 import { AnimatedBackground } from "../components/AnimatedBackground";
 import { LoadingScreen } from "../components/LoadingScreen";
-import { CustomCursor } from "../components/CustomCursor";
 import { SmoothScroll } from "../components/SmoothScroll";
+
+const Footer = React.lazy(() => import("../components/Footer").then(m => ({ default: m.Footer })));
+const BackToTop = React.lazy(() => import("../components/BackToTop").then(m => ({ default: m.BackToTop })));
+const CustomCursor = React.lazy(() => import("../components/CustomCursor").then(m => ({ default: m.CustomCursor })));
 
 function NotFoundComponent() {
   return (
@@ -78,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Kandati Ranjith Kumar Reddy — Full Stack Developer" },
       { name: "description", content: "Portfolio of Kandati Ranjith Kumar Reddy — full stack developer building fast, accessible, beautifully animated web experiences." },
       { name: "author", content: "Kandati Ranjith Kumar Reddy" },
-      { name: "theme-color", content: "#0b0f1d" },
+      { name: "theme-color", content: "#000000" },
       { property: "og:site_name", content: "Kandati Ranjith Kumar Reddy" },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "Kandati Ranjith Kumar Reddy — Full Stack Developer" },
@@ -179,14 +180,18 @@ function RootComponent() {
         <SmoothScroll />
         <LoadingScreen />
         <ScrollProgress />
-        <CustomCursor />
+        <Suspense fallback={null}>
+          <CustomCursor />
+        </Suspense>
         <AnimatedBackground />
         <Navbar />
         <main className="pt-28 sm:pt-32">
           <Outlet />
         </main>
-        <Footer />
-        <BackToTop />
+        <Suspense fallback={null}>
+          <Footer />
+          <BackToTop />
+        </Suspense>
       </ThemeProvider>
     </QueryClientProvider>
   );

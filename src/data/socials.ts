@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
+import { SiLeetcode } from "react-icons/si";
 import type { IconType } from "react-icons";
 
 export type Social = {
@@ -12,6 +13,7 @@ export type Social = {
 export const socials: Social[] = [
   { name: "GitHub", href: "https://github.com/KandatiRanjithKumarReddy", icon: FaGithub, label: "GitHub profile" },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/", icon: FaLinkedin, label: "LinkedIn profile" },
+  { name: "LeetCode", href: "https://leetcode.com/u/ranjith568/", icon: SiLeetcode, label: "LeetCode profile" },
   { name: "Email", href: "mailto:kandatiranjithkumarreddy@gmail.com", icon: HiOutlineMail, label: "Send email" },
   { name: "Phone", href: "tel:+917569377080", icon: HiOutlinePhone, label: "Call phone" },
 ];

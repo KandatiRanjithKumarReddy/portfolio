@@ -23,7 +23,7 @@ export function LoadingScreen() {
           >
             <div className="relative h-14 w-14">
               <span className="absolute inset-0 rounded-2xl gradient-bg blur-xl opacity-70" />
-              <span className="relative h-14 w-14 rounded-2xl gradient-bg flex items-center justify-center text-2xl font-display font-bold text-primary-foreground">A</span>
+              <span className="relative h-14 w-14 rounded-2xl gradient-bg flex items-center justify-center text-2xl font-display font-bold text-primary-foreground">R</span>
             </div>
             <div className="flex gap-1.5">
               {[0,1,2].map(i => (
