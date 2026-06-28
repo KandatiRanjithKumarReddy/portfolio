@@ -1,0 +1,12 @@
+# Kandati Ranjith Kumar Reddy — Portfolio
+
+> Portfolio of Kandati Ranjith Kumar Reddy, a full stack / MERN developer building fast, accessible, beautifully animated web experiences with React, Node.js, and modern UI engineering.
+
+## Pages
+
+- [Home](/): Introduction, featured highlights, and quick links.
+- [About](/about): Background, education at SVCE, and career objective.
+- [Skills](/skills): Languages, frameworks, databases, and tools.
+- [Projects](/projects): Doctor Appointment Booking System, Real-Time Chat Application, TripNest, and more.
+- [Experience](/experience): Internships, certifications, and achievements.
+- [Contact](/contact): Email, phone, and social channels.
