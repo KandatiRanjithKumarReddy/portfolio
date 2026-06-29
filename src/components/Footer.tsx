@@ -28,8 +28,8 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h3 className="text-sm font-semibold text-foreground">Elsewhere</h3>
-          <div className="mt-3 flex gap-2">
+          <h3 className="text-sm font-semibold text-foreground">Connect</h3>
+          <div className="mt-3 flex gap-3">
             {socials.map(s => (
               <a
                 key={s.name}
@@ -37,7 +37,7 @@ export function Footer() {
                 aria-label={s.label}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass h-10 w-10 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:glow transition-all"
+                className="glass h-10 w-10 rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:scale-110 hover:shadow-lg hover:glow transition-all duration-300"
               >
                 <s.icon className="h-5 w-5" />
               </a>

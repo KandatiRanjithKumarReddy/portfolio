@@ -10,17 +10,18 @@ export function ProjectCard({ project, i }: { project: Project; i: number }) {
       viewport={{ once: true, margin: "-60px" }}
       transition={{ delay: i * 0.05, duration: 0.45 }}
       whileHover={{ y: -6 }}
-      className="group glass rounded-2xl overflow-hidden flex flex-col shadow-elegant hover:glow transition-shadow"
+      className="group glass rounded-2xl overflow-hidden flex flex-col h-full shadow-elegant hover:glow transition-all duration-300"
     >
-      <div className="relative aspect-[16/10] overflow-hidden">
+      {/* Image — square/sharp corners, fixed aspect ratio */}
+      <div className="relative aspect-video overflow-hidden">
         <div className="absolute inset-0 gradient-bg opacity-20" aria-hidden />
         <img
           src={project.image}
           alt={project.title}
           loading="lazy"
           width={1280}
-          height={800}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          height={720}
+          className="h-full w-full object-cover rounded-none transition-transform duration-700 group-hover:scale-105"
         />
       </div>
       <div className="p-5 flex flex-col flex-1 gap-4">

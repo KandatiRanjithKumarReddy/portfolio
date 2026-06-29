@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 import React, { useEffect, type ReactNode, Suspense } from "react";
 
+
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { ThemeProvider } from "../components/ThemeProvider";
@@ -79,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Kandati Ranjith Kumar Reddy — Full Stack Developer" },
       { name: "description", content: "Portfolio of Kandati Ranjith Kumar Reddy — full stack developer building fast, accessible, beautifully animated web experiences." },
       { name: "author", content: "Kandati Ranjith Kumar Reddy" },
-      { name: "theme-color", content: "#000000" },
+      { name: "theme-color", content: "#ffffff" },
       { property: "og:site_name", content: "Kandati Ranjith Kumar Reddy" },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "Kandati Ranjith Kumar Reddy — Full Stack Developer" },
@@ -87,6 +88,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
@@ -159,8 +161,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="light">
       <head>
+        <link rel="icon" type="image/png" href="/favicon.png" />
         <HeadContent />
       </head>
       <body>

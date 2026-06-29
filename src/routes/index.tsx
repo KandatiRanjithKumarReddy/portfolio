@@ -97,24 +97,23 @@ function HomePage() {
           </div>
 
           <motion.div variants={item} className="order-1 md:order-2 relative flex justify-center">
-            <div className="relative">
+            <div className="relative group">
               <div className="absolute -inset-6 gradient-bg rounded-full blur-3xl opacity-30" aria-hidden />
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="relative rounded-[2rem] overflow-hidden glass-strong p-2 shadow-elegant"
-              >
-                <img
-                  src={profile.image}
-                  alt={`Portrait of ${profile.name}`}
-                  width={420}
-                  height={420}
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                  className="h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] rounded-[1.6rem] object-cover"
-                />
-              </motion.div>
+              {/* Gradient border wrapper */}
+              <div className="relative rounded-full p-[2px] gradient-bg shadow-elegant">
+                <div className="rounded-full overflow-hidden bg-background">
+                  <img
+                    src={profile.image}
+                    alt={`Portrait of ${profile.name}`}
+                    width={420}
+                    height={420}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] rounded-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              </div>
             </div>
           </motion.div>
         </motion.div>
