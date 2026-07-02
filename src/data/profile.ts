@@ -9,7 +9,7 @@ export const profile = {
     "2026 Computer Science graduate passionate about building scalable full-stack applications with MERN, Angular, and TypeScript, focused on performance, user experience, and real-world impact.",
   email: "kandatiranjithkumarreddy@gmail.com",
   phone: "+91 75693 77080",
-  location: "India, Andra Pradesh, Venkatagiri",
-  resumeUrl: "https://drive.google.com/file/d/1eKSifyoBoEmNy5BfyKQva4nIELrmTNrR/view",
+  location: "India,Andra Pradesh,Venkatagiri",
+  resumeUrl: "https://drive.google.com/uc?export=download&id=1uiz3k9i7AypLuWogCUkNqub__TcfHEFu",
   image: profileImg,
 };
