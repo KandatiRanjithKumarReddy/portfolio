@@ -7,46 +7,66 @@ export type Project = {
   title: string;
   description: string;
   image: string;
-  tech: string[];
-  features: string[];
-  github: string;
-  demo: string;
+  techStack: string[];
+  highlights: string[];
+  liveUrl?: string;
+  githubUrl: string;
+  // Backwards compatibility aliases
+  tech?: string[];
+  features?: string[];
+  github?: string;
+  demo?: string;
   featured?: boolean;
 };
 
 export const projects: Project[] = [
   {
     id: "doctor-appointment",
-    title: "Doctor Appointment Booking System",
+    title: "Prescripto - Smart Healthcare Management Platform",
     description:
-      "Full-stack platform for doctor discovery, appointment booking, and secure online payments.",
+      "Full-stack healthcare platform for booking appointments, payments, and doctor management.",
     image: p1,
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT", "Cloudinary", "Razorpay"],
-    features: [
-      "Role-based authentication for patients, doctors & admins using JWT",
-      "Reduced booking time from 15 min to under 2 min",
-      "Cloudinary image storage & Razorpay payments",
-      "3 portals across 6 medical specialties",
+    techStack: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT",
+      "Tailwind",
+      "Razorpay",
+      "Cloudinary",
     ],
-    github: "https://github.com/",
-    demo: "https://doctor-frontend-eosin.vercel.app/",
+    highlights: [
+      "Reduced booking time by 87%",
+      "Role-based authentication",
+      "Secure online payments",
+    ],
+    liveUrl: "https://doctor-frontend-eosin.vercel.app/",
+    githubUrl: "https://github.com/KandatiRanjithKumarReddy/doctor-frontend",
     featured: true,
   },
   {
     id: "realtime-chat",
-    title: "Real-Time Chat Application",
+    title: "Chatty – Real Time Communication Platform",
     description:
       "Real-time messaging app with sub-second delivery, online presence, and JWT-secured sessions powered by Socket.IO.",
     image: p2,
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.IO", "JWT", "Tailwind CSS"],
-    features: [
+    techStack: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Socket.IO",
+      "JWT",
+      "Tailwind",
+    ],
+    highlights: [
       "Reduced message delivery time by 40%",
       "Event-driven Socket.IO architecture",
       "Real-time online/offline presence",
-      "Supports 30+ Themes",
     ],
-    github: "https://github.com/",
-    demo: "https://chatapplication-8q6x.onrender.com/",
+    liveUrl: "https://chatapplication-8q6x.onrender.com/",
+    githubUrl: "https://github.com/KandatiRanjithKumarReddy/ChatApplication",
     featured: true,
   },
   {
@@ -55,14 +75,20 @@ export const projects: Project[] = [
     description:
       "Responsive Angular SPA for exploring 50+ destinations with end-to-end booking, dynamic search and Razorpay checkout.",
     image: p3,
-    tech: ["Angular", "TypeScript", "Firebase", "Firestore", "Razorpay", "HTML", "CSS"],
-    features: [
+    techStack: [
+      "Angular",
+      "TypeScript",
+      "Firebase",
+      "Firestore",
+      "Razorpay",
+      "Tailwind",
+    ],
+    highlights: [
       "Dynamic filters, sorting & pagination (50% faster loads)",
       "Firebase Auth with Angular Auth Guards",
       "Razorpay multi-method checkout with live pricing",
-      "Persistent sessions across refreshes",
     ],
-    github: "https://github.com/",
-    demo: "https://github.com/KandatiRanjithKumarReddy/TripNest",
+    liveUrl: "",
+    githubUrl: "https://github.com/KandatiRanjithKumarReddy/TripNest",
   },
 ];

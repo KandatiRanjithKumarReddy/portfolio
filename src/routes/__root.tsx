@@ -186,6 +186,7 @@ function RootComponent() {
         <Suspense fallback={null}>
           <CustomCursor />
         </Suspense>
+
         <AnimatedBackground />
         <Navbar />
         <main className="pt-28 sm:pt-32">

@@ -1,8 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "motion/react";
 import { projects } from "@/data/projects";
-import { SectionHeading } from "@/components/SectionHeading";
-import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectsSection } from "@/components/sections/ProjectsSection";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -35,10 +33,10 @@ export const Route = createFileRoute("/projects")({
                 "@id": `/projects#${p.id}`,
                 name: p.title,
                 description: p.description,
-                programmingLanguage: p.tech,
-                keywords: p.tech.join(", "),
-                codeRepository: p.github,
-                url: p.demo,
+                programmingLanguage: p.techStack || p.tech || [],
+                keywords: (p.techStack || p.tech || []).join(", "),
+                codeRepository: p.githubUrl || p.github || "",
+                url: p.liveUrl || p.demo || "",
                 author: { "@id": "/#person" },
               },
             })),
@@ -47,25 +45,5 @@ export const Route = createFileRoute("/projects")({
       },
     ],
   }),
-  component: ProjectsPage,
+  component: ProjectsSection,
 });
-
-function ProjectsPage() {
-  return (
-    <div className="mx-auto max-w-6xl px-4 pb-24">
-      <SectionHeading
-        eyebrow="Selected work"
-        title="Projects"
-        description="A curated set of recent builds that showcase full-stack delivery, real-time systems, and polished frontend experiences."
-      />
-
-      <motion.div layout className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((p, i) => (
-          <motion.div key={p.id} layout>
-            <ProjectCard project={p} i={i} />
-          </motion.div>
-        ))}
-      </motion.div>
-    </div>
-  );
-}

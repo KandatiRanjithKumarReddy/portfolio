@@ -16,7 +16,7 @@ export type TimelineEntry = {
 export const experience: TimelineEntry[] = [
   {
     kind: "internship",
-    title: "Software Intern",
+    title: "Software Engineer Intern",
     org: "Infosys Springboard",
     period: "Feb 2026 — Apr 2026",
     location: "Remote",

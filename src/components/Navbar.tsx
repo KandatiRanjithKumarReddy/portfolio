@@ -1,14 +1,18 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { HiBars3, HiXMark } from "react-icons/hi2";
 import { navItems } from "@/data/navigation";
 import { ThemeToggle } from "./ThemeToggle";
+import { useScrollSpy } from "@/hooks/useScrollSpy";
 
 export function Navbar() {
   const pathname = useRouterState({ select: s => s.location.pathname });
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const sectionPaths = useMemo(() => navItems.map(item => item.to), []);
+  const activeSection = useScrollSpy(sectionPaths);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -18,6 +22,18 @@ export function Navbar() {
   }, []);
 
   useEffect(() => { setOpen(false); }, [pathname]);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, to: string) => {
+    const targetId = to === "/" ? "home" : to.replace(/^\//, "");
+    const targetEl =
+      document.getElementById(targetId) ||
+      document.querySelector(`[data-section="${to}"]`);
+
+    if (targetEl) {
+      e.preventDefault();
+      targetEl.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "py-2" : "py-4"}`}>
@@ -53,11 +69,12 @@ export function Navbar() {
 
             <ul className="relative z-10 flex items-center gap-1">
               {navItems.map((item) => {
-                const active = pathname === item.to;
+                const active = activeSection ? activeSection === item.to : pathname === item.to;
                 return (
                   <li key={item.to}>
                     <Link
                       to={item.to}
+                      onClick={(e) => handleNavClick(e, item.to)}
                       className={`relative flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-colors ${
                         active ? "text-foreground" : "text-muted-foreground hover:text-foreground hover:bg-muted"
                       }`}
@@ -82,7 +99,6 @@ export function Navbar() {
 
           {/* Utility segment */}
           <div className="relative flex h-14 items-center gap-2 rounded-2xl border border-border bg-card/90 px-2 backdrop-blur-2xl">
-
             <div className="flex items-center gap-1">
               <ThemeToggle />
               <button
@@ -107,11 +123,15 @@ export function Navbar() {
             >
               <ul className="flex flex-col">
                 {navItems.map(item => {
-                  const active = pathname === item.to;
+                  const active = activeSection ? activeSection === item.to : pathname === item.to;
                   return (
                     <li key={item.to}>
                       <Link
                         to={item.to}
+                        onClick={(e) => {
+                          handleNavClick(e, item.to);
+                          setOpen(false);
+                        }}
                         className={`block rounded-xl px-4 py-3 text-sm ${
                           active ? "gradient-bg text-primary-foreground" : "text-foreground hover:bg-muted"
                         }`}
