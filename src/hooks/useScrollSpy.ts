@@ -13,7 +13,7 @@ export function useScrollSpy(
     root: null,
     rootMargin: "-25% 0px -40% 0px",
     threshold: [0, 0.25, 0.5, 0.75, 1.0],
-  }
+  },
 ): string | null {
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
@@ -26,9 +26,7 @@ export function useScrollSpy(
 
     const handleIntersection: IntersectionObserverCallback = (entries) => {
       entries.forEach((entry) => {
-        const id =
-          entry.target.getAttribute("data-section") ||
-          entry.target.getAttribute("id");
+        const id = entry.target.getAttribute("data-section") || entry.target.getAttribute("id");
 
         if (!id) return;
 
@@ -84,6 +82,7 @@ export function useScrollSpy(
     return () => {
       observer.disconnect();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sectionIds, JSON.stringify(options)]);
 
   return activeSection;

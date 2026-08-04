@@ -1,13 +1,31 @@
 import type { IconType } from "react-icons";
 import {
-  SiHtml5, SiCss as SiCss3, SiJavascript, SiTypescript, SiReact, SiAngular, SiTailwindcss, SiDaisyui,
-  SiNodedotjs, SiExpress, SiSocketdotio,
-  SiMongodb, SiFirebase,
-  SiGit, SiGithub, SiPostman, SiVercel, SiRender, SiRazorpay,
-  SiOpenjdk, SiMysql,
+  SiHtml5,
+  SiCss as SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiAngular,
+  SiTailwindcss,
+  SiDaisyui,
+  SiNodedotjs,
+  SiExpress,
+  SiSocketdotio,
+  SiMongodb,
+  SiFirebase,
+  SiGit,
+  SiGithub,
+  SiPostman,
+  SiVercel,
+  SiRender,
+  SiRazorpay,
+  SiOpenjdk,
+  SiMysql,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
-import { TbApi } from "react-icons/tb";
+import { TbApi, TbBinaryTree2, TbCpu, TbNetwork, TbRefreshDot } from "react-icons/tb";
+import { HiCubeTransparent } from "react-icons/hi2";
+import { BsDatabaseGear } from "react-icons/bs";
 
 export type Skill = { name: string; icon: IconType; color: string };
 export type SkillCategoryT = { title: string; skills: Skill[] };
@@ -56,6 +74,17 @@ export const skillCategories: SkillCategoryT[] = [
       { name: "Razorpay", icon: SiRazorpay, color: "#0C2451" },
       { name: "Vercel", icon: SiVercel, color: "currentColor" },
       { name: "Render", icon: SiRender, color: "#46E3B7" },
+    ],
+  },
+  {
+    title: "Core Concepts",
+    skills: [
+      { name: "Data Structures and Algorithms", icon: TbBinaryTree2, color: "#FF6B6B" },
+      { name: "OOP", icon: HiCubeTransparent, color: "#A78BFA" },
+      { name: "DBMS", icon: BsDatabaseGear, color: "#38BDF8" },
+      { name: "OS", icon: TbCpu, color: "#F59E0B" },
+      { name: "CN", icon: TbNetwork, color: "#34D399" },
+      { name: "Software Development Life Cycle", icon: TbRefreshDot, color: "#F472B6" },
     ],
   },
 ];

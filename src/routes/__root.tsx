@@ -9,7 +9,6 @@ import {
 } from "@tanstack/react-router";
 import React, { useEffect, type ReactNode, Suspense } from "react";
 
-
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { ThemeProvider } from "../components/ThemeProvider";
@@ -19,9 +18,15 @@ import { AnimatedBackground } from "../components/AnimatedBackground";
 import { LoadingScreen } from "../components/LoadingScreen";
 import { SmoothScroll } from "../components/SmoothScroll";
 
-const Footer = React.lazy(() => import("../components/Footer").then(m => ({ default: m.Footer })));
-const BackToTop = React.lazy(() => import("../components/BackToTop").then(m => ({ default: m.BackToTop })));
-const CustomCursor = React.lazy(() => import("../components/CustomCursor").then(m => ({ default: m.CustomCursor })));
+const Footer = React.lazy(() =>
+  import("../components/Footer").then((m) => ({ default: m.Footer })),
+);
+const BackToTop = React.lazy(() =>
+  import("../components/BackToTop").then((m) => ({ default: m.BackToTop })),
+);
+const CustomCursor = React.lazy(() =>
+  import("../components/CustomCursor").then((m) => ({ default: m.CustomCursor })),
+);
 
 function NotFoundComponent() {
   return (
@@ -60,12 +65,17 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="rounded-lg gradient-bg px-4 py-2 text-sm font-medium text-primary-foreground glow"
           >
             Try again
           </button>
-          <a href="/" className="rounded-lg glass px-4 py-2 text-sm font-medium">Go home</a>
+          <a href="/" className="rounded-lg glass px-4 py-2 text-sm font-medium">
+            Go home
+          </a>
         </div>
       </div>
     </div>
@@ -78,13 +88,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Kandati Ranjith Kumar Reddy — Full Stack Developer" },
-      { name: "description", content: "Portfolio of Kandati Ranjith Kumar Reddy — full stack developer building fast, accessible, beautifully animated web experiences." },
+      {
+        name: "description",
+        content:
+          "Portfolio of Kandati Ranjith Kumar Reddy — full stack developer building fast, accessible, beautifully animated web experiences.",
+      },
       { name: "author", content: "Kandati Ranjith Kumar Reddy" },
       { name: "theme-color", content: "#ffffff" },
       { property: "og:site_name", content: "Kandati Ranjith Kumar Reddy" },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "Kandati Ranjith Kumar Reddy — Full Stack Developer" },
-      { property: "og:description", content: "Premium developer portfolio: React, Node, modern UI engineering." },
+      {
+        property: "og:description",
+        content: "Premium developer portfolio: React, Node, modern UI engineering.",
+      },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -124,14 +141,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 name: "Sri Venkateswara College of Engineering",
               },
               knowsAbout: [
-                "JavaScript", "TypeScript", "Java", "React.js", "Angular",
-                "Node.js", "Express.js", "MongoDB", "Firebase", "Socket.IO",
-                "REST APIs", "JWT Authentication", "Tailwind CSS", "Razorpay",
+                "JavaScript",
+                "TypeScript",
+                "Java",
+                "React.js",
+                "Angular",
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "Firebase",
+                "Socket.IO",
+                "REST APIs",
+                "JWT Authentication",
+                "Tailwind CSS",
+                "Razorpay",
               ],
-              sameAs: [
-                "https://github.com/",
-                "https://www.linkedin.com/",
-              ],
+              sameAs: ["https://github.com/", "https://www.linkedin.com/"],
               url: "/",
             },
             {

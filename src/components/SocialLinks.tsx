@@ -5,7 +5,7 @@ export function SocialLinks({ size = "md" }: { size?: "sm" | "md" }) {
   const ic = size === "sm" ? "h-4 w-4" : "h-5 w-5";
   return (
     <ul className="flex items-center gap-3">
-      {socials.map(s => (
+      {socials.map((s) => (
         <li key={s.name}>
           <a
             href={s.href}

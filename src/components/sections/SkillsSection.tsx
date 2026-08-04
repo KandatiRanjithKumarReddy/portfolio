@@ -26,7 +26,7 @@ export function SkillsSection() {
               <h3 className="font-display text-xl sm:text-2xl font-semibold">{cat.title}</h3>
               <span className="text-xs text-muted-foreground">{cat.skills.length}</span>
             </div>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 sm:gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
               {cat.skills.map((s, i) => (
                 <SkillCard key={`${cat.title}-${s.name}`} skill={s} i={i} />
               ))}

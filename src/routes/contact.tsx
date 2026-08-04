@@ -5,7 +5,11 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Kandati Ranjith Kumar Reddy" },
-      { name: "description", content: "Get in touch with Kandati Ranjith Kumar Reddy for project inquiries, collaboration, or a quick hello." },
+      {
+        name: "description",
+        content:
+          "Get in touch with Kandati Ranjith Kumar Reddy for project inquiries, collaboration, or a quick hello.",
+      },
       { property: "og:title", content: "Contact — Kandati Ranjith Kumar Reddy" },
       { property: "og:description", content: "Let's build something together." },
       { property: "og:url", content: "/contact" },

@@ -57,7 +57,8 @@
 }
 
 /* --- Light Theme (Clean & Minimal) --- */
-:root, .light {
+:root,
+.light {
   /* Core Backgrounds & Text */
   --background: #ffffff;
   --foreground: #09090b; /* Zinc 950 */
@@ -67,21 +68,21 @@
   --popover-foreground: #09090b;
 
   /* Primary (Vibrant Indigo) */
-  --primary: #4f46e5; 
+  --primary: #4f46e5;
   --primary-foreground: #ffffff;
-  
+
   /* Secondary & Muted */
   --secondary: #f4f4f5; /* Zinc 100 */
   --secondary-foreground: #18181b; /* Zinc 900 */
   --muted: #f4f4f5;
   --muted-foreground: #71717a; /* Zinc 500 */
-  
+
   /* Accents — used for inline text highlights, must be readable */
   --accent: #6366f1; /* Indigo 500 — visible on white */
   --accent-foreground: #ffffff;
-  --destructive: #ef4444; 
+  --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  
+
   /* UI Elements */
   --border: #e4e4e7; /* Zinc 200 */
   --input: #e4e4e7;
@@ -100,13 +101,17 @@
   /* Premium Gradients */
   --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
   --gradient-rainbow: linear-gradient(120deg, #4f46e5, #ec4899, #f97316);
-  --gradient-soft: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(124, 58, 237, 0.08) 100%);
+  --gradient-soft: linear-gradient(
+    135deg,
+    rgba(79, 70, 229, 0.08) 0%,
+    rgba(124, 58, 237, 0.08) 100%
+  );
   --gradient-text: linear-gradient(120deg, #4f46e5 0%, #8b5cf6 100%);
 
   /* Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.65);
   --glass-border: rgba(255, 255, 255, 0.6);
-  
+
   /* Soft, Diffused Shadows */
   --shadow-glow: 0 10px 40px -10px rgba(79, 70, 229, 0.25);
   --shadow-elegant: 0 10px 30px -5px rgba(9, 9, 11, 0.04), 0 4px 10px -3px rgba(9, 9, 11, 0.02);
@@ -131,15 +136,15 @@
   --secondary-foreground: #fafafa;
   --muted: #27272a;
   --muted-foreground: #a1a1aa; /* Zinc 400 */
-  
+
   /* Accents — used for inline text highlights, must be readable */
   --accent: #818cf8; /* Indigo 400 — visible on dark */
   --accent-foreground: #09090b;
-  --destructive: #f87171; 
+  --destructive: #f87171;
   --destructive-foreground: #09090b;
-  
+
   /* UI Elements */
-  --border: #27272a; 
+  --border: #27272a;
   --input: #27272a;
   --ring: #6366f1;
 
@@ -156,13 +161,17 @@
   /* Premium Gradients */
   --gradient-primary: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
   --gradient-rainbow: linear-gradient(120deg, #6366f1, #d946ef, #fb923c);
-  --gradient-soft: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
+  --gradient-soft: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.15) 0%,
+    rgba(168, 85, 247, 0.15) 100%
+  );
   --gradient-text: linear-gradient(120deg, #818cf8 0%, #c084fc 100%);
 
   /* Glassmorphism */
   --glass-bg: rgba(24, 24, 27, 0.55);
   --glass-border: rgba(255, 255, 255, 0.08);
-  
+
   /* Deep Shadows */
   --shadow-glow: 0 10px 40px -10px rgba(99, 102, 241, 0.35);
   --shadow-elegant: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 10px 20px -5px rgba(0, 0, 0, 0.3);
@@ -174,37 +183,54 @@
  * =========================================
  */
 @layer base {
-  * { 
-    border-color: var(--color-border); 
+  * {
+    border-color: var(--color-border);
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
-  
+
   /* Lenis smooth scroll fix */
-  html.lenis, html.lenis body { height: auto; }
-  .lenis.lenis-smooth { scroll-behavior: auto !important; }
-  .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-  .lenis.lenis-stopped { overflow: clip; }
-  
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: clip;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
-  
-  h1, h2, h3, h4, h5, h6 { 
-    font-family: var(--font-display); 
-    letter-spacing: -0.02em; 
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
   }
-  
-  ::selection { 
-    background: oklch(from var(--color-primary) l c h / 0.25); 
-    color: var(--color-primary); 
+
+  ::selection {
+    background: oklch(from var(--color-primary) l c h / 0.25);
+    color: var(--color-primary);
   }
 
   /* Beautiful Modern Scrollbars */
@@ -269,9 +295,11 @@
     padding: 1px;
     border-radius: inherit;
     background: var(--gradient-primary);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
-            mask-composite: exclude;
+    mask-composite: exclude;
     pointer-events: none;
   }
 }
@@ -291,14 +319,26 @@
  */
 
 @keyframes blob {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(40px, -30px) scale(1.05); }
-  66% { transform: translate(-30px, 30px) scale(0.95); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -30px) scale(1.05);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.95);
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @utility animate-blob {

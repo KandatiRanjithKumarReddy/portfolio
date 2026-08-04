@@ -14,9 +14,19 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Ranjith-Portfolio" },
-      { name: "description", content: "Portfolio of Kandati Ranjith Kumar Reddy, a full stack developer crafting premium, animated web experiences with React and Node." },
-      { property: "og:title", content: "Kandati Ranjith Kumar Reddy — Full Stack Developer Portfolio" },
-      { property: "og:description", content: "Premium developer portfolio: React, Node, modern UI engineering." },
+      {
+        name: "description",
+        content:
+          "Portfolio of Kandati Ranjith Kumar Reddy, a full stack developer crafting premium, animated web experiences with React and Node.",
+      },
+      {
+        property: "og:title",
+        content: "Kandati Ranjith Kumar Reddy — Full Stack Developer Portfolio",
+      },
+      {
+        property: "og:description",
+        content: "Premium developer portfolio: React, Node, modern UI engineering.",
+      },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -59,7 +69,7 @@ function HomePage() {
 
               <motion.h1
                 variants={item}
-                className="mt-5 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.05]"
+                className="mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]"
               >
                 Hi, I'm <span className="gradient-text">{profile.firstName}</span>.
                 <br />
@@ -68,12 +78,15 @@ function HomePage() {
                 </span>
               </motion.h1>
 
-              <motion.p variants={item} className="mt-5 text-base sm:text-lg text-muted-foreground max-w-xl">
+              <motion.p
+                variants={item}
+                className="mt-5 text-base sm:text-lg text-muted-foreground max-w-xl"
+              >
                 I turn ideas into production-ready web apps. From{" "}
                 <span className="text-accent">real-time chat systems</span> to{" "}
-                <span className="text-accent">payment-integrated booking platforms</span>, I build with{" "}
-                <span className="text-accent"> MERN, Angualr,TypeScript, and Java</span>{" "}
-                - fast, secure, and built to scale.
+                <span className="text-accent">payment-integrated booking platforms</span>, I build
+                with <span className="text-accent"> MERN, Angualr,TypeScript, and Java</span> -
+                fast, secure, and built to scale.
               </motion.p>
 
               <motion.div variants={item} className="mt-7 flex flex-wrap gap-3">
@@ -113,7 +126,10 @@ function HomePage() {
 
             <motion.div variants={item} className="order-1 md:order-2 relative flex justify-center">
               <div className="relative group">
-                <div className="absolute -inset-6 gradient-bg rounded-full blur-3xl opacity-30" aria-hidden />
+                <div
+                  className="absolute -inset-6 gradient-bg rounded-full blur-3xl opacity-30"
+                  aria-hidden
+                />
                 {/* Gradient border wrapper */}
                 <div className="relative rounded-full p-[2px] gradient-bg shadow-elegant">
                   <div className="rounded-full overflow-hidden bg-background">
@@ -125,7 +141,7 @@ function HomePage() {
                       loading="eager"
                       fetchPriority="high"
                       decoding="async"
-                      className="h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] rounded-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="h-[260px] w-[260px] sm:h-[320px] sm:w-[320px] md:h-[400px] md:w-[400px] rounded-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                 </div>

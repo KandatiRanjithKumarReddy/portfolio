@@ -16,11 +16,17 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     const root = document.documentElement;
     root.classList.remove("light", "dark");
     root.classList.add(theme);
-    try { localStorage.setItem("theme", theme); } catch {}
+    try {
+      localStorage.setItem("theme", theme);
+    } catch (e) {
+      console.warn("Failed to save theme in localStorage", e);
+    }
   }, [theme]);
 
   return (
-    <ThemeCtx.Provider value={{ theme, toggle: () => setTheme(t => (t === "dark" ? "light" : "dark")) }}>
+    <ThemeCtx.Provider
+      value={{ theme, toggle: () => setTheme((t) => (t === "dark" ? "light" : "dark")) }}
+    >
       {children}
     </ThemeCtx.Provider>
   );

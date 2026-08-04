@@ -5,7 +5,11 @@ export function GlassCard({
   children,
   className = "",
   hover = true,
-}: { children: ReactNode; className?: string; hover?: boolean }) {
+}: {
+  children: ReactNode;
+  className?: string;
+  hover?: boolean;
+}) {
   return (
     <motion.div
       whileHover={hover ? { y: -4 } : undefined}

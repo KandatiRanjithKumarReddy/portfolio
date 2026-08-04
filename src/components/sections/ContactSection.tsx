@@ -23,21 +23,29 @@ export function ContactSection() {
             <h3 className="font-display text-xl font-semibold">Contact info</h3>
             <ul className="mt-4 space-y-3 text-sm">
               <li className="flex items-start gap-3">
-                <span className="h-9 w-9 rounded-lg gradient-bg flex items-center justify-center shrink-0"><HiEnvelope className="h-4 w-4 text-primary-foreground" /></span>
+                <span className="h-9 w-9 rounded-lg gradient-bg flex items-center justify-center shrink-0">
+                  <HiEnvelope className="h-4 w-4 text-primary-foreground" />
+                </span>
                 <div>
                   <p className="text-xs text-muted-foreground">Email</p>
-                  <a href={`mailto:${profile.email}`} className="hover:gradient-text">{profile.email}</a>
+                  <a href={`mailto:${profile.email}`} className="hover:gradient-text break-all">
+                    {profile.email}
+                  </a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="h-9 w-9 rounded-lg gradient-bg flex items-center justify-center shrink-0"><HiPhone className="h-4 w-4 text-primary-foreground" /></span>
+                <span className="h-9 w-9 rounded-lg gradient-bg flex items-center justify-center shrink-0">
+                  <HiPhone className="h-4 w-4 text-primary-foreground" />
+                </span>
                 <div>
                   <p className="text-xs text-muted-foreground">Phone</p>
                   <a href={`tel:${profile.phone.replace(/\s/g, "")}`}>{profile.phone}</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="h-9 w-9 rounded-lg gradient-bg flex items-center justify-center shrink-0"><HiMapPin className="h-4 w-4 text-primary-foreground" /></span>
+                <span className="h-9 w-9 rounded-lg gradient-bg flex items-center justify-center shrink-0">
+                  <HiMapPin className="h-4 w-4 text-primary-foreground" />
+                </span>
                 <div>
                   <p className="text-xs text-muted-foreground">Location</p>
                   <p>{profile.location}</p>

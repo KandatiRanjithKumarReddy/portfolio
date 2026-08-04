@@ -44,13 +44,13 @@ export const experience: TimelineEntry[] = [
   },
 ];
 
-
 export const education = [
   {
     title: "B.Tech in Computer Science",
     org: "Sri Venkateswara College of Engineering, Tirupati",
     period: "Sept 2022 — Apr 2026",
-    description:"GPA: 9.1 / 10. Focus on full-stack web development, DSA, and software engineering.",
+    description:
+      "GPA: 9.1 / 10. Focus on full-stack web development, DSA, and software engineering.",
   },
 ];
 
@@ -62,4 +62,9 @@ export const interests = [
   "DSA in Java",
   "Open source",
 ];
-export const currentlyLearning = ["Next.js", "TypeScript at scale", "System design", "Advanced DSA"];
+export const currentlyLearning = [
+  "Next.js",
+  "TypeScript at scale",
+  "System design",
+  "Advanced DSA",
+];

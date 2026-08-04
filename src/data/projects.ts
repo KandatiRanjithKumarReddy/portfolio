@@ -51,15 +51,7 @@ export const projects: Project[] = [
     description:
       "Real-time messaging app with sub-second delivery, online presence, and JWT-secured sessions powered by Socket.IO.",
     image: p2,
-    techStack: [
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Socket.IO",
-      "JWT",
-      "Tailwind",
-    ],
+    techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.IO", "JWT", "Tailwind"],
     highlights: [
       "Reduced message delivery time by 40%",
       "Event-driven Socket.IO architecture",
@@ -75,14 +67,7 @@ export const projects: Project[] = [
     description:
       "Responsive Angular SPA for exploring 50+ destinations with end-to-end booking, dynamic search and Razorpay checkout.",
     image: p3,
-    techStack: [
-      "Angular",
-      "TypeScript",
-      "Firebase",
-      "Firestore",
-      "Razorpay",
-      "Tailwind",
-    ],
+    techStack: ["Angular", "TypeScript", "Firebase", "Firestore", "Razorpay", "CSS", "HTML"],
     highlights: [
       "Dynamic filters, sorting & pagination (50% faster loads)",
       "Firebase Auth with Angular Auth Guards",

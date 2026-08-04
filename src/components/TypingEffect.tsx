@@ -23,19 +23,25 @@ export function TypingEffect({
     }
     if (deleting && sub === "") {
       setDeleting(false);
-      setIndex(i => (i + 1) % words.length);
+      setIndex((i) => (i + 1) % words.length);
       return;
     }
-    const t = setTimeout(() => {
-      setSub(s => deleting ? current.slice(0, s.length - 1) : current.slice(0, s.length + 1));
-    }, deleting ? deletingSpeed : typingSpeed);
+    const t = setTimeout(
+      () => {
+        setSub((s) => (deleting ? current.slice(0, s.length - 1) : current.slice(0, s.length + 1)));
+      },
+      deleting ? deletingSpeed : typingSpeed,
+    );
     return () => clearTimeout(t);
   }, [sub, deleting, index, words, typingSpeed, deletingSpeed, pause]);
 
   return (
     <span className="inline-flex items-center">
       <span className="gradient-text">{sub}</span>
-      <span className="ml-1 inline-block w-[2px] h-[1em] bg-foreground/70 animate-pulse" aria-hidden />
+      <span
+        className="ml-1 inline-block w-[2px] h-[1em] bg-foreground/70 animate-pulse"
+        aria-hidden
+      />
     </span>
   );
 }

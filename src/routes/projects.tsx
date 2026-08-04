@@ -6,7 +6,11 @@ export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
       { title: "Projects — Kandati Ranjith Kumar Reddy" },
-      { name: "description", content: "Selected projects across frontend, backend, and full stack — built with React, Node.js, and modern tooling." },
+      {
+        name: "description",
+        content:
+          "Selected projects across frontend, backend, and full stack — built with React, Node.js, and modern tooling.",
+      },
       { property: "og:title", content: "Projects — Kandati Ranjith Kumar Reddy" },
       { property: "og:description", content: "Selected work: dashboards, commerce, AI, and more." },
       { property: "og:url", content: "/projects" },

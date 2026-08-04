@@ -7,11 +7,11 @@ import { ThemeToggle } from "./ThemeToggle";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 
 export function Navbar() {
-  const pathname = useRouterState({ select: s => s.location.pathname });
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const sectionPaths = useMemo(() => navItems.map(item => item.to), []);
+  const sectionPaths = useMemo(() => navItems.map((item) => item.to), []);
   const activeSection = useScrollSpy(sectionPaths);
 
   useEffect(() => {
@@ -21,13 +21,14 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => { setOpen(false); }, [pathname]);
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, to: string) => {
     const targetId = to === "/" ? "home" : to.replace(/^\//, "");
     const targetEl =
-      document.getElementById(targetId) ||
-      document.querySelector(`[data-section="${to}"]`);
+      document.getElementById(targetId) || document.querySelector(`[data-section="${to}"]`);
 
     if (targetEl) {
       e.preventDefault();
@@ -36,9 +37,11 @@ export function Navbar() {
   };
 
   return (
-    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "py-2" : "py-4"}`}>
+    <header
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "py-2" : "py-4"}`}
+    >
       <div className="mx-auto max-w-6xl px-4">
-        <div className="flex items-center justify-center gap-3">
+        <div className="flex items-center justify-center gap-2 sm:gap-3 min-w-0">
           {/* Brand segment */}
           <Link to="/" className="group relative">
             <div className="absolute -inset-0.5 rounded-2xl gradient-bg opacity-20 blur-sm group-hover:opacity-50 transition duration-500" />
@@ -76,7 +79,9 @@ export function Navbar() {
                       to={item.to}
                       onClick={(e) => handleNavClick(e, item.to)}
                       className={`relative flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-colors ${
-                        active ? "text-foreground" : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                        active
+                          ? "text-foreground"
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
                       }`}
                     >
                       {item.label}
@@ -103,7 +108,7 @@ export function Navbar() {
               <ThemeToggle />
               <button
                 className="md:hidden flex h-10 w-10 items-center justify-center rounded-xl bg-muted text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setOpen(o => !o)}
+                onClick={() => setOpen((o) => !o)}
                 aria-label={open ? "Close menu" : "Open menu"}
                 aria-expanded={open}
               >
@@ -122,7 +127,7 @@ export function Navbar() {
               className="md:hidden mt-3 glass-strong rounded-2xl p-2 shadow-elegant"
             >
               <ul className="flex flex-col">
-                {navItems.map(item => {
+                {navItems.map((item) => {
                   const active = activeSection ? activeSection === item.to : pathname === item.to;
                   return (
                     <li key={item.to}>
@@ -133,7 +138,9 @@ export function Navbar() {
                           setOpen(false);
                         }}
                         className={`block rounded-xl px-4 py-3 text-sm ${
-                          active ? "gradient-bg text-primary-foreground" : "text-foreground hover:bg-muted"
+                          active
+                            ? "gradient-bg text-primary-foreground"
+                            : "text-foreground hover:bg-muted"
                         }`}
                       >
                         {item.label}

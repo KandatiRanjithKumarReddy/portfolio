@@ -21,11 +21,7 @@ export type ProjectCardProps = {
 };
 
 export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
-  const {
-    image,
-    title,
-    description,
-  } = project;
+  const { image, title, description } = project;
 
   // Support both techStack/highlights/liveUrl/githubUrl and legacy aliases
   const techList = project.techStack || project.tech || [];
@@ -99,7 +95,9 @@ export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
         )}
 
         {/* [CTA Buttons / Links Footer] */}
-        <div className={`mt-auto pt-4 border-t border-border/50 flex items-center gap-2 flex-wrap sm:flex-nowrap ${!demoUrl ? "justify-center" : ""}`}>
+        <div
+          className={`mt-auto pt-4 border-t border-border/50 flex flex-col sm:flex-row items-center gap-2 ${!demoUrl ? "justify-center" : ""}`}
+        >
           {/* [Live Demo] - Primary / gradient button (only if URL exists) */}
           {demoUrl && (
             <a
@@ -107,7 +105,7 @@ export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`View live demo for ${title}`}
-              className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl gradient-bg text-primary-foreground px-4 py-2 text-xs sm:text-sm font-semibold glow hover:opacity-95 transition-opacity"
+              className="inline-flex w-full sm:w-auto flex-1 items-center justify-center gap-1.5 rounded-xl gradient-bg text-primary-foreground px-4 py-2 text-xs sm:text-sm font-semibold glow hover:opacity-95 transition-opacity"
             >
               <span>Live Demo</span>
               <HiArrowTopRightOnSquare className="h-4 w-4" />
@@ -120,7 +118,7 @@ export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View ${title} source code on GitHub`}
-            className={`inline-flex items-center justify-center gap-1.5 rounded-xl border border-border bg-card hover:bg-muted text-foreground px-4 py-2 text-xs sm:text-sm font-medium transition-colors ${demoUrl ? "flex-1" : "w-full"}`}
+            className={`inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-xl border border-border bg-card hover:bg-muted text-foreground px-4 py-2 text-xs sm:text-sm font-medium transition-colors ${demoUrl ? "flex-1" : "w-full"}`}
           >
             <FaGithub className="h-4 w-4" />
             <span>GitHub</span>

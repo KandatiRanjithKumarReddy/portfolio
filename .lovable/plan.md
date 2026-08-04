@@ -16,21 +16,22 @@ I'll use your uploaded Stitch references (glacier home, alex_rivera variants for
 
 ## Pages (routes)
 
-| Route | File | Purpose |
-|---|---|---|
-| `/` | `src/routes/index.tsx` | Hero, typing effect, CTAs, social, intro |
-| `/about` | `src/routes/about.tsx` | Bio, education timeline, info cards, resume DL |
-| `/skills` | `src/routes/skills.tsx` | Grouped icon cards, hover glow |
-| `/projects` | `src/routes/projects.tsx` | Filterable project cards |
-| `/experience` | `src/routes/experience.tsx` | Timeline + certs/achievements |
-| `/contact` | `src/routes/contact.tsx` | Validated form + contact info |
-| 404 | `__root.tsx` notFoundComponent | Custom 404 |
+| Route         | File                           | Purpose                                        |
+| ------------- | ------------------------------ | ---------------------------------------------- |
+| `/`           | `src/routes/index.tsx`         | Hero, typing effect, CTAs, social, intro       |
+| `/about`      | `src/routes/about.tsx`         | Bio, education timeline, info cards, resume DL |
+| `/skills`     | `src/routes/skills.tsx`        | Grouped icon cards, hover glow                 |
+| `/projects`   | `src/routes/projects.tsx`      | Filterable project cards                       |
+| `/experience` | `src/routes/experience.tsx`    | Timeline + certs/achievements                  |
+| `/contact`    | `src/routes/contact.tsx`       | Validated form + contact info                  |
+| 404           | `__root.tsx` notFoundComponent | Custom 404                                     |
 
 Each leaf route gets its own SEO `head()` (title, description, og:*).
 
 ## Component breakdown (`src/components/`)
 
 **Layout**
+
 - `Navbar.tsx` — sticky, blurs on scroll, active-route highlight, mobile hamburger
 - `Footer.tsx` — quick links, socials, copyright
 - `BackToTop.tsx`
@@ -42,6 +43,7 @@ Each leaf route gets its own SEO `head()` (title, description, og:*).
 - `AnimatedBackground.tsx` — gradient blobs
 
 **Primitives / sections**
+
 - `GlassCard.tsx` — reusable glassmorphism panel
 - `GradientText.tsx`
 - `SectionHeading.tsx`

@@ -19,8 +19,8 @@ export function ContactForm() {
   const [sent, setSent] = useState(false);
 
   function set<K extends keyof typeof form>(k: K, v: string) {
-    setForm(f => ({ ...f, [k]: v }));
-    if (errors[k]) setErrors(e => ({ ...e, [k]: undefined }));
+    setForm((f) => ({ ...f, [k]: v }));
+    if (errors[k]) setErrors((e) => ({ ...e, [k]: undefined }));
   }
 
   async function onSubmit(e: React.FormEvent) {
@@ -35,7 +35,7 @@ export function ContactForm() {
       return;
     }
     setSubmitting(true);
-    await new Promise(r => setTimeout(r, 900));
+    await new Promise((r) => setTimeout(r, 900));
     setSubmitting(false);
     setSent(true);
     setForm({ name: "", email: "", subject: "", message: "" });
@@ -43,7 +43,10 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="glass rounded-2xl p-6 sm:p-8 space-y-5 relative overflow-hidden">
+    <form
+      onSubmit={onSubmit}
+      className="glass rounded-2xl p-6 sm:p-8 space-y-5 relative overflow-hidden"
+    >
       <AnimatePresence>
         {sent && (
           <motion.div
@@ -62,17 +65,41 @@ export function ContactForm() {
       </AnimatePresence>
 
       <div className="grid sm:grid-cols-2 gap-4">
-        <Field label="Name" id="name" value={form.name} onChange={v => set("name", v)} error={errors.name} placeholder="Your name" />
-        <Field label="Email" id="email" type="email" value={form.email} onChange={v => set("email", v)} error={errors.email} placeholder="you@example.com" />
+        <Field
+          label="Name"
+          id="name"
+          value={form.name}
+          onChange={(v) => set("name", v)}
+          error={errors.name}
+          placeholder="Your name"
+        />
+        <Field
+          label="Email"
+          id="email"
+          type="email"
+          value={form.email}
+          onChange={(v) => set("email", v)}
+          error={errors.email}
+          placeholder="you@example.com"
+        />
       </div>
-      <Field label="Subject" id="subject" value={form.subject} onChange={v => set("subject", v)} error={errors.subject} placeholder="What's it about?" />
+      <Field
+        label="Subject"
+        id="subject"
+        value={form.subject}
+        onChange={(v) => set("subject", v)}
+        error={errors.subject}
+        placeholder="What's it about?"
+      />
       <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-1.5">Message</label>
+        <label htmlFor="message" className="block text-sm font-medium mb-1.5">
+          Message
+        </label>
         <textarea
           id="message"
           rows={5}
           value={form.message}
-          onChange={e => set("message", e.target.value)}
+          onChange={(e) => set("message", e.target.value)}
           placeholder="Tell me about your project…"
           className="w-full rounded-xl bg-background/40 border border-border px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-y"
         />
@@ -84,26 +111,45 @@ export function ContactForm() {
         disabled={submitting}
         className="inline-flex items-center justify-center gap-2 w-full rounded-xl gradient-bg text-primary-foreground py-3 font-medium glow hover:opacity-95 transition-opacity disabled:opacity-60"
       >
-        {submitting ? "Sending…" : <>Send message <HiPaperAirplane className="h-4 w-4" /></>}
+        {submitting ? (
+          "Sending…"
+        ) : (
+          <>
+            Send message <HiPaperAirplane className="h-4 w-4" />
+          </>
+        )}
       </button>
     </form>
   );
 }
 
 function Field({
-  label, id, value, onChange, error, placeholder, type = "text",
+  label,
+  id,
+  value,
+  onChange,
+  error,
+  placeholder,
+  type = "text",
 }: {
-  label: string; id: string; value: string; onChange: (v: string) => void;
-  error?: string; placeholder?: string; type?: string;
+  label: string;
+  id: string;
+  value: string;
+  onChange: (v: string) => void;
+  error?: string;
+  placeholder?: string;
+  type?: string;
 }) {
   return (
     <div>
-      <label htmlFor={id} className="block text-sm font-medium mb-1.5">{label}</label>
+      <label htmlFor={id} className="block text-sm font-medium mb-1.5">
+        {label}
+      </label>
       <input
         id={id}
         type={type}
         value={value}
-        onChange={e => onChange(e.target.value)}
+        onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         className="w-full rounded-xl bg-background/40 border border-border px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
         aria-invalid={!!error}

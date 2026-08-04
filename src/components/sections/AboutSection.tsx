@@ -1,13 +1,6 @@
 import { motion } from "motion/react";
-import {
-  HiArrowDownTray,
-  HiAcademicCap,
-  HiSparkles,
-} from "react-icons/hi2";
-import {
-  HiOutlineDesktopComputer,
-  HiOutlineLightBulb,
-} from "react-icons/hi";
+import { HiArrowDownTray, HiAcademicCap, HiSparkles } from "react-icons/hi2";
+import { HiOutlineDesktopComputer, HiOutlineLightBulb } from "react-icons/hi";
 import { FaCoffee, FaPlane } from "react-icons/fa";
 import { profile } from "@/data/profile";
 import { education, currentlyLearning } from "@/data/experience";
@@ -34,7 +27,6 @@ const interestItems = [
 export function AboutSection() {
   return (
     <div className="mx-auto max-w-6xl px-4 pb-24 space-y-24" id="about" data-section="/about">
-
       {/* ─── Hero / Intro ─── */}
       <motion.section
         variants={stagger}
@@ -72,21 +64,22 @@ export function AboutSection() {
         whileInView="show"
         viewport={{ once: true, margin: "-60px" }}
       >
-        <motion.div variants={fadeUp} className="flex flex-col items-center text-center gap-6 max-w-4xl mx-auto">
+        <motion.div
+          variants={fadeUp}
+          className="flex flex-col items-center text-center gap-6 max-w-4xl mx-auto"
+        >
           <div>
-            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">
-            </h2>
+            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight"></h2>
             <p className="mt-4 text-foreground/85 leading-relaxed">
               I am a Web Developer focused on building{" "}
-              <strong className="text-foreground">robust, scalable systems</strong>{" "}
-              that solve real-world problems. With hands-on experience in the JavaScript
-              ecosystem, I bridge the gap between high-performance backends and
-              pixel-perfect user interfaces.
+              <strong className="text-foreground">robust, scalable systems</strong> that solve
+              real-world problems. With hands-on experience in the JavaScript ecosystem, I bridge
+              the gap between high-performance backends and pixel-perfect user interfaces.
             </p>
             <p className="mt-4 text-foreground/85 leading-relaxed">
               My philosophy is simple: write clean, maintainable code that lasts. I thrive in
-              collaborative environments where technical excellence and user-centric
-              design are the priority. I don't just build features; I architect solutions.
+              collaborative environments where technical excellence and user-centric design are the
+              priority. I don't just build features; I architect solutions.
             </p>
           </div>
 
@@ -102,10 +95,7 @@ export function AboutSection() {
 
       {/* ─── Education & Certifications ─── */}
       <section>
-        <SectionHeading
-          eyebrow="Education"
-          title="Education"
-        />
+        <SectionHeading eyebrow="Education" title="Education" />
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -124,14 +114,10 @@ export function AboutSection() {
                     {e.period}
                   </span>
                 </div>
-                <h3 className="font-display text-base font-semibold leading-snug">
-                  {e.title}
-                </h3>
+                <h3 className="font-display text-base font-semibold leading-snug">{e.title}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{e.org}</p>
                 {e.description && (
-                  <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
-                    {e.description}
-                  </p>
+                  <p className="mt-2 text-sm text-foreground/75 leading-relaxed">{e.description}</p>
                 )}
               </GlassCard>
             </motion.div>
@@ -188,8 +174,10 @@ export function AboutSection() {
                 <h3 className="font-display text-xl font-semibold">Currently Learning</h3>
               </div>
               <ul className="flex flex-wrap gap-2">
-                {currentlyLearning.map(t => (
-                  <li key={t} className="rounded-full glass px-4 py-1.5 text-sm font-medium">{t}</li>
+                {currentlyLearning.map((t) => (
+                  <li key={t} className="rounded-full glass px-4 py-1.5 text-sm font-medium">
+                    {t}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -213,19 +201,24 @@ export function AboutSection() {
                 Built for Performance
               </h2>
               <p className="mt-4 text-foreground/80 leading-relaxed">
-                My development environment is optimized for speed
-                and reliability. I leverage modern tooling to ensure
-                your projects are delivered with the highest quality.
+                My development environment is optimized for speed and reliability. I leverage modern
+                tooling to ensure your projects are delivered with the highest quality.
               </p>
               <ul className="mt-6 space-y-3">
                 {[
                   "TypeScript for Type Safety",
                   "React.js for Fast & Rich UIs",
                   "Tailwind for Scalable Design Systems",
-                ].map(t => (
+                ].map((t) => (
                   <li key={t} className="flex items-center gap-3 text-sm text-foreground/85">
                     <span className="h-5 w-5 rounded-full gradient-bg flex items-center justify-center shrink-0">
-                      <svg className="h-3 w-3 text-primary-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <svg
+                        className="h-3 w-3 text-primary-foreground"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={3}
+                      >
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                     </span>
@@ -239,13 +232,17 @@ export function AboutSection() {
             <motion.div variants={fadeUp}>
               <div className="rounded-2xl bg-background/80 border border-border p-5 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto">
                 <p className="text-muted-foreground">{"// Turning challenges into code."}</p>
-                <p className="text-muted-foreground">{"// Portfolio.status = 'Ready for Impact';"}</p>
+                <p className="text-muted-foreground">
+                  {"// Portfolio.status = 'Ready for Impact';"}
+                </p>
                 <p className="mt-3">
                   <span className="text-primary">const</span>{" "}
                   <span className="text-accent">Portfolio</span>{" "}
                   <span className="text-foreground/60">=</span>{" "}
                   <span className="text-foreground">(</span>
-                  <span className="text-muted-foreground">{"{"}experience, passion{"}"}</span>
+                  <span className="text-muted-foreground">
+                    {"{"}experience, passion{"}"}
+                  </span>
                   <span className="text-foreground">)</span>{" "}
                   <span className="text-primary">{"=>"}</span>{" "}
                   <span className="text-foreground">{"{"}</span>

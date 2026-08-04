@@ -35,9 +35,7 @@ export function ExperienceList({ items }: { items: TimelineEntry[] }) {
               {it.location && <p className="mt-0.5">{it.location}</p>}
             </div>
           </div>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            {it.description}
-          </p>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{it.description}</p>
         </motion.li>
       ))}
     </ol>
