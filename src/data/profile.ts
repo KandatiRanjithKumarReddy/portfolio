@@ -22,5 +22,6 @@ export const profile = {
   phone: "+91 75693 77080",
   location: "India,Andra Pradesh,Venkatagiri",
   resumeUrl: "/Kandati_Ranjith_Kumar_Reddy_Resume.pdf",
+  resumeDriveUrl: "https://drive.google.com/file/d/1jE5FfeTPuogF5mXGmpEvHVDvs4mTefBV/view?usp=drive_link",
   image: profileImg,
 };
