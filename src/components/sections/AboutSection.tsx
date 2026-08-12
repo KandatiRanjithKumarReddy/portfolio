@@ -85,7 +85,8 @@ export function AboutSection() {
 
           <a
             href={profile.resumeUrl}
-            download="Kandati_Ranjith_Kumar_Reddy_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl gradient-bg text-primary-foreground px-6 py-3 text-sm font-medium glow hover:opacity-95 transition-opacity w-fit"
           >
             <HiArrowDownTray className="h-4 w-4" /> Download My Resume

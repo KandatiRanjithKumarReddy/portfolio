@@ -46,7 +46,7 @@ This portfolio showcases my technical skills, featured real-world projects, work
 ## ✨ Features & Highlights
 
 - 🚀 **Powered by TanStack Start & Vite**: Lightning-fast SSR/SSG capabilities with full TypeScript type safety and file-based routing.
-- 🎨 **Warm Stone & Neon Teal Color System**: Tailored dual theme (Light & Dark) using modern CSS custom properties and WCAG AAA contrast ratios.
+- 🎨 **Theme-Dependent Accent Color System**: Sky Blue (Light) / Vibrant Orange (Dark) dual theme using modern CSS custom properties with smooth transitions.
 - 💫 **Smooth Motion & Micro-Interactions**: Built using **Framer Motion (`motion`)** and **Lenis** smooth scrolling for liquid-smooth transitions.
 - 📱 **Fully Responsive Layout**: Built with Tailwind CSS v4 and Radix UI primitives for headless, accessible UI elements.
 - 🗂️ **Interactive Project Showcase**: Live links, GitHub repositories, and tech stack badges for featured full-stack projects.
@@ -103,19 +103,23 @@ Ranjith_Portfolio/
 
 ## 🎨 Color Palette System
 
-The portfolio features a curated **Warm Stone & Teal** theme system carefully designed for WCAG AAA accessibility and low eye strain:
+The portfolio uses a **theme-dependent accent color system** with carefully chosen colors for each mode:
 
-### ☀️ **Light Theme**
-- **Background**: `#fafaf9` (Warm Stone 50)
-- **Foreground**: `#1c1917` (Deep Stone 900)
-- **Primary / Accent**: `#0d9488` (Teal 600) / `#0f766e` (Teal 700)
+### ☀️ **Light Theme** — Sky Blue
+- **Background**: `#ffffff` (Pure White)
+- **Foreground**: `#09090b` (Zinc 950)
+- **Primary**: `#87CEFA` (Sky Blue)
+- **Accent**: `#3a9fd8` (Deeper Sky Blue — for text readability)
 - **Cards**: `#ffffff` (Pure White)
+- **Gradients**: Sky blue tones (`#87CEFA` → `#3a9fd8`)
 
-### 🌙 **Dark Theme**
-- **Background**: `#121210` (Warm Charcoal)
-- **Foreground**: `#fafaf9` (Stone 50)
-- **Primary / Accent**: `#2dd4bf` (Luminous Teal 400) / `#5eead4` (Teal 300)
-- **Cards**: `#1c1c1a` (Warm Dark Surface)
+### 🌙 **Dark Theme** — Vibrant Orange
+- **Background**: `#09090b` (Zinc 950)
+- **Foreground**: `#fafafa` (Zinc 50)
+- **Primary**: `#F97415` (Vibrant Orange)
+- **Accent**: `#fb923c` (Orange 400 — for text readability)
+- **Cards**: `#18181b` (Zinc 900)
+- **Gradients**: Orange tones (`#F97415` → `#fb923c`)
 
 ---
 

@@ -20,7 +20,8 @@ export function ExperienceSection() {
       <div className="mt-14 flex justify-center">
         <a
           href={profile.resumeUrl}
-          download="Kandati_Ranjith_Kumar_Reddy_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-primary/50 hover:text-primary"
         >
           <HiArrowDownTray className="h-4 w-4" /> Download full resume

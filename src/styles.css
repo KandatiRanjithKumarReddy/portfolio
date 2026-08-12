@@ -67,8 +67,8 @@
   --popover: #ffffff;
   --popover-foreground: #09090b;
 
-  /* Primary (Vibrant Indigo) */
-  --primary: #4f46e5;
+  /* Primary (Blue) */
+  --primary: #2563EB;
   --primary-foreground: #ffffff;
 
   /* Secondary & Muted */
@@ -78,7 +78,7 @@
   --muted-foreground: #71717a; /* Zinc 500 */
 
   /* Accents — used for inline text highlights, must be readable */
-  --accent: #6366f1; /* Indigo 500 — visible on white */
+  --accent: #1d4ed8; /* Blue 700 — visible on white */
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
@@ -86,7 +86,7 @@
   /* UI Elements */
   --border: #e4e4e7; /* Zinc 200 */
   --input: #e4e4e7;
-  --ring: #4f46e5;
+  --ring: #2563EB;
 
   /* Semantic Brand Colors */
   --brand-red: #ef4444;
@@ -99,21 +99,21 @@
   --brand-cyan: #06b6d4;
 
   /* Premium Gradients */
-  --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-  --gradient-rainbow: linear-gradient(120deg, #4f46e5, #ec4899, #f97316);
+  --gradient-primary: linear-gradient(135deg, #2563EB 0%, #1d4ed8 100%);
+  --gradient-rainbow: linear-gradient(120deg, #3b82f6, #2563EB, #1d4ed8);
   --gradient-soft: linear-gradient(
     135deg,
-    rgba(79, 70, 229, 0.08) 0%,
-    rgba(124, 58, 237, 0.08) 100%
+    rgba(37, 99, 235, 0.10) 0%,
+    rgba(29, 78, 216, 0.10) 100%
   );
-  --gradient-text: linear-gradient(120deg, #4f46e5 0%, #8b5cf6 100%);
+  --gradient-text: linear-gradient(120deg, #2563EB 0%, #1d4ed8 100%);
 
   /* Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.65);
   --glass-border: rgba(255, 255, 255, 0.6);
 
   /* Soft, Diffused Shadows */
-  --shadow-glow: 0 10px 40px -10px rgba(79, 70, 229, 0.25);
+  --shadow-glow: 0 10px 40px -10px rgba(37, 99, 235, 0.35);
   --shadow-elegant: 0 10px 30px -5px rgba(9, 9, 11, 0.04), 0 4px 10px -3px rgba(9, 9, 11, 0.02);
 }
 
@@ -127,8 +127,8 @@
   --popover: #18181b;
   --popover-foreground: #fafafa;
 
-  /* Primary (Bright Indigo) */
-  --primary: #6366f1; /* Indigo 500 */
+  /* Primary (Blue) */
+  --primary: #2563EB;
   --primary-foreground: #ffffff;
 
   /* Secondary & Muted */
@@ -138,7 +138,7 @@
   --muted-foreground: #a1a1aa; /* Zinc 400 */
 
   /* Accents — used for inline text highlights, must be readable */
-  --accent: #818cf8; /* Indigo 400 — visible on dark */
+  --accent: #60a5fa; /* Blue 400 — visible on dark */
   --accent-foreground: #09090b;
   --destructive: #f87171;
   --destructive-foreground: #09090b;
@@ -146,7 +146,7 @@
   /* UI Elements */
   --border: #27272a;
   --input: #27272a;
-  --ring: #6366f1;
+  --ring: #2563EB;
 
   /* Semantic Brand Colors */
   --brand-red: #f87171;
@@ -159,21 +159,21 @@
   --brand-cyan: #22d3ee;
 
   /* Premium Gradients */
-  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-  --gradient-rainbow: linear-gradient(120deg, #6366f1, #d946ef, #fb923c);
+  --gradient-primary: linear-gradient(135deg, #2563EB 0%, #3b82f6 100%);
+  --gradient-rainbow: linear-gradient(120deg, #1d4ed8, #2563EB, #3b82f6);
   --gradient-soft: linear-gradient(
     135deg,
-    rgba(99, 102, 241, 0.15) 0%,
-    rgba(168, 85, 247, 0.15) 100%
+    rgba(37, 99, 235, 0.15) 0%,
+    rgba(59, 130, 246, 0.15) 100%
   );
-  --gradient-text: linear-gradient(120deg, #818cf8 0%, #c084fc 100%);
+  --gradient-text: linear-gradient(120deg, #60a5fa 0%, #2563EB 100%);
 
   /* Glassmorphism */
   --glass-bg: rgba(24, 24, 27, 0.55);
   --glass-border: rgba(255, 255, 255, 0.08);
 
   /* Deep Shadows */
-  --shadow-glow: 0 10px 40px -10px rgba(99, 102, 241, 0.35);
+  --shadow-glow: 0 10px 40px -10px rgba(37, 99, 235, 0.35);
   --shadow-elegant: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 10px 20px -5px rgba(0, 0, 0, 0.3);
 }
 

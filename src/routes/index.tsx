@@ -102,7 +102,8 @@ function HomePage() {
                 </a>
                 <a
                   href={profile.resumeUrl}
-                  download="Kandati_Ranjith_Kumar_Reddy_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-xl glass px-5 py-3 text-sm font-medium hover:bg-muted transition-colors"
                 >
                   <HiArrowDownTray className="h-4 w-4" /> Download resume

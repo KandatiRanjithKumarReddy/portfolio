@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import React, { useEffect, type ReactNode, Suspense } from "react";
+import React, { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -18,15 +18,9 @@ import { AnimatedBackground } from "../components/AnimatedBackground";
 import { LoadingScreen } from "../components/LoadingScreen";
 import { SmoothScroll } from "../components/SmoothScroll";
 
-const Footer = React.lazy(() =>
-  import("../components/Footer").then((m) => ({ default: m.Footer })),
-);
-const BackToTop = React.lazy(() =>
-  import("../components/BackToTop").then((m) => ({ default: m.BackToTop })),
-);
-const CustomCursor = React.lazy(() =>
-  import("../components/CustomCursor").then((m) => ({ default: m.CustomCursor })),
-);
+import { Footer } from "../components/Footer";
+import { BackToTop } from "../components/BackToTop";
+import { CustomCursor } from "../components/CustomCursor";
 
 function NotFoundComponent() {
   return (
@@ -208,19 +202,14 @@ function RootComponent() {
         <SmoothScroll />
         <LoadingScreen />
         <ScrollProgress />
-        <Suspense fallback={null}>
-          <CustomCursor />
-        </Suspense>
-
+        <CustomCursor />
         <AnimatedBackground />
         <Navbar />
         <main className="pt-28 sm:pt-32">
           <Outlet />
         </main>
-        <Suspense fallback={null}>
-          <Footer />
-          <BackToTop />
-        </Suspense>
+        <Footer />
+        <BackToTop />
       </ThemeProvider>
     </QueryClientProvider>
   );
