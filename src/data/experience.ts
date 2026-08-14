@@ -21,7 +21,7 @@ export const experience: TimelineEntry[] = [
     period: "Feb 2026 — Apr 2026",
     location: "Remote",
     description:
-      "Designed and developed TripNest, a scalable travel booking platform supporting 50+ destinations. Leveraged Angular, Firebase, and Razorpay to create a secure and responsive booking experience while improving application performance by 50%.",
+      "Designed and developed TripNest, a scalable travel booking platform supporting 100+ destinations. Leveraged Angular, Firebase, and Razorpay to create a secure and responsive booking experience while improving application performance by 50%.",
     icon: HiBriefcase,
   },
   {
