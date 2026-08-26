@@ -5,6 +5,7 @@ import p3 from "@/assets/tripnest home.png";
 export type Project = {
   id: string;
   title: string;
+  subtitle: string;
   description: string;
   image: string;
   techStack: string[];
@@ -22,7 +23,8 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "doctor-appointment",
-    title: "Prescripto - Smart Healthcare Management Platform",
+    title: "Prescripto",
+    subtitle: "Smart Healthcare Management Platform",
     description:
       "Full-stack healthcare platform for booking appointments, payments, and doctor management.",
     image: p1,
@@ -47,7 +49,8 @@ export const projects: Project[] = [
   },
   {
     id: "realtime-chat",
-    title: "Chatty – Real Time Communication Platform",
+    title: "Chatty",
+    subtitle: "Real Time Communication Platform",
     description:
       "Real-time messaging app with sub-second delivery, online presence, and JWT-secured sessions powered by Socket.IO.",
     image: p2,
@@ -63,7 +66,8 @@ export const projects: Project[] = [
   },
   {
     id: "tripnest",
-    title: "TripNest — Tourism Web App",
+    title: "TripNest",
+    subtitle: "Tourism Web App",
     description:
       "Responsive Angular SPA for exploring 50+ destinations with end-to-end booking, dynamic search and Razorpay checkout.",
     image: p3,

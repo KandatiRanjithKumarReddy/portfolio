@@ -29,7 +29,7 @@
 
   ---
 
-  [🌐 Live Demo](https://doctor-frontend-eosin.vercel.app/) • [📫 Contact Me](mailto:kandatiranjithkumarreddy@gmail.com) • [📄 Resume (Drive)](https://drive.google.com/file/d/1jE5FfeTPuogF5mXGmpEvHVDvs4mTefBV/view?usp=drive_link)
+  [🌐 Live Demo](https://doctor-frontend-eosin.vercel.app/) • [📫 Contact Me](mailto:kandatiranjithkumarreddy@gmail.com) • [📄 Resume (Drive)](https://drive.google.com/file/d/1rj8F2240fKQPQCyxMB3vUdl8KMa9G6vh/view?usp=drive_link)
 
 </div>
 

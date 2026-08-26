@@ -13,7 +13,8 @@ export type TimelineEntry = {
   icon: IconType;
 };
 
-export const experience: TimelineEntry[] = [
+/* ── Work Experience ── */
+export const experiences: TimelineEntry[] = [
   {
     kind: "internship",
     title: "Software Engineer Intern",
@@ -24,6 +25,10 @@ export const experience: TimelineEntry[] = [
       "Designed and developed TripNest, a scalable travel booking platform supporting 100+ destinations. Leveraged Angular, Firebase, and Razorpay to create a secure and responsive booking experience while improving application performance by 50%.",
     icon: HiBriefcase,
   },
+];
+
+/* ── Certifications ── */
+export const certifications: TimelineEntry[] = [
   {
     kind: "certification",
     title: "The Complete Full-Stack Web Development Bootcamp",
@@ -43,6 +48,9 @@ export const experience: TimelineEntry[] = [
     icon: HiAcademicCap,
   },
 ];
+
+/* ── Legacy combined export (backwards-compat) ── */
+export const experience: TimelineEntry[] = [...experiences, ...certifications];
 
 export const education = [
   {

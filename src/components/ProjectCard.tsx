@@ -6,6 +6,7 @@ export type ProjectCardProps = {
   project: {
     image: string;
     title: string;
+    subtitle?: string;
     description: string;
     techStack?: string[];
     tech?: string[];
@@ -21,7 +22,7 @@ export type ProjectCardProps = {
 };
 
 export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
-  const { image, title, description } = project;
+  const { image, title, subtitle, description } = project;
 
   // Support both techStack/highlights/liveUrl/githubUrl and legacy aliases
   const techList = project.techStack || project.tech || [];
@@ -35,44 +36,48 @@ export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ delay: i * 0.08, duration: 0.45, ease: "easeOut" }}
-      whileHover={{ y: -6 }}
-      className="group relative flex flex-col h-full rounded-2xl border border-border bg-card/90 glass overflow-hidden shadow-elegant hover:shadow-glow hover:border-primary/40 transition-all duration-300"
+      className="group relative flex flex-col h-full rounded-3xl border border-border/80 bg-card overflow-hidden shadow-project hover:border-primary/40 transition-all duration-300 gradient-border"
     >
-      {/* Subtle top gradient accent bar on hover */}
-      <div className="absolute top-0 inset-x-0 h-1 gradient-bg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+      {/* Persistent vertical gradient accent bar on the left edge */}
+      <div className="absolute top-0 bottom-0 left-0 w-1 gradient-bg opacity-70 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 
       {/* [Project Image / Screenshot] */}
-      <div className="relative aspect-video w-full overflow-hidden bg-muted">
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent z-10 opacity-60 group-hover:opacity-30 transition-opacity" />
+      <div className="relative aspect-video w-full overflow-hidden bg-muted pl-1">
+        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent z-10 opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
         <img
           src={image}
           alt={`Screenshot of ${title}`}
           loading="lazy"
           width={1280}
           height={720}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />
       </div>
 
       {/* Card Content Body */}
-      <div className="p-6 flex flex-col flex-1 gap-5">
-        {/* Title & Description */}
-        <div>
-          <h3 className="text-xl font-bold font-display tracking-tight text-foreground group-hover:gradient-text transition-colors">
+      <div className="p-6 flex flex-col flex-1 gap-4 pl-7">
+        {/* Title, Subtitle & Description */}
+        <div className="space-y-1.5">
+          <h3 className="text-xl font-bold font-display tracking-tight text-foreground group-hover:gradient-text transition-colors duration-300">
             {title}
           </h3>
-          <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-2">
+          {subtitle && (
+            <p className="text-xs font-semibold text-primary/90 uppercase tracking-wide">
+              {subtitle}
+            </p>
+          )}
+          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 pt-1">
             {description}
           </p>
         </div>
 
-        {/* [Tech stack as small pill/badge tags] */}
+        {/* [Tech stack as small outlined pill tags] */}
         {techList.length > 0 && (
           <div className="flex flex-wrap gap-1.5" aria-label="Technologies used">
             {techList.map((t) => (
               <span
                 key={t}
-                className="inline-flex items-center rounded-full bg-secondary/80 border border-border/60 px-2.5 py-0.5 text-xs font-medium text-secondary-foreground"
+                className="inline-flex items-center rounded-lg bg-primary/5 border border-primary/20 px-2.5 py-0.5 text-xs font-medium text-primary transition-colors hover:bg-primary/10 hover:border-primary/30"
               >
                 {t}
               </span>
@@ -80,13 +85,13 @@ export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
           </div>
         )}
 
-        {/* [Highlights with checkmark icon] */}
+        {/* [Highlights with bullet accent] */}
         {highlightList.length > 0 && (
           <ul className="space-y-2 text-xs sm:text-sm text-foreground/85">
             {highlightList.map((h, idx) => (
               <li key={idx} className="flex items-start gap-2.5">
-                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent mt-0.5">
-                  <HiCheck className="h-3.5 w-3.5 stroke-[2.5]" />
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-accent/15 text-accent font-mono text-[10px] font-bold mt-0.5">
+                  0{idx + 1}
                 </span>
                 <span className="leading-snug">{h}</span>
               </li>
