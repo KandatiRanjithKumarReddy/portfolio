@@ -9,7 +9,7 @@ export function ProjectSpotlight({ project, i = 0 }: ProjectCardProps) {
   const techList = project.techStack || project.tech || [];
   const highlightList = project.highlights || project.features || [];
   const demoUrl = project.liveUrl || project.demo || "";
-  const repoUrl = project.githubUrl || project.github || "#";
+  const repoUrl = project.githubUrl || project.github || "";
 
   return (
     <motion.article
@@ -101,33 +101,37 @@ export function ProjectSpotlight({ project, i = 0 }: ProjectCardProps) {
           )}
 
           {/* Action Links */}
-          <div className="flex flex-wrap items-center gap-3 pt-2">
-            {demoUrl && (
-              <a
-                href={demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`View live demo for ${title}`}
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl gradient-bg text-primary-foreground px-5 py-2.5 text-sm font-semibold glow hover:opacity-95 transition-all"
-              >
-                <span>Live Demo</span>
-                <HiArrowTopRightOnSquare className="h-4 w-4" />
-              </a>
-            )}
+          {(demoUrl || repoUrl) && (
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              {demoUrl && (
+                <a
+                  href={demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View live demo for ${title}`}
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl gradient-bg text-primary-foreground px-5 py-2.5 text-sm font-semibold glow hover:opacity-95 transition-all"
+                >
+                  <span>Live Demo</span>
+                  <HiArrowTopRightOnSquare className="h-4 w-4" />
+                </a>
+              )}
 
-            <a
-              href={repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`View ${title} source code on GitHub`}
-              className={`inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-muted/60 hover:bg-muted text-foreground px-5 py-2.5 text-sm font-medium transition-colors ${
-                demoUrl ? "flex-1" : "w-full"
-              }`}
-            >
-              <FaGithub className="h-4 w-4" />
-              <span>GitHub</span>
-            </a>
-          </div>
+              {repoUrl && (
+                <a
+                  href={repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${title} source code on GitHub`}
+                  className={`inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-muted/60 hover:bg-muted text-foreground px-5 py-2.5 text-sm font-medium transition-colors ${
+                    demoUrl ? "flex-1" : "w-full"
+                  }`}
+                >
+                  <FaGithub className="h-4 w-4" />
+                  <span>GitHub</span>
+                </a>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </motion.article>

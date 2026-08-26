@@ -170,20 +170,22 @@ In the project directory, you can run:
 
 ## 💼 Featured Projects
 
-### 🏥 **Prescripto — Smart Healthcare Platform**
+### 🏥 **Prescripto — Smart Healthcare Management Platform**
 - **Tech Stack**: React, Node.js, Express, MongoDB, JWT, Razorpay, Cloudinary, Tailwind
-- **Highlights**: Role-based authentication, appointment scheduling, and online payments.
+- **Description**: Full-stack healthcare platform for doctor appointments, patient management, and online payments. Reduced booking process from ~15 minutes to under 2 minutes.
+- **Highlights**: Role-based JWT auth for patients/doctors/admins, 15+ REST APIs with MongoDB, Razorpay & Cloudinary integration.
 - [🔗 Live Demo](https://doctor-frontend-eosin.vercel.app/) • [🐙 GitHub](https://github.com/KandatiRanjithKumarReddy/doctor-frontend)
 
 ### 💬 **Chatty — Real-Time Communication Platform**
 - **Tech Stack**: React, Node.js, Express, MongoDB, Socket.IO, JWT, Tailwind
-- **Highlights**: Sub-second message delivery, real-time online/offline presence tracking.
+- **Description**: Real-time messaging platform built for instant user-to-user communication with sub-second message delivery and ~40% delay reduction.
+- **Highlights**: Event-driven Socket.IO architecture, connection tracking, real-time online/offline presence, and secure user sessions with JWT.
 - [🔗 Live Demo](https://chatapplication-8q6x.onrender.com/) • [🐙 GitHub](https://github.com/KandatiRanjithKumarReddy/ChatApplication)
 
 ### ✈️ **TripNest — Tourism Booking Platform**
-- **Tech Stack**: Angular, TypeScript, Firebase, Razorpay, Tailwind
-- **Highlights**: SPA architecture covering 50+ destinations with multi-method checkout.
-- [🐙 GitHub](https://github.com/KandatiRanjithKumarReddy/TripNest)
+- **Tech Stack**: Angular, TypeScript, Firebase, Firestore, Razorpay, CSS, HTML
+- **Description**: Angular-based tourism booking platform developed during Infosys Springboard internship supporting 100+ destinations with 50% faster load times via pagination.
+- **Highlights**: Firebase Authentication with Angular Auth Guards, search/filter/sort/pagination, and Razorpay dynamic pricing based on traveler count, fees, and taxes.
 
 ---
 

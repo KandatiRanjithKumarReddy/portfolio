@@ -28,7 +28,7 @@ export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
   const techList = project.techStack || project.tech || [];
   const highlightList = project.highlights || project.features || [];
   const demoUrl = project.liveUrl || project.demo || "";
-  const repoUrl = project.githubUrl || project.github || "#";
+  const repoUrl = project.githubUrl || project.github || "";
 
   return (
     <motion.article
@@ -66,7 +66,7 @@ export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
               {subtitle}
             </p>
           )}
-          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 pt-1">
+          <p className="text-sm text-muted-foreground leading-relaxed pt-1">
             {description}
           </p>
         </div>
@@ -100,35 +100,39 @@ export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
         )}
 
         {/* [CTA Buttons / Links Footer] */}
-        <div
-          className={`mt-auto pt-4 border-t border-border/50 flex flex-col sm:flex-row items-center gap-2 ${!demoUrl ? "justify-center" : ""}`}
-        >
-          {/* [Live Demo] - Primary / gradient button (only if URL exists) */}
-          {demoUrl && (
-            <a
-              href={demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`View live demo for ${title}`}
-              className="inline-flex w-full sm:w-auto flex-1 items-center justify-center gap-1.5 rounded-xl gradient-bg text-primary-foreground px-4 py-2 text-xs sm:text-sm font-semibold glow hover:opacity-95 transition-opacity"
-            >
-              <span>Live Demo</span>
-              <HiArrowTopRightOnSquare className="h-4 w-4" />
-            </a>
-          )}
-
-          {/* [GitHub] - Outline button */}
-          <a
-            href={repoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`View ${title} source code on GitHub`}
-            className={`inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-xl border border-border bg-card hover:bg-muted text-foreground px-4 py-2 text-xs sm:text-sm font-medium transition-colors ${demoUrl ? "flex-1" : "w-full"}`}
+        {(demoUrl || repoUrl) && (
+          <div
+            className={`mt-auto pt-4 border-t border-border/50 flex flex-col sm:flex-row items-center gap-2 ${!demoUrl ? "justify-center" : ""}`}
           >
-            <FaGithub className="h-4 w-4" />
-            <span>GitHub</span>
-          </a>
-        </div>
+            {/* [Live Demo] - Primary / gradient button (only if URL exists) */}
+            {demoUrl && (
+              <a
+                href={demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View live demo for ${title}`}
+                className="inline-flex w-full sm:w-auto flex-1 items-center justify-center gap-1.5 rounded-xl gradient-bg text-primary-foreground px-4 py-2 text-xs sm:text-sm font-semibold glow hover:opacity-95 transition-opacity"
+              >
+                <span>Live Demo</span>
+                <HiArrowTopRightOnSquare className="h-4 w-4" />
+              </a>
+            )}
+
+            {/* [GitHub] - Outline button */}
+            {repoUrl && (
+              <a
+                href={repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${title} source code on GitHub`}
+                className={`inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-xl border border-border bg-card hover:bg-muted text-foreground px-4 py-2 text-xs sm:text-sm font-medium transition-colors ${demoUrl ? "flex-1" : "w-full"}`}
+              >
+                <FaGithub className="h-4 w-4" />
+                <span>GitHub</span>
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </motion.article>
   );
