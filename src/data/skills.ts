@@ -22,7 +22,17 @@ import {
   SiMysql,
   SiJsonwebtokens,
 } from "react-icons/si";
-import { TbApi, TbBinaryTree2, TbCpu, TbNetwork, TbRefreshDot, TbTestPipe } from "react-icons/tb";
+import {
+  TbApi,
+  TbBinaryTree2,
+  TbChecklist,
+  TbCpu,
+  TbDeviceDesktopCheck,
+  TbNetwork,
+  TbRefreshDot,
+  TbSettingsAutomation,
+  TbTestPipe,
+} from "react-icons/tb";
 import { HiCubeTransparent } from "react-icons/hi2";
 import { BsDatabaseGear } from "react-icons/bs";
 import { VscExtensions } from "react-icons/vsc";
@@ -76,12 +86,18 @@ export const skillCategories: SkillCategoryT[] = [
       { name: "Data Structures and Algorithms", icon: TbBinaryTree2, color: "#FF6B6B" },
       { name: "Object-Oriented Programming (OOP)", icon: HiCubeTransparent, color: "#A78BFA" },
       { name: "Database Management Systems (DBMS)", icon: BsDatabaseGear, color: "#38BDF8" },
-
       { name: "Operating Systems (OS)", icon: TbCpu, color: "#F59E0B" },
-
       { name: "Computer Networks (CN)", icon: TbNetwork, color: "#34D399" },
-
       { name: "Software Development Life Cycle (SDLC)", icon: TbRefreshDot, color: "#F472B6" },
+    ],
+  },
+  {
+    title: "Testing",
+    skills: [
+      { name: "Unit Testing", icon: TbChecklist, color: "#22C55E" },
+      { name: "API Testing", icon: TbTestPipe, color: "#F97316" },
+      { name: "End-to-End (E2E) Testing", icon: TbDeviceDesktopCheck, color: "#3B82F6" },
+      { name: "Automated Testing", icon: TbSettingsAutomation, color: "#A855F7" },
     ],
   },
   {
@@ -94,7 +110,6 @@ export const skillCategories: SkillCategoryT[] = [
       { name: "CI/CD", icon: GoWorkflow, color: "#2088FF" },
       { name: "Vercel", icon: SiVercel, color: "currentColor" },
       { name: "Render", icon: SiRender, color: "#46E3B7" },
-      { name: "API Testing", icon: TbTestPipe, color: "#F97316" },
     ],
   },
 ];

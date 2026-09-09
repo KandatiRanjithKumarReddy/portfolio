@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { HiCheck, HiArrowTopRightOnSquare } from "react-icons/hi2";
+import { HiArrowTopRightOnSquare } from "react-icons/hi2";
 import { FaGithub } from "react-icons/fa";
 
 export type ProjectCardProps = {
@@ -22,118 +22,121 @@ export type ProjectCardProps = {
 };
 
 export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
-  const { image, title, subtitle, description } = project;
+  const { image, title, description } = project;
 
   // Support both techStack/highlights/liveUrl/githubUrl and legacy aliases
   const techList = project.techStack || project.tech || [];
-  const highlightList = project.highlights || project.features || [];
   const demoUrl = project.liveUrl || project.demo || "";
   const repoUrl = project.githubUrl || project.github || "";
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ delay: i * 0.08, duration: 0.45, ease: "easeOut" }}
-      className="group relative flex flex-col h-full rounded-3xl border border-border/80 bg-card overflow-hidden shadow-project hover:border-primary/40 transition-all duration-300 gradient-border"
+      transition={{ delay: i * 0.1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ y: -6 }}
+      className="group relative flex flex-col h-full rounded-2xl border border-white/[0.06] bg-[#16161a] overflow-hidden transition-all duration-300 hover:border-orange-500/30 hover:shadow-[0_8px_40px_-12px_rgba(249,115,22,0.15)]"
     >
-      {/* Persistent vertical gradient accent bar on the left edge */}
-      <div className="absolute top-0 bottom-0 left-0 w-1 gradient-bg opacity-70 group-hover:opacity-100 transition-opacity duration-300 z-20" />
-
-      {/* [Project Image / Screenshot] */}
-      <div className="relative aspect-video w-full overflow-hidden bg-muted pl-1">
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent z-10 opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
-        <img
-          src={image}
-          alt={`Screenshot of ${title}`}
-          loading="lazy"
-          width={1280}
-          height={720}
-          className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+      {/* ── Image Preview Container ── */}
+      <div className="relative w-full overflow-hidden bg-[#111114]">
+        {/* Warm ambient glow behind preview */}
+        <div
+          className="absolute inset-0 opacity-40 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 50% at 50% 80%, rgba(249,115,22,0.12), transparent)",
+          }}
+          aria-hidden
         />
-      </div>
 
-      {/* Card Content Body */}
-      <div className="p-6 flex flex-col flex-1 gap-4 pl-7">
-        {/* Title, Subtitle & Description */}
-        <div className="space-y-1.5">
-          <h3 className="text-xl font-bold font-display tracking-tight text-foreground group-hover:gradient-text transition-colors duration-300">
-            {title}
-          </h3>
-          {subtitle && (
-            <p className="text-xs font-semibold text-primary/90 uppercase tracking-wide">
-              {subtitle}
-            </p>
-          )}
-          <p className="text-sm text-muted-foreground leading-relaxed pt-1">
-            {description}
-          </p>
+        {/* Project screenshot */}
+        <div className="relative aspect-[16/10] w-full overflow-hidden">
+          <img
+            src={image}
+            alt={`Screenshot of ${title}`}
+            loading="lazy"
+            width={1280}
+            height={720}
+            className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          />
+          {/* Subtle bottom fade into card body */}
+          <div
+            className="absolute inset-x-0 bottom-0 h-16 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to top, #16161a 0%, transparent 100%)",
+            }}
+            aria-hidden
+          />
         </div>
 
-        {/* [Tech stack as small outlined pill tags] */}
-        {techList.length > 0 && (
-          <div className="flex flex-wrap gap-1.5" aria-label="Technologies used">
-            {techList.map((t) => (
-              <span
-                key={t}
-                className="inline-flex items-center rounded-lg bg-primary/5 border border-primary/20 px-2.5 py-0.5 text-xs font-medium text-primary transition-colors hover:bg-primary/10 hover:border-primary/30"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-        )}
-
-        {/* [Highlights with bullet accent] */}
-        {highlightList.length > 0 && (
-          <ul className="space-y-2 text-xs sm:text-sm text-foreground/85">
-            {highlightList.map((h, idx) => (
-              <li key={idx} className="flex items-start gap-2.5">
-                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-accent/15 text-accent font-mono text-[10px] font-bold mt-0.5">
-                  0{idx + 1}
-                </span>
-                <span className="leading-snug">{h}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        {/* [CTA Buttons / Links Footer] */}
-        {(demoUrl || repoUrl) && (
-          <div
-            className={`mt-auto pt-4 border-t border-border/50 flex flex-col sm:flex-row items-center gap-2 ${!demoUrl ? "justify-center" : ""}`}
-          >
-            {/* [Live Demo] - Primary / gradient button (only if URL exists) */}
-            {demoUrl && (
-              <a
-                href={demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`View live demo for ${title}`}
-                className="inline-flex w-full sm:w-auto flex-1 items-center justify-center gap-1.5 rounded-xl gradient-bg text-primary-foreground px-4 py-2 text-xs sm:text-sm font-semibold glow hover:opacity-95 transition-opacity"
-              >
-                <span>Live Demo</span>
-                <HiArrowTopRightOnSquare className="h-4 w-4" />
-              </a>
-            )}
-
-            {/* [GitHub] - Outline button */}
+        {/* ── Action Buttons (overlaid at bottom of image) ── */}
+        {(repoUrl || demoUrl) && (
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-10 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
             {repoUrl && (
               <a
                 href={repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`View ${title} source code on GitHub`}
-                className={`inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-xl border border-border bg-card hover:bg-muted text-foreground px-4 py-2 text-xs sm:text-sm font-medium transition-colors ${demoUrl ? "flex-1" : "w-full"}`}
+                className="inline-flex items-center gap-1.5 rounded-full bg-zinc-800/90 backdrop-blur-sm border border-white/10 px-4 py-2 text-xs font-medium text-white/90 hover:bg-zinc-700/90 hover:border-white/20 transition-all duration-200"
               >
-                <FaGithub className="h-4 w-4" />
-                <span>GitHub</span>
+                <FaGithub className="h-3.5 w-3.5" />
+                <span>Code</span>
+              </a>
+            )}
+            {demoUrl && (
+              <a
+                href={demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View live demo for ${title}`}
+                className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-4 py-2 text-xs font-semibold text-white shadow-[0_2px_12px_-2px_rgba(249,115,22,0.4)] hover:from-orange-400 hover:to-amber-400 transition-all duration-200"
+              >
+                <HiArrowTopRightOnSquare className="h-3.5 w-3.5" />
+                <span>Live</span>
               </a>
             )}
           </div>
         )}
       </div>
+
+      {/* ── Card Body ── */}
+      <div className="p-5 pt-3 flex flex-col flex-1 gap-3">
+        {/* Title */}
+        <h3 className="text-lg font-bold font-display tracking-tight text-white/95 group-hover:text-orange-300/90 transition-colors duration-300">
+          {title}
+        </h3>
+
+        {/* Description (2-3 lines max) */}
+        <p className="text-sm text-zinc-400 leading-relaxed line-clamp-3">
+          {description}
+        </p>
+
+        {/* ── Tech Stack Badges ── */}
+        {techList.length > 0 && (
+          <div
+            className="mt-auto pt-3 flex flex-wrap gap-1.5"
+            aria-label="Technologies used"
+          >
+            {techList.map((t) => (
+              <span
+                key={t}
+                className="inline-flex items-center rounded-full bg-orange-500/[0.08] border border-orange-500/20 px-2.5 py-0.5 text-[11px] font-medium text-orange-400/90 transition-colors hover:bg-orange-500/[0.14] hover:border-orange-500/30"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Bottom accent glow on hover */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        aria-hidden
+      />
     </motion.article>
   );
 }

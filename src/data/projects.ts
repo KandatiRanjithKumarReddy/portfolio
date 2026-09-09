@@ -1,6 +1,8 @@
 import p1 from "@/assets/port1.png";
 import p2 from "@/assets/port2.png";
 import p3 from "@/assets/tripnest home.png";
+import p4 from "@/assets/project-4.jpeg";
+import p5 from "@/assets/project.-5.jpeg";
 
 export type Project = {
   id: string;
@@ -20,13 +22,16 @@ export type Project = {
   featured?: boolean;
 };
 
-export const projects: Project[] = [
+/* ══════════════════════════════════════════════════════════════════════
+ *  REAL PROJECTS — Your actual portfolio work
+ * ══════════════════════════════════════════════════════════════════════ */
+export const realProjects: Project[] = [
   {
     id: "doctor-appointment",
     title: "Prescripto",
     subtitle: "Smart Healthcare Management Platform",
     description:
-      "A full-stack healthcare platform that allows patients to search for doctors, book appointments, and make online payments. I built the React frontend and Node.js/Express backend, implemented JWT-based role authentication for patients, doctors, and admins, and developed 15+ REST APIs with MongoDB. I also integrated Cloudinary for image storage and Razorpay for payments. The booking process was reduced from around 15 minutes to under 2 minutes.",
+      "Full-stack healthcare platform with doctor search, appointment booking, and online payments — cutting booking time from ~15 minutes to under 2 minutes. Built 15+ REST APIs with JWT role-based auth for patients, doctors, and admins.",
     image: p1,
     techStack: [
       "React",
@@ -52,7 +57,7 @@ export const projects: Project[] = [
     title: "Chatty",
     subtitle: "Real-Time Communication Platform",
     description:
-      "A real-time messaging application built for instant user-to-user communication. I used React, Node.js, Express, MongoDB, Socket.IO, and JWT authentication. I implemented secure user sessions, real-time messaging, connection/disconnection tracking, and online/offline status. Messages were delivered in under one second, with communication delays reduced by approximately 40%.",
+      "Real-time messaging app delivering sub-second message delivery with ~40% latency reduction. Features Socket.IO-powered live connection tracking, online/offline status, and secure JWT-authenticated user sessions.",
     image: p2,
     techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.IO", "JWT", "Tailwind"],
     highlights: [
@@ -64,12 +69,16 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/KandatiRanjithKumarReddy/ChatApplication",
     featured: true,
   },
+];
+
+/* ── TripNest (existing project) ── */
+export const tripNestProject: Project[] = [
   {
     id: "tripnest",
     title: "TripNest",
     subtitle: "Tourism Booking Platform",
     description:
-      "An Angular-based tourism booking platform I developed during my Infosys Springboard internship. It supports 100+ destinations with search, filtering, sorting, and pagination. I implemented Firebase Authentication and Angular Auth Guards to secure booking and payment routes, and integrated Razorpay with dynamic pricing based on traveler count, fees, and taxes. Pagination reduced the initial page load time by 50%.",
+      "Angular-based tourism platform supporting 100+ destinations with search, filtering, sorting, and pagination — reducing initial page load by 50%. Secured booking routes with Firebase Auth Guards and integrated Razorpay dynamic pricing.",
     image: p3,
     techStack: ["Angular", "TypeScript", "Firebase", "Firestore", "Razorpay", "CSS", "HTML"],
     highlights: [
@@ -80,3 +89,47 @@ export const projects: Project[] = [
     liveUrl: "",
   },
 ];
+
+/* ══════════════════════════════════════════════════════════════════════
+ *  ADDITIONAL PROJECTS
+ * ══════════════════════════════════════════════════════════════════════ */
+export const additionalProjects: Project[] = [
+  {
+    id: "github-user-finder",
+    title: "GitHub User Finder",
+    subtitle: "React Testing Reference Implementation",
+    description:
+      "A modern React 19 + TypeScript app to search GitHub users, view profiles, and browse repositories — doubling as a comprehensive testing reference with 9 Playwright E2E tests, 4 RTL component suites, and custom hook lifecycle tests achieving high coverage.",
+    image: p4,
+    techStack: ["React 19", "TypeScript", "Vite", "Vitest", "Testing Library", "Playwright"],
+    highlights: [
+      "9 automated Playwright E2E test cases covering all user flows",
+      "Multi-layer testing: unit, hook, component & browser E2E",
+      "Full code coverage pipeline with @vitest/coverage-v8",
+    ],
+    liveUrl: "https://testing-react-sigma.vercel.app/",
+    githubUrl: "https://github.com/KandatiRanjithKumarReddy/testing-react",
+    featured: true,
+  },
+  {
+    id: "borrower-copilot",
+    title: "Borrower Copilot",
+    subtitle: "Financial Self-Assessment Engine",
+    description:
+      "A privacy-first loan assessment tool for Indian borrowers — exposing the gap between what banks sanction vs. what borrowers can safely repay. Features a Newton-Raphson APR solver, dual-shock stress testing, and a printable negotiation card for bank meetings. 100% client-side, zero data collection.",
+    image: p5,
+    techStack: ["React 19", "TypeScript", "Vite", "Tailwind CSS"],
+    highlights: [
+      "Honest BORROW / BORROW LESS / DON'T BORROW decision engine",
+      "Newton-Raphson APR solver & dual-shock stress testing",
+      "100% client-side — zero server, zero PII collection",
+    ],
+    liveUrl: "https://borrower-copilot-seven.vercel.app/",
+    githubUrl: "https://github.com/KandatiRanjithKumarReddy/Borrower-Copilot",
+    featured: true,
+  },
+];
+
+/* ── Combined export used by the Projects section (5 cards total) ── */
+export const projects: Project[] = [...realProjects, ...tripNestProject, ...additionalProjects];
+
