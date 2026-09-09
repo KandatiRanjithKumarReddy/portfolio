@@ -2,9 +2,18 @@ import { motion, AnimatePresence } from "motion/react";
 import { useEffect, useState } from "react";
 
 export function LoadingScreen() {
-  const [done, setDone] = useState(false);
+  const [done, setDone] = useState(() => {
+    if (typeof window !== "undefined") {
+      return Boolean(sessionStorage.getItem("visited_screen"));
+    }
+    return false;
+  });
+
   useEffect(() => {
-    const t = setTimeout(() => setDone(true), 900);
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("visited_screen", "true");
+    }
+    const t = setTimeout(() => setDone(true), 300);
     return () => clearTimeout(t);
   }, []);
   return (

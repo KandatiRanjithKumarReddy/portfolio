@@ -56,6 +56,7 @@ export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
             src={image}
             alt={`Screenshot of ${title}`}
             loading="lazy"
+            decoding="async"
             width={1280}
             height={720}
             className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
@@ -104,13 +105,20 @@ export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
 
       {/* ── Card Body ── */}
       <div className="p-5 pt-3 flex flex-col flex-1 gap-3">
-        {/* Title */}
-        <h3 className="text-lg font-bold font-display tracking-tight text-white/95 group-hover:text-orange-300/90 transition-colors duration-300">
-          {title}
-        </h3>
+        {/* Title & Subtitle */}
+        <div>
+          <h3 className="text-lg font-bold font-display tracking-tight text-white/95 group-hover:text-orange-300/90 transition-colors duration-300">
+            {title}
+          </h3>
+          {project.subtitle && (
+            <p className="text-xs font-medium text-orange-400/85 mt-0.5 tracking-wide">
+              {project.subtitle}
+            </p>
+          )}
+        </div>
 
-        {/* Description (2-3 lines max) */}
-        <p className="text-sm text-zinc-400 leading-relaxed line-clamp-3">
+        {/* Full description without clipping or skipping points */}
+        <p className="text-sm text-zinc-400 leading-relaxed">
           {description}
         </p>
 

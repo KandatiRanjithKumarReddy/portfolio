@@ -114,7 +114,7 @@ export const additionalProjects: Project[] = [
   {
     id: "borrower-copilot",
     title: "Borrower Copilot",
-    subtitle: "Financial Self-Assessment Engine",
+    subtitle: "Loan Advisor",
     description:
       "A privacy-first loan assessment tool for Indian borrowers — exposing the gap between what banks sanction vs. what borrowers can safely repay. Features a Newton-Raphson APR solver, dual-shock stress testing, and a printable negotiation card for bank meetings. 100% client-side, zero data collection.",
     image: p5,
