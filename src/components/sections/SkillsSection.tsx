@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import { skillCategories } from "@/data/skills";
 import { SectionHeading } from "@/components/SectionHeading";
-import { SkillCard } from "@/components/SkillCard";
 
 export function SkillsSection() {
   return (
@@ -12,28 +11,33 @@ export function SkillsSection() {
         description="The stack I reach for to ship production-grade products quickly without compromising on quality."
       />
 
-      <div className="mt-16 space-y-14">
-        {skillCategories.map((cat, ci) => (
-          <motion.section
-            key={cat.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ delay: ci * 0.05 }}
-          >
-            <div className="flex items-center gap-3 mb-5">
-              <span className="h-1.5 w-8 rounded-full gradient-bg" />
-              <h3 className="font-display text-xl sm:text-2xl font-semibold">{cat.title}</h3>
-              <span className="text-xs text-muted-foreground">{cat.skills.length}</span>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
-              {cat.skills.map((s, i) => (
-                <SkillCard key={`${cat.title}-${s.name}`} skill={s} i={i} />
-              ))}
-            </div>
-          </motion.section>
-        ))}
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        className="mt-16"
+      >
+        <div className="glass rounded-2xl p-6 sm:p-8 md:p-10 space-y-5">
+          {skillCategories.map((cat, ci) => (
+            <motion.div
+              key={cat.title}
+              initial={{ opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ delay: ci * 0.06, duration: 0.4 }}
+              className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-0 group"
+            >
+              <span className="font-display text-base sm:text-lg font-bold text-foreground shrink-0 sm:min-w-[200px] md:min-w-[230px]">
+                {cat.title}:
+              </span>
+              <span className="text-sm sm:text-base text-foreground/80 leading-relaxed">
+                {cat.skills.join(", ")}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
     </div>
   );
 }

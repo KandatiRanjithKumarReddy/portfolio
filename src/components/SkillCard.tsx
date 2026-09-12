@@ -1,5 +1,9 @@
+// This component is no longer used — skills are now rendered as a text-list layout.
+// Kept for potential future use.
+
 import { motion } from "motion/react";
-import type { Skill } from "@/data/skills";
+
+type Skill = { name: string; color?: string };
 
 export function SkillCard({ skill, i }: { skill: Skill; i: number }) {
   return (
@@ -11,17 +15,6 @@ export function SkillCard({ skill, i }: { skill: Skill; i: number }) {
       whileHover={{ y: -4, scale: 1.04 }}
       className="group relative glass rounded-2xl p-4 sm:p-5 flex flex-col items-center justify-center gap-3 min-h-[100px] sm:min-h-[120px] transition-shadow hover:glow"
     >
-      <div
-        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"
-        style={{
-          background: `radial-gradient(circle at 50% 0%, ${skill.color}33, transparent 70%)`,
-        }}
-        aria-hidden
-      />
-      <skill.icon
-        className="relative h-9 w-9 sm:h-10 sm:w-10 shrink-0 transition-transform group-hover:scale-110"
-        style={{ color: skill.color }}
-      />
       <span className="relative text-[11px] sm:text-sm font-medium text-center leading-tight line-clamp-2">
         {skill.name}
       </span>

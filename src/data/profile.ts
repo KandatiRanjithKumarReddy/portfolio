@@ -1,4 +1,4 @@
-import profileImg from "@/assets/port-photo.png";
+import profileImg from "@/assets/profile-photo.png";
 
 export const profile = {
   name: "Kandati Ranjith Kumar Reddy",
