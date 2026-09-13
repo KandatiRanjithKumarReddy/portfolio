@@ -85,8 +85,14 @@ export function AboutSection() {
 
           <a
             href={profile.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={(e) => {
+              e.preventDefault();
+              const iframe = document.createElement("iframe");
+              iframe.style.display = "none";
+              iframe.src = profile.resumeUrl;
+              document.body.appendChild(iframe);
+              setTimeout(() => document.body.removeChild(iframe), 10000);
+            }}
             className="inline-flex items-center gap-2 rounded-xl gradient-bg text-primary-foreground px-6 py-3 text-sm font-medium glow hover:opacity-95 transition-opacity w-fit"
           >
             <HiArrowDownTray className="h-4 w-4" /> Download My Resume

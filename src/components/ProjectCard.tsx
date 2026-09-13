@@ -74,7 +74,7 @@ export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
 
         {/* ── Action Buttons (overlaid at bottom of image) ── */}
         {(repoUrl || demoUrl) && (
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-10 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-10 opacity-100 translate-y-0 md:opacity-0 md:translate-y-2 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300">
             {repoUrl && (
               <a
                 href={repoUrl}

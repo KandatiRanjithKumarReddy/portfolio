@@ -23,7 +23,7 @@ export const skillCategories: SkillCategoryT[] = [
   },
   {
     title: "Tools & DevOps",
-    skills: ["Git", "GitHub", "Postman", "Thunder Client", "CI/CD", "Vercel", "Render"],
+    skills: ["Git", "GitHub", "Postman", "Thunder Client", "CI/CD", "Vercel", "Render", "Cursor", "Lovable", "Antigravity", "Claude"],
   },
   {
     title: "Testing",

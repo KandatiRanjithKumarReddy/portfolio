@@ -102,8 +102,14 @@ function HomePage() {
                 </a>
                 <a
                   href={profile.resumeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const iframe = document.createElement("iframe");
+                    iframe.style.display = "none";
+                    iframe.src = profile.resumeUrl;
+                    document.body.appendChild(iframe);
+                    setTimeout(() => document.body.removeChild(iframe), 10000);
+                  }}
                   className="inline-flex items-center gap-2 rounded-xl glass px-5 py-3 text-sm font-medium hover:bg-muted transition-colors"
                 >
                   <HiArrowDownTray className="h-4 w-4" /> Download resume
