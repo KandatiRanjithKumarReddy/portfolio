@@ -7,7 +7,11 @@ import { ExperienceList } from "@/components/ExperienceList";
 
 export function ExperienceSection() {
   return (
-    <div className="mx-auto max-w-4xl px-4 pb-24 space-y-16" id="experience" data-section="/experience">
+    <div
+      className="mx-auto max-w-4xl px-4 pb-24 space-y-16"
+      id="experience"
+      data-section="/experience"
+    >
       <SectionHeading
         eyebrow="Journey & Milestones"
         title="Experience & Certifications"

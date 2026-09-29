@@ -29,18 +29,26 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:url", content: "/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "/" },
+      {
+        rel: "preload",
+        as: "image",
+        href: profile.image,
+        type: "image/webp",
+      },
+    ],
   }),
   component: HomePage,
 });
 
 const stagger = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+  show: { transition: { staggerChildren: 0.06, delayChildren: 0.02 } },
 };
 const item = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } },
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
 function HomePage() {
@@ -82,11 +90,16 @@ function HomePage() {
                 variants={item}
                 className="mt-5 text-base sm:text-lg text-muted-foreground max-w-xl"
               >
-                I turn ideas into production-ready web apps. From{" "}
-                <span className="text-accent">real-time chat systems</span> to{" "}
-                <span className="text-accent">payment-integrated booking platforms</span>, I build
-                with <span className="text-accent"> MERN, Angualr,TypeScript, and Java</span> -
-                fast, secure, and built to scale.
+                I build from zero. Whether it's{" "}
+                <span className="text-accent">frontend, backend, full-stack applications</span>, or
+                product-focused tools, I work across the entire development lifecycle. From UI and
+                business logic to{" "}
+                <span className="text-accent">APIs, authentication, payments, and deployment</span>,
+                I care less about using the latest technology and more about{" "}
+                <span className="text-accent">
+                  building software that works well and solves real problems
+                </span>
+                .
               </motion.p>
 
               <motion.div variants={item} className="mt-7 flex flex-wrap gap-3">

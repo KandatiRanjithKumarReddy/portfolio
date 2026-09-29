@@ -1,8 +1,8 @@
-import p1 from "@/assets/port1.png";
-import p2 from "@/assets/port2.png";
-import p3 from "@/assets/tripnest home.png";
-import p4 from "@/assets/project-4.jpeg";
-import p5 from "@/assets/project.-5.jpeg";
+import p1 from "@/assets/port1.webp";
+import p2 from "@/assets/port2.webp";
+import p3 from "@/assets/tripnest-home.webp";
+import p4 from "@/assets/project-4.webp";
+import p5 from "@/assets/project-5.webp";
 
 export type Project = {
   id: string;
@@ -132,4 +132,3 @@ export const additionalProjects: Project[] = [
 
 /* ── Combined export used by the Projects section (5 cards total) ── */
 export const projects: Project[] = [...realProjects, ...tripNestProject, ...additionalProjects];
-

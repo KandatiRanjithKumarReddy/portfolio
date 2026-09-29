@@ -7,13 +7,15 @@ import { useEffect, useState } from "react";
  * @param sectionIds Array of section identifiers (e.g., ["/", "/about", "/skills", ...])
  * @param options IntersectionObserver options
  */
+const DEFAULT_OPTIONS: IntersectionObserverInit = {
+  root: null,
+  rootMargin: "-25% 0px -40% 0px",
+  threshold: [0, 0.25, 0.5, 0.75, 1.0],
+};
+
 export function useScrollSpy(
   sectionIds: string[],
-  options: IntersectionObserverInit = {
-    root: null,
-    rootMargin: "-25% 0px -40% 0px",
-    threshold: [0, 0.25, 0.5, 0.75, 1.0],
-  },
+  options: IntersectionObserverInit = DEFAULT_OPTIONS,
 ): string | null {
   const [activeSection, setActiveSection] = useState<string | null>(null);
 

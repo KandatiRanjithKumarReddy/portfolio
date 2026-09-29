@@ -1,4 +1,7 @@
-export type SkillCategoryT = { title: string; skills: string[] };
+export type SkillCategoryT = {
+  title: string;
+  skills: string[];
+};
 
 export const skillCategories: SkillCategoryT[] = [
   {
@@ -7,7 +10,16 @@ export const skillCategories: SkillCategoryT[] = [
   },
   {
     title: "Frontend",
-    skills: ["React", "Angular", "Zustand", "TailwindCSS", "DaisyUI", "HTML", "CSS"],
+    skills: [
+      "React",
+      "Angular",
+      "Zustand",
+      "Tailwind CSS",
+      "DaisyUI",
+      "HTML",
+      "CSS",
+      "Framer Motion",
+    ],
   },
   {
     title: "Backend",
@@ -19,11 +31,29 @@ export const skillCategories: SkillCategoryT[] = [
   },
   {
     title: "Core Concepts",
-    skills: ["Data Structures and Algorithms", "OOP", "DBMS", "OS", "CN", "SDLC"],
+    skills: [
+      "Data Structures and Algorithms",
+      "Object-Oriented Programming",
+      "DBMS",
+      "Operating Systems",
+      "Computer Networks",
+      "SDLC",
+    ],
   },
   {
     title: "Tools & DevOps",
-    skills: ["Git", "GitHub", "Postman", "Thunder Client", "CI/CD", "Vercel", "Render", "Cursor", "Lovable", "Antigravity", "Claude"],
+    skills: [
+      "Git",
+      "GitHub",
+      "Postman",
+      "CI/CD",
+      "Vercel",
+      "Render",
+      "Cursor",
+      "Lovable",
+      "Antigravity",
+      "Claude",
+    ],
   },
   {
     title: "Testing",

@@ -1,4 +1,4 @@
-import profileImg from "@/assets/profile-photo.png";
+import profileImg from "@/assets/profile-photo.webp";
 
 export const profile = {
   name: "Kandati Ranjith Kumar Reddy",
@@ -6,6 +6,7 @@ export const profile = {
   roles: [
     "Full Stack Developer",
     "MERN Stack Developer",
+    "I build from idea to production",
     "React Developer",
     "Node.js Developer",
     "Frontend Developer",
@@ -22,6 +23,7 @@ export const profile = {
   phone: "+91 75693 77080",
   location: "India,Andra Pradesh,Venkatagiri",
   resumeUrl: "https://drive.google.com/uc?export=download&id=1M1QBFg4H610xwnUPB0VSv2uz014AQFRv",
-  resumeDriveUrl: "https://drive.google.com/file/d/1M1QBFg4H610xwnUPB0VSv2uz014AQFRv/view?usp=sharing",
+  resumeDriveUrl:
+    "https://drive.google.com/file/d/1M1QBFg4H610xwnUPB0VSv2uz014AQFRv/view?usp=sharing",
   image: profileImg,
 };

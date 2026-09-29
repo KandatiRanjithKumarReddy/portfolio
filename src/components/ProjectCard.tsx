@@ -65,8 +65,7 @@ export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
           <div
             className="absolute inset-x-0 bottom-0 h-16 pointer-events-none"
             style={{
-              background:
-                "linear-gradient(to top, #16161a 0%, transparent 100%)",
+              background: "linear-gradient(to top, #16161a 0%, transparent 100%)",
             }}
             aria-hidden
           />
@@ -118,16 +117,11 @@ export function ProjectCard({ project, i = 0 }: ProjectCardProps) {
         </div>
 
         {/* Full description without clipping or skipping points */}
-        <p className="text-sm text-zinc-400 leading-relaxed">
-          {description}
-        </p>
+        <p className="text-sm text-zinc-400 leading-relaxed">{description}</p>
 
         {/* ── Tech Stack Badges ── */}
         {techList.length > 0 && (
-          <div
-            className="mt-auto pt-3 flex flex-wrap gap-1.5"
-            aria-label="Technologies used"
-          >
+          <div className="mt-auto pt-3 flex flex-wrap gap-1.5" aria-label="Technologies used">
             {techList.map((t) => (
               <span
                 key={t}

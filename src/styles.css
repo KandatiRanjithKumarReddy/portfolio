@@ -68,7 +68,7 @@
   --popover-foreground: #09090b;
 
   /* Primary (Blue) */
-  --primary: #2563EB;
+  --primary: #2563eb;
   --primary-foreground: #ffffff;
 
   /* Secondary & Muted */
@@ -86,7 +86,7 @@
   /* UI Elements */
   --border: #e4e4e7; /* Zinc 200 */
   --input: #e4e4e7;
-  --ring: #2563EB;
+  --ring: #2563eb;
 
   /* Semantic Brand Colors */
   --brand-red: #ef4444;
@@ -99,14 +99,10 @@
   --brand-cyan: #06b6d4;
 
   /* Premium Gradients */
-  --gradient-primary: linear-gradient(135deg, #2563EB 0%, #1d4ed8 100%);
-  --gradient-rainbow: linear-gradient(120deg, #3b82f6, #2563EB, #1d4ed8);
-  --gradient-soft: linear-gradient(
-    135deg,
-    rgba(37, 99, 235, 0.10) 0%,
-    rgba(29, 78, 216, 0.10) 100%
-  );
-  --gradient-text: linear-gradient(120deg, #2563EB 0%, #1d4ed8 100%);
+  --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  --gradient-rainbow: linear-gradient(120deg, #3b82f6, #2563eb, #1d4ed8);
+  --gradient-soft: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(29, 78, 216, 0.1) 100%);
+  --gradient-text: linear-gradient(120deg, #2563eb 0%, #1d4ed8 100%);
 
   /* Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.65);
@@ -115,7 +111,8 @@
   /* Soft, Diffused Shadows */
   --shadow-glow: 0 10px 40px -10px rgba(37, 99, 235, 0.35);
   --shadow-elegant: 0 10px 30px -5px rgba(9, 9, 11, 0.04), 0 4px 10px -3px rgba(9, 9, 11, 0.02);
-  --shadow-project: 0 14px 34px -10px rgba(15, 23, 42, 0.08), 0 4px 14px -4px rgba(15, 23, 42, 0.04);
+  --shadow-project:
+    0 14px 34px -10px rgba(15, 23, 42, 0.08), 0 4px 14px -4px rgba(15, 23, 42, 0.04);
 }
 
 /* --- Dark Theme (Sleek & Deep) --- */
@@ -129,7 +126,7 @@
   --popover-foreground: #fafafa;
 
   /* Primary (Blue) */
-  --primary: #2563EB;
+  --primary: #2563eb;
   --primary-foreground: #ffffff;
 
   /* Secondary & Muted */
@@ -147,7 +144,7 @@
   /* UI Elements */
   --border: #27272a;
   --input: #27272a;
-  --ring: #2563EB;
+  --ring: #2563eb;
 
   /* Semantic Brand Colors */
   --brand-red: #f87171;
@@ -160,14 +157,14 @@
   --brand-cyan: #22d3ee;
 
   /* Premium Gradients */
-  --gradient-primary: linear-gradient(135deg, #2563EB 0%, #3b82f6 100%);
-  --gradient-rainbow: linear-gradient(120deg, #1d4ed8, #2563EB, #3b82f6);
+  --gradient-primary: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  --gradient-rainbow: linear-gradient(120deg, #1d4ed8, #2563eb, #3b82f6);
   --gradient-soft: linear-gradient(
     135deg,
     rgba(37, 99, 235, 0.15) 0%,
     rgba(59, 130, 246, 0.15) 100%
   );
-  --gradient-text: linear-gradient(120deg, #60a5fa 0%, #2563EB 100%);
+  --gradient-text: linear-gradient(120deg, #60a5fa 0%, #2563eb 100%);
 
   /* Glassmorphism */
   --glass-bg: rgba(24, 24, 27, 0.55);

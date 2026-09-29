@@ -37,18 +37,14 @@ export function ExperienceList({ items }: { items: TimelineEntry[] }) {
                         {kindLabel[it.kind] || it.kind}
                       </span>
                       {it.location && (
-                        <span className="text-xs text-muted-foreground">
-                          • {it.location}
-                        </span>
+                        <span className="text-xs text-muted-foreground">• {it.location}</span>
                       )}
                     </div>
 
                     <h4 className="mt-1.5 text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
                       {it.title}
                     </h4>
-                    <p className="text-sm font-medium text-foreground/80 mt-0.5">
-                      {it.org}
-                    </p>
+                    <p className="text-sm font-medium text-foreground/80 mt-0.5">{it.org}</p>
                   </div>
 
                   <div className="shrink-0 text-left sm:text-right mt-1 sm:mt-0">

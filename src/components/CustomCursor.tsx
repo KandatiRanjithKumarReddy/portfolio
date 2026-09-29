@@ -1,65 +1,89 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export function CustomCursor() {
-  const [enabled, setEnabled] = useState(false);
-  const [pos, setPos] = useState({ x: -100, y: -100 });
-  const [hovering, setHovering] = useState(false);
+  const dotRef = useRef<HTMLDivElement>(null);
+  const glowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const mq = window.matchMedia("(pointer: fine)");
-    setEnabled(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setEnabled(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
+    if (!mq.matches) return;
 
-  useEffect(() => {
-    if (!enabled) return;
+    let rafId: number;
+    let mouseX = -100;
+    let mouseY = -100;
+    let isHovering = false;
+    let hasMoved = false;
+
     document.documentElement.classList.add("has-custom-cursor");
-    const move = (e: MouseEvent) => setPos({ x: e.clientX, y: e.clientY });
-    const over = (e: MouseEvent) => {
-      const t = e.target as HTMLElement | null;
-      setHovering(!!t?.closest("a, button, [role='button'], input, textarea, select"));
+
+    const onMouseMove = (e: MouseEvent) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!hasMoved) {
+        hasMoved = true;
+        if (dotRef.current) dotRef.current.style.opacity = "1";
+        if (glowRef.current) glowRef.current.style.opacity = "0.4";
+      }
     };
-    window.addEventListener("mousemove", move);
-    window.addEventListener("mouseover", over);
+
+    const onMouseOver = (e: MouseEvent) => {
+      const t = e.target as HTMLElement | null;
+      const hover = Boolean(t?.closest("a, button, [role='button'], input, textarea, select"));
+      if (hover !== isHovering) {
+        isHovering = hover;
+        if (dotRef.current) {
+          dotRef.current.style.width = hover ? "36px" : "12px";
+          dotRef.current.style.height = hover ? "36px" : "12px";
+        }
+      }
+    };
+
+    const update = () => {
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+      }
+      if (glowRef.current) {
+        glowRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+      }
+      rafId = requestAnimationFrame(update);
+    };
+
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
+    window.addEventListener("mouseover", onMouseOver, { passive: true });
+    rafId = requestAnimationFrame(update);
+
     return () => {
       document.documentElement.classList.remove("has-custom-cursor");
-      window.removeEventListener("mousemove", move);
-      window.removeEventListener("mouseover", over);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseover", onMouseOver);
+      cancelAnimationFrame(rafId);
     };
-  }, [enabled]);
-
-  if (!enabled) return null;
+  }, []);
 
   return (
     <>
       <div
+        ref={dotRef}
         aria-hidden
-        className="pointer-events-none fixed z-[90] rounded-full mix-blend-difference"
+        className="pointer-events-none fixed top-0 left-0 z-[90] rounded-full mix-blend-difference opacity-0 transition-[width,height] duration-200 ease-out"
         style={{
-          left: pos.x,
-          top: pos.y,
-          width: hovering ? 36 : 12,
-          height: hovering ? 36 : 12,
-          transform: "translate(-50%, -50%)",
+          width: 12,
+          height: 12,
           background: "white",
-          transition: "width .2s, height .2s",
+          willChange: "transform",
         }}
       />
       <div
+        ref={glowRef}
         aria-hidden
-        className="pointer-events-none fixed z-[89] rounded-full"
+        className="pointer-events-none fixed top-0 left-0 z-[89] rounded-full opacity-0"
         style={{
-          left: pos.x,
-          top: pos.y,
           width: 40,
           height: 40,
-          transform: "translate(-50%, -50%)",
           background: "var(--gradient-primary)",
           filter: "blur(16px)",
-          opacity: 0.4,
-          transition: "transform .1s",
+          willChange: "transform",
         }}
       />
     </>

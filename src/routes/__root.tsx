@@ -15,7 +15,6 @@ import { ThemeProvider } from "../components/ThemeProvider";
 import { Navbar } from "../components/Navbar";
 import { ScrollProgress } from "../components/ScrollProgress";
 import { AnimatedBackground } from "../components/AnimatedBackground";
-import { LoadingScreen } from "../components/LoadingScreen";
 import { SmoothScroll } from "../components/SmoothScroll";
 
 import { Footer } from "../components/Footer";
@@ -122,7 +121,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               familyName: "Kandati",
               jobTitle: "Full Stack Developer",
               description:
-                "I turn ideas into production-ready web apps. From real-time chat systems to payment-integrated booking platforms, I build with React, Angular, Node.js, TypeScript, and Java — fast, secure, and built to scale",
+                "I build from zero. Whether it's frontend, backend, full-stack applications, or product-focused tools, I work across the entire development lifecycle. From UI and business logic to APIs, authentication, payments, and deployment, I care less about using the latest technology and more about building software that works well and solves real problems.",
               email: "mailto:kandatiranjithkumarreddy@gmail.com",
               telephone: "+91-75693-77080",
               address: {
@@ -200,7 +199,6 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <SmoothScroll />
-        <LoadingScreen />
         <ScrollProgress />
         <CustomCursor />
         <AnimatedBackground />

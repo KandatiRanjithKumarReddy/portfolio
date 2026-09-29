@@ -65,16 +65,16 @@ I'm **Kandati Ranjith Kumar Reddy**, a Computer Science graduate (B.Tech, GPA: 9
 
 ### What This Portfolio Demonstrates
 
-| Competency | Implementation |
-| :--- | :--- |
+| Competency                | Implementation                                                           |
+| :------------------------ | :----------------------------------------------------------------------- |
 | **Frontend Architecture** | React 19 with TanStack Start SSR, file-based routing, and code-splitting |
-| **Type Safety** | End-to-end TypeScript with strict mode, zero `any` types |
-| **Design Systems** | Theme-aware CSS custom properties, dual-accent color palette |
-| **Motion & UX** | Framer Motion orchestrated animations, Lenis smooth scroll |
-| **Component Design** | Headless UI primitives (Radix UI) + composable patterns (CVA + clsx) |
-| **Form Engineering** | Schema-validated forms with react-hook-form + Zod |
-| **Performance** | Vite 8 HMR, tree-shaking, lazy loading, optimized asset pipeline |
-| **Accessibility** | WCAG-compliant Radix primitives, semantic HTML, keyboard navigation |
+| **Type Safety**           | End-to-end TypeScript with strict mode, zero `any` types                 |
+| **Design Systems**        | Theme-aware CSS custom properties, dual-accent color palette             |
+| **Motion & UX**           | Framer Motion orchestrated animations, Lenis smooth scroll               |
+| **Component Design**      | Headless UI primitives (Radix UI) + composable patterns (CVA + clsx)     |
+| **Form Engineering**      | Schema-validated forms with react-hook-form + Zod                        |
+| **Performance**           | Vite 8 HMR, tree-shaking, lazy loading, optimized asset pipeline         |
+| **Accessibility**         | WCAG-compliant Radix primitives, semantic HTML, keyboard navigation      |
 
 ---
 
@@ -85,18 +85,23 @@ This portfolio is deliberately over-engineered (relative to its scope) to serve 
 ### Key Architectural Decisions
 
 **1. TanStack Start + Vite 8 over Next.js / Remix**
+
 > Chose TanStack Start for its superior type-safe routing, first-class Vite integration, and lean runtime. The file-based routing convention via `@tanstack/router-plugin` eliminates boilerplate while preserving full TypeScript inference across route params, loaders, and search params.
 
 **2. Radix UI Primitives + CVA over Fully-Styled Component Libraries**
+
 > Rather than importing heavyweight component libraries (MUI, Chakra, Ant), I use unstyled Radix UI primitives for accessible behavior and compose visual styles with `class-variance-authority` and `tailwind-merge`. This keeps the bundle lean while achieving pixel-perfect design control.
 
 **3. Framer Motion (`motion`) for Declarative Animations**
+
 > All animations are declarative, orchestrated, and GPU-accelerated. Scroll-triggered reveals, staggered card entrances, and page transitions are handled via `motion` (the v12+ package) — avoiding imperative animation code entirely.
 
 **4. CSS Custom Properties for Theming over JS-based Theme Providers**
+
 > The theme system is CSS-native. Light and dark modes swap via `:root` / `.dark` CSS custom property overrides, enabling instant theme switches with zero React re-renders. Tailwind v4's native CSS variable integration makes this seamless.
 
 **5. Data-Driven Content Layer**
+
 > All portfolio content (profile, projects, skills, experience, socials) lives in structured TypeScript modules under `src/data/`. This decouples content from presentation, making updates trivial and enabling future CMS migration without touching component code.
 
 ### Rendering Strategy
@@ -118,6 +123,7 @@ This portfolio is deliberately over-engineered (relative to its scope) to serve 
 ## ✨ Features & Highlights
 
 ### 🎯 Core Features
+
 - **🚀 SSR + Client Hydration** — TanStack Start delivers server-rendered HTML with seamless client-side hydration for optimal FCP/LCP metrics
 - **🎨 Dual-Accent Theme System** — Sky Blue (Light) ↔ Vibrant Orange (Dark) with CSS custom property-driven transitions that are instant and flicker-free
 - **💫 60fps Motion Design** — GPU-accelerated Framer Motion animations: scroll-triggered reveals, staggered layouts, parallax effects, and smooth page transitions
@@ -125,6 +131,7 @@ This portfolio is deliberately over-engineered (relative to its scope) to serve 
 - **📱 Fully Responsive** — Mobile-first Tailwind CSS v4 layout that adapts gracefully from 320px to 4K displays
 
 ### 🛠️ Engineering Quality
+
 - **Type-Safe Routing** — TanStack Router with full TypeScript inference for route params, search params, and loaders
 - **Schema-Validated Forms** — Contact form built with `react-hook-form` + `zod` for runtime type-safe validation
 - **Accessible by Default** — Radix UI primitives ensure WCAG 2.1 AA compliance with proper ARIA attributes, focus management, and keyboard navigation
@@ -132,6 +139,7 @@ This portfolio is deliberately over-engineered (relative to its scope) to serve 
 - **Custom React Hooks** — Encapsulated scroll behavior, theme management, and intersection observer logic
 
 ### 🎨 UI/UX Polish
+
 - **Interactive Project Showcase** — Spotlight cards with hover effects, live demo links, GitHub repos, and animated tech stack badges
 - **Dynamic Skills Grid** — Categorized skill cards across 7 categories (Languages, Frontend, Backend, Databases, Core Concepts, DevOps, Testing)
 - **Experience Timeline** — Interactive career milestone timeline with work experience, certifications, and education
@@ -146,47 +154,47 @@ This portfolio is deliberately over-engineered (relative to its scope) to serve 
 
 ### Frontend & Framework
 
-| Technology | Version | Purpose |
-| :--- | :---: | :--- |
-| ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) | `19.2` | Core UI library with concurrent features, Server Components readiness |
-| ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) | `5.8` | Static type safety across the entire codebase |
-| ![TanStack Start](https://img.shields.io/badge/TanStack_Start-FF4154?style=flat-square&logo=reactrouter&logoColor=white) | `1.168` | Full-stack React framework with SSR/SSG and type-safe file routing |
-| ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) | `8.0` | Next-gen build tool — sub-second HMR, optimized production bundles |
+| Technology                                                                                                               | Version | Purpose                                                               |
+| :----------------------------------------------------------------------------------------------------------------------- | :-----: | :-------------------------------------------------------------------- |
+| ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)                         | `19.2`  | Core UI library with concurrent features, Server Components readiness |
+| ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)          |  `5.8`  | Static type safety across the entire codebase                         |
+| ![TanStack Start](https://img.shields.io/badge/TanStack_Start-FF4154?style=flat-square&logo=reactrouter&logoColor=white) | `1.168` | Full-stack React framework with SSR/SSG and type-safe file routing    |
+| ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)                            |  `8.0`  | Next-gen build tool — sub-second HMR, optimized production bundles    |
 
 ### Styling & UI Components
 
-| Technology | Version | Purpose |
-| :--- | :---: | :--- |
-| ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white) | `4.2` | Utility-first CSS framework with native CSS variable theming |
-| ![Radix UI](https://img.shields.io/badge/Radix_UI-161618?style=flat-square&logo=radix-ui&logoColor=white) | `latest` | Headless, accessible UI primitives (Dialog, Tooltip, Select, Accordion, etc.) |
-| ![Framer Motion](https://img.shields.io/badge/Motion-0055FF?style=flat-square&logo=framer&logoColor=white) | `12.42` | Production-grade animation library — declarative, GPU-accelerated |
-| ![Lucide](https://img.shields.io/badge/Lucide_Icons-F56565?style=flat-square&logo=lucide&logoColor=white) | `0.575` | Modern, tree-shakeable icon library |
+| Technology                                                                                                           | Version  | Purpose                                                                       |
+| :------------------------------------------------------------------------------------------------------------------- | :------: | :---------------------------------------------------------------------------- |
+| ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white) |  `4.2`   | Utility-first CSS framework with native CSS variable theming                  |
+| ![Radix UI](https://img.shields.io/badge/Radix_UI-161618?style=flat-square&logo=radix-ui&logoColor=white)            | `latest` | Headless, accessible UI primitives (Dialog, Tooltip, Select, Accordion, etc.) |
+| ![Framer Motion](https://img.shields.io/badge/Motion-0055FF?style=flat-square&logo=framer&logoColor=white)           | `12.42`  | Production-grade animation library — declarative, GPU-accelerated             |
+| ![Lucide](https://img.shields.io/badge/Lucide_Icons-F56565?style=flat-square&logo=lucide&logoColor=white)            | `0.575`  | Modern, tree-shakeable icon library                                           |
 
 ### Form & Validation
 
-| Technology | Purpose |
-| :--- | :--- |
-| `react-hook-form` | Performant form state management with minimal re-renders |
-| `zod` v4 | Schema-first runtime validation with TypeScript type inference |
-| `@hookform/resolvers` | Bridges zod schemas into react-hook-form validation |
+| Technology            | Purpose                                                        |
+| :-------------------- | :------------------------------------------------------------- |
+| `react-hook-form`     | Performant form state management with minimal re-renders       |
+| `zod` v4              | Schema-first runtime validation with TypeScript type inference |
+| `@hookform/resolvers` | Bridges zod schemas into react-hook-form validation            |
 
 ### Animation & Scroll
 
-| Technology | Purpose |
-| :--- | :--- |
+| Technology                   | Purpose                                                              |
+| :--------------------------- | :------------------------------------------------------------------- |
 | `motion` (Framer Motion v12) | Declarative animations, layout transitions, scroll-triggered reveals |
-| `lenis` | Smooth, momentum-based scrolling with configurable easing |
+| `lenis`                      | Smooth, momentum-based scrolling with configurable easing            |
 
 ### Utilities
 
-| Technology | Purpose |
-| :--- | :--- |
-| `class-variance-authority` | Type-safe component variant API builder |
-| `clsx` | Conditional className composition |
-| `tailwind-merge` | Intelligent Tailwind class conflict resolution |
-| `date-fns` | Lightweight, tree-shakeable date utility library |
-| `sonner` | Elegant toast notification system |
-| `react-icons` | Comprehensive icon sets (FontAwesome, Heroicons, Simple Icons) |
+| Technology                 | Purpose                                                        |
+| :------------------------- | :------------------------------------------------------------- |
+| `class-variance-authority` | Type-safe component variant API builder                        |
+| `clsx`                     | Conditional className composition                              |
+| `tailwind-merge`           | Intelligent Tailwind class conflict resolution                 |
+| `date-fns`                 | Lightweight, tree-shakeable date utility library               |
+| `sonner`                   | Elegant toast notification system                              |
+| `react-icons`              | Comprehensive icon sets (FontAwesome, Heroicons, Simple Icons) |
 
 ---
 
@@ -196,25 +204,25 @@ The portfolio implements a **theme-dependent accent color system** using CSS cus
 
 ### ☀️ Light Theme — Sky Blue Palette
 
-| Token | Value | Usage |
-| :--- | :--- | :--- |
-| `--background` | `#ffffff` | Page background |
-| `--foreground` | `#09090b` | Primary text (Zinc 950) |
-| `--primary` | `#87CEFA` | Sky Blue — buttons, links, accents |
-| `--accent` | `#3a9fd8` | Deeper Sky Blue — text-safe contrast |
-| `--card` | `#ffffff` | Card surfaces |
-| Gradient | `#87CEFA → #3a9fd8` | Hero section, CTA highlights |
+| Token          | Value               | Usage                                |
+| :------------- | :------------------ | :----------------------------------- |
+| `--background` | `#ffffff`           | Page background                      |
+| `--foreground` | `#09090b`           | Primary text (Zinc 950)              |
+| `--primary`    | `#87CEFA`           | Sky Blue — buttons, links, accents   |
+| `--accent`     | `#3a9fd8`           | Deeper Sky Blue — text-safe contrast |
+| `--card`       | `#ffffff`           | Card surfaces                        |
+| Gradient       | `#87CEFA → #3a9fd8` | Hero section, CTA highlights         |
 
 ### 🌙 Dark Theme — Vibrant Orange Palette
 
-| Token | Value | Usage |
-| :--- | :--- | :--- |
-| `--background` | `#09090b` | Page background (Zinc 950) |
-| `--foreground` | `#fafafa` | Primary text (Zinc 50) |
-| `--primary` | `#F97415` | Vibrant Orange — buttons, links, accents |
-| `--accent` | `#fb923c` | Orange 400 — text-safe contrast |
-| `--card` | `#18181b` | Card surfaces (Zinc 900) |
-| Gradient | `#F97415 → #fb923c` | Hero section, CTA highlights |
+| Token          | Value               | Usage                                    |
+| :------------- | :------------------ | :--------------------------------------- |
+| `--background` | `#09090b`           | Page background (Zinc 950)               |
+| `--foreground` | `#fafafa`           | Primary text (Zinc 50)                   |
+| `--primary`    | `#F97415`           | Vibrant Orange — buttons, links, accents |
+| `--accent`     | `#fb923c`           | Orange 400 — text-safe contrast          |
+| `--card`       | `#18181b`           | Card surfaces (Zinc 900)                 |
+| Gradient       | `#F97415 → #fb923c` | Hero section, CTA highlights             |
 
 ### Why Two Distinct Accent Colors?
 
@@ -286,12 +294,12 @@ Ranjith_Portfolio/
 
 > Full-stack healthcare platform that **reduced appointment booking time from ~15 minutes to under 2 minutes**.
 
-| Attribute | Detail |
-| :--- | :--- |
-| **Stack** | React · Node.js · Express · MongoDB · JWT · Razorpay · Cloudinary · Tailwind |
-| **Architecture** | RESTful API backend (15+ endpoints), role-based JWT auth (Patient/Doctor/Admin) |
-| **Key Impact** | 87% reduction in booking flow time, integrated payment gateway, cloud media management |
-| **Links** | [🔗 Live Demo](https://doctor-frontend-eosin.vercel.app/) · [🐙 GitHub](https://github.com/KandatiRanjithKumarReddy/doctor-frontend) |
+| Attribute        | Detail                                                                                                                               |
+| :--------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| **Stack**        | React · Node.js · Express · MongoDB · JWT · Razorpay · Cloudinary · Tailwind                                                         |
+| **Architecture** | RESTful API backend (15+ endpoints), role-based JWT auth (Patient/Doctor/Admin)                                                      |
+| **Key Impact**   | 87% reduction in booking flow time, integrated payment gateway, cloud media management                                               |
+| **Links**        | [🔗 Live Demo](https://doctor-frontend-eosin.vercel.app/) · [🐙 GitHub](https://github.com/KandatiRanjithKumarReddy/doctor-frontend) |
 
 ---
 
@@ -299,12 +307,12 @@ Ranjith_Portfolio/
 
 > Real-time messaging platform achieving **sub-second delivery with ~40% latency reduction** via event-driven Socket.IO architecture.
 
-| Attribute | Detail |
-| :--- | :--- |
-| **Stack** | React · Node.js · Express · MongoDB · Socket.IO · JWT · Tailwind |
-| **Architecture** | WebSocket event-driven messaging, real-time connection tracking, presence system |
-| **Key Impact** | Sub-second P2P message delivery, live online/offline status, secure JWT sessions |
-| **Links** | [🔗 Live Demo](https://chatapplication-8q6x.onrender.com/) · [🐙 GitHub](https://github.com/KandatiRanjithKumarReddy/ChatApplication) |
+| Attribute        | Detail                                                                                                                                |
+| :--------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
+| **Stack**        | React · Node.js · Express · MongoDB · Socket.IO · JWT · Tailwind                                                                      |
+| **Architecture** | WebSocket event-driven messaging, real-time connection tracking, presence system                                                      |
+| **Key Impact**   | Sub-second P2P message delivery, live online/offline status, secure JWT sessions                                                      |
+| **Links**        | [🔗 Live Demo](https://chatapplication-8q6x.onrender.com/) · [🐙 GitHub](https://github.com/KandatiRanjithKumarReddy/ChatApplication) |
 
 ---
 
@@ -312,12 +320,12 @@ Ranjith_Portfolio/
 
 > Angular-based booking platform supporting **100+ destinations** with **50% faster initial load** via pagination strategy.
 
-| Attribute | Detail |
-| :--- | :--- |
-| **Stack** | Angular · TypeScript · Firebase · Firestore · Razorpay · CSS · HTML |
+| Attribute        | Detail                                                                               |
+| :--------------- | :----------------------------------------------------------------------------------- |
+| **Stack**        | Angular · TypeScript · Firebase · Firestore · Razorpay · CSS · HTML                  |
 | **Architecture** | Firebase Auth with Angular Route Guards, Firestore real-time data, paginated queries |
-| **Key Impact** | 50% load time improvement, dynamic pricing engine, search/filter/sort pipeline |
-| **Context** | Developed during **Infosys Springboard** internship |
+| **Key Impact**   | 50% load time improvement, dynamic pricing engine, search/filter/sort pipeline       |
+| **Context**      | Developed during **Infosys Springboard** internship                                  |
 
 ---
 
@@ -325,12 +333,12 @@ Ranjith_Portfolio/
 
 > Modern React 19 app doubling as a **comprehensive testing reference** with 9 Playwright E2E tests, 4 RTL suites, and full coverage.
 
-| Attribute | Detail |
-| :--- | :--- |
-| **Stack** | React 19 · TypeScript · Vite · Vitest · Testing Library · Playwright |
-| **Testing Strategy** | Multi-layer: unit → hook → component → E2E browser tests |
-| **Key Impact** | 9 automated E2E flows, custom hook lifecycle tests, @vitest/coverage-v8 pipeline |
-| **Links** | [🔗 Live Demo](https://testing-react-sigma.vercel.app/) · [🐙 GitHub](https://github.com/KandatiRanjithKumarReddy/testing-react) |
+| Attribute            | Detail                                                                                                                           |
+| :------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| **Stack**            | React 19 · TypeScript · Vite · Vitest · Testing Library · Playwright                                                             |
+| **Testing Strategy** | Multi-layer: unit → hook → component → E2E browser tests                                                                         |
+| **Key Impact**       | 9 automated E2E flows, custom hook lifecycle tests, @vitest/coverage-v8 pipeline                                                 |
+| **Links**            | [🔗 Live Demo](https://testing-react-sigma.vercel.app/) · [🐙 GitHub](https://github.com/KandatiRanjithKumarReddy/testing-react) |
 
 ---
 
@@ -338,12 +346,12 @@ Ranjith_Portfolio/
 
 > A **100% client-side** loan assessment tool exposing the gap between bank sanctions and safe repayment capacity.
 
-| Attribute | Detail |
-| :--- | :--- |
-| **Stack** | React 19 · TypeScript · Vite · Tailwind CSS |
-| **Algorithms** | Newton-Raphson APR solver, dual-shock stress testing engine |
-| **Key Impact** | Honest BORROW / BORROW LESS / DON'T BORROW decisions, printable negotiation card, zero PII collection |
-| **Links** | [🔗 Live Demo](https://borrower-copilot-seven.vercel.app/) · [🐙 GitHub](https://github.com/KandatiRanjithKumarReddy/Borrower-Copilot) |
+| Attribute      | Detail                                                                                                                                 |
+| :------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
+| **Stack**      | React 19 · TypeScript · Vite · Tailwind CSS                                                                                            |
+| **Algorithms** | Newton-Raphson APR solver, dual-shock stress testing engine                                                                            |
+| **Key Impact** | Honest BORROW / BORROW LESS / DON'T BORROW decisions, printable negotiation card, zero PII collection                                  |
+| **Links**      | [🔗 Live Demo](https://borrower-copilot-seven.vercel.app/) · [🐙 GitHub](https://github.com/KandatiRanjithKumarReddy/Borrower-Copilot) |
 
 ---
 
@@ -351,11 +359,11 @@ Ranjith_Portfolio/
 
 ### Prerequisites
 
-| Requirement | Minimum Version |
-| :--- | :--- |
-| **Node.js** | `≥ 18.0.0` (LTS recommended) |
+| Requirement         | Minimum Version                         |
+| :------------------ | :-------------------------------------- |
+| **Node.js**         | `≥ 18.0.0` (LTS recommended)            |
 | **Package Manager** | `npm` ≥ 9 / `bun` ≥ 1.0 / `yarn` ≥ 1.22 |
-| **Git** | `≥ 2.30` |
+| **Git**             | `≥ 2.30`                                |
 
 ### Installation
 
@@ -377,6 +385,7 @@ npm run dev
 ### Quick Verification
 
 After starting the dev server, verify the setup:
+
 - Navigate to `http://localhost:3000` — you should see the portfolio landing page
 - Toggle the theme (sun/moon icon) — accent colors should switch between Sky Blue and Orange
 - Scroll through sections — smooth scrolling and animations should be active
@@ -386,32 +395,35 @@ After starting the dev server, verify the setup:
 
 ## 📜 Available Scripts
 
-| Command | Description |
-| :--- | :--- |
-| `npm run dev` | Start Vite dev server with HMR at `localhost:3000` |
-| `npm run build` | Production build — generates SSR-optimized output via Nitro |
-| `npm run build:dev` | Development-mode build (for debugging production issues) |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run ESLint (flat config) with React Hooks + Prettier rules |
-| `npm run format` | Format entire codebase with Prettier |
+| Command             | Description                                                 |
+| :------------------ | :---------------------------------------------------------- |
+| `npm run dev`       | Start Vite dev server with HMR at `localhost:3000`          |
+| `npm run build`     | Production build — generates SSR-optimized output via Nitro |
+| `npm run build:dev` | Development-mode build (for debugging production issues)    |
+| `npm run preview`   | Preview the production build locally                        |
+| `npm run lint`      | Run ESLint (flat config) with React Hooks + Prettier rules  |
+| `npm run format`    | Format entire codebase with Prettier                        |
 
 ---
 
 ## ⚡ Performance & Optimization
 
 ### Build-Time Optimizations
+
 - **Vite 8 Tree-Shaking** — Dead code elimination across all dependencies
 - **Code Splitting** — TanStack Router automatic route-based code splitting
 - **Asset Pipeline** — Image imports resolved at build time, optimized by Vite's asset handling
 - **Tailwind v4 Lightning CSS** — Native CSS compilation (replaces PostCSS), dramatically faster builds
 
 ### Runtime Optimizations
+
 - **CSS-Layer Theming** — Theme switches via CSS custom property toggling with zero React re-renders
 - **GPU-Accelerated Animations** — Framer Motion leverages `transform` and `opacity` for compositor-only animations
 - **Lazy Hydration** — TanStack Start's progressive hydration minimizes Time-to-Interactive
 - **Smooth Scroll Debouncing** — Lenis scroll events are lerp-interpolated, preventing jank on high-frequency scroll input
 
 ### Bundle Composition
+
 - **React 19** core (~40KB gzipped)
 - **TanStack Router** (~12KB gzipped)
 - **Framer Motion** (~30KB gzipped, tree-shaken)
@@ -464,15 +476,15 @@ Contributions, issues, and feature requests are welcome! Here's how to contribut
 
 ## 📞 Contact & Connect
 
-| Channel | Link |
-| :--- | :--- |
-| 👨‍💻 **Name** | Kandati Ranjith Kumar Reddy |
-| 📧 **Email** | [kandatiranjithkumarreddy@gmail.com](mailto:kandatiranjithkumarreddy@gmail.com) |
-| 📞 **Phone** | +91 75693 77080 |
-| 📍 **Location** | Venkatagiri, Andhra Pradesh, India |
-| 🐙 **GitHub** | [@KandatiRanjithKumarReddy](https://github.com/KandatiRanjithKumarReddy) |
+| Channel         | Link                                                                                    |
+| :-------------- | :-------------------------------------------------------------------------------------- |
+| 👨‍💻 **Name**     | Kandati Ranjith Kumar Reddy                                                             |
+| 📧 **Email**    | [kandatiranjithkumarreddy@gmail.com](mailto:kandatiranjithkumarreddy@gmail.com)         |
+| 📞 **Phone**    | +91 75693 77080                                                                         |
+| 📍 **Location** | Venkatagiri, Andhra Pradesh, India                                                      |
+| 🐙 **GitHub**   | [@KandatiRanjithKumarReddy](https://github.com/KandatiRanjithKumarReddy)                |
 | 💼 **LinkedIn** | [Kandati Ranjith Kumar Reddy](https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/) |
-| 🧩 **LeetCode** | [ranjith568](https://leetcode.com/u/ranjith568/) |
+| 🧩 **LeetCode** | [ranjith568](https://leetcode.com/u/ranjith568/)                                        |
 
 ---
 
@@ -484,8 +496,8 @@ This project is open source and available for reference and learning purposes.
 
 <div align="center">
 
-  **If this portfolio impressed you, consider giving it a ⭐ — it helps!**
+**If this portfolio impressed you, consider giving it a ⭐ — it helps!**
 
-  <sub>Engineered with ❤️ and relentless attention to detail by <b>Kandati Ranjith Kumar Reddy</b></sub>
+<sub>Engineered with ❤️ and relentless attention to detail by <b>Kandati Ranjith Kumar Reddy</b></sub>
 
 </div>

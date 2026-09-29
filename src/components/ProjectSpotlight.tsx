@@ -89,7 +89,10 @@ export function ProjectSpotlight({ project, i = 0 }: ProjectCardProps) {
               </p>
               <ul className="space-y-2">
                 {highlightList.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/85">
+                  <li
+                    key={idx}
+                    className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/85"
+                  >
                     <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary font-mono text-[10px] font-bold mt-0.5">
                       0{idx + 1}
                     </span>
