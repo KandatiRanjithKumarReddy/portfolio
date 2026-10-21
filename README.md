@@ -55,12 +55,6 @@ Hi, I'm **Kandati Ranjith Kumar Reddy** — a **2026 B.Tech Computer Science gra
 
 I genuinely love building things for the web. For me, there's nothing quite like starting with an empty editor and turning an idea into a smooth, dependable product that people can actually use.
 
-Rather than over-engineering or chasing buzzwords, I focus on what makes software truly reliable:
-- **Snappy, fluid interfaces** that respect the user's time and device.
-- **Robust RESTful APIs** designed for low latency, clean status handling, and graceful model fallbacks.
-- **Secure authentication flows** using JWT, Google OAuth 2.0, and strict role-based access.
-- **Well-architected database schemas** in MySQL and MongoDB that stay easy to maintain and scale.
-
 ---
 
 ## 2. 🛠️ My Skills & Technologies
@@ -160,43 +154,8 @@ I am actively open to **Software Engineer**, **Full-Stack Developer**, and **Fro
 | 📄 **Resume** | [Download / View Latest Resume](https://drive.google.com/file/d/1sSxfee5abcbq4Ct6NtVeF8UjwrM4VDoP/view?usp=sharing) |
 | 💼 **LinkedIn** | [linkedin.com/in/kandati-ranjith-kumar-reddy](https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/) |
 | 🐙 **GitHub** | [github.com/KandatiRanjithKumarReddy](https://github.com/KandatiRanjithKumarReddy) |
-| 🌐 **Live Portfolio** | [doctor-frontend-eosin.vercel.app](https://doctor-frontend-eosin.vercel.app/) |
 
----
 
-## 5. ⚙️ Getting Started & Local Setup
-
-### Prerequisites
-- **Node.js**: `≥ 18.0.0` (LTS recommended)
-- **Package Manager**: `npm` (v9+) or `bun`
-
-### Quick Start
-
-```bash
-# 1. Clone this repository
-git clone https://github.com/KandatiRanjithKumarReddy/portfolio.git
-cd portfolio
-
-# 2. Install dependencies
-npm install
-
-# 3. Launch local development server
-npm run dev
-```
-
-Visit [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Available Scripts
-
-| Command | Description |
-| :--- | :--- |
-| `npm run dev` | Starts Vite dev server with instant HMR at `localhost:3000` |
-| `npm run build` | Compiles production bundle & generates Nitro SSR worker |
-| `npm run preview` | Locally preview the production build |
-| `npm run lint` | Runs ESLint across the codebase |
-| `npm run format` | Formats all files with Prettier |
-
----
 
 ## 6. 📄 License
 
@@ -208,6 +167,6 @@ This project is open source and available for reference and learning purposes.
 
 **If this portfolio impressed you, consider giving it a ⭐ — it helps!**
 
-Engineered with ❤️ and relentless attention to detail by **Kandati Ranjith Kumar Reddy**
+Built By **Ranjith** ❤️
 
 </div>
