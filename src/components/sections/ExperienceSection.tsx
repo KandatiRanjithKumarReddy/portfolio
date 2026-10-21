@@ -4,6 +4,7 @@ import { experiences, certifications } from "@/data/experience";
 import { profile } from "@/data/profile";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ExperienceList } from "@/components/ExperienceList";
+import { downloadResumeFile } from "@/lib/utils";
 
 export function ExperienceSection() {
   return (
@@ -78,15 +79,9 @@ export function ExperienceSection() {
       <div className="flex justify-center pt-4">
         <a
           href={profile.resumeUrl}
-          onClick={(e) => {
-            e.preventDefault();
-            const iframe = document.createElement("iframe");
-            iframe.style.display = "none";
-            iframe.src = profile.resumeUrl;
-            document.body.appendChild(iframe);
-            setTimeout(() => document.body.removeChild(iframe), 10000);
-          }}
-          className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-all hover:border-primary/50 hover:text-primary hover:shadow-sm"
+          download={profile.resumeFileName}
+          onClick={downloadResumeFile}
+          className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-all hover:border-primary/50 hover:text-primary hover:shadow-sm cursor-pointer"
         >
           <HiArrowDownTray className="h-4 w-4" /> Download full resume
         </a>

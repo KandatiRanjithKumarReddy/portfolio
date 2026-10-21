@@ -32,7 +32,7 @@
 
 ---
 
-[🌐 Live Demo](https://doctor-frontend-eosin.vercel.app/) • [📫 Contact Me](mailto:kandatiranjithkumarreddy@gmail.com) • [📄 Resume](https://drive.google.com/file/d/1M1QBFg4H610xwnUPB0VSv2uz014AQFRv/view?usp=sharing) • [💼 LinkedIn](https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/)
+[🌐 Live Demo](https://doctor-frontend-eosin.vercel.app/) • [📫 Contact Me](mailto:kandatiranjithkumarreddy@gmail.com) • [📄 Resume](https://drive.google.com/file/d/1sSxfee5abcbq4Ct6NtVeF8UjwrM4VDoP/view?usp=sharing) • [💼 LinkedIn](https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/)
 
 </div>
 

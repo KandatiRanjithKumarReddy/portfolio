@@ -22,8 +22,9 @@ export const profile = {
   email: "kandatiranjithkumarreddy@gmail.com",
   phone: "+91 75693 77080",
   location: "India,Andra Pradesh,Venkatagiri",
-  resumeUrl: "https://drive.google.com/uc?export=download&id=1M1QBFg4H610xwnUPB0VSv2uz014AQFRv",
+  resumeUrl: "/Kandati_Ranjith_Kumar_Reddy_Resume.pdf",
+  resumeFileName: "Kandati_Ranjith_Kumar_Reddy_Resume.pdf",
   resumeDriveUrl:
-    "https://drive.google.com/file/d/1M1QBFg4H610xwnUPB0VSv2uz014AQFRv/view?usp=sharing",
+    "https://drive.google.com/file/d/1sSxfee5abcbq4Ct6NtVeF8UjwrM4VDoP/view?usp=sharing",
   image: profileImg,
 };

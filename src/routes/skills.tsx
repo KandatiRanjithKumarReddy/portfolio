@@ -8,7 +8,7 @@ export const Route = createFileRoute("/skills")({
       {
         name: "description",
         content:
-          "Technologies I use: React, Node.js, TypeScript, Tailwind, PostgreSQL, MongoDB, and more.",
+          "Technologies I use: React, Node.js, TypeScript, Tailwind, MySQL, MongoDB, and more.",
       },
       { property: "og:title", content: "Skills — Kandati Ranjith Kumar Reddy" },
       {

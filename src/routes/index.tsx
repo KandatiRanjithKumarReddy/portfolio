@@ -9,6 +9,7 @@ import { SkillsSection } from "@/components/sections/SkillsSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { downloadResumeFile } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -115,15 +116,9 @@ function HomePage() {
                 </a>
                 <a
                   href={profile.resumeUrl}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const iframe = document.createElement("iframe");
-                    iframe.style.display = "none";
-                    iframe.src = profile.resumeUrl;
-                    document.body.appendChild(iframe);
-                    setTimeout(() => document.body.removeChild(iframe), 10000);
-                  }}
-                  className="inline-flex items-center gap-2 rounded-xl glass px-5 py-3 text-sm font-medium hover:bg-muted transition-colors"
+                  download={profile.resumeFileName}
+                  onClick={downloadResumeFile}
+                  className="inline-flex items-center gap-2 rounded-xl glass px-5 py-3 text-sm font-medium hover:bg-muted transition-colors cursor-pointer"
                 >
                   <HiArrowDownTray className="h-4 w-4" /> Download resume
                 </a>

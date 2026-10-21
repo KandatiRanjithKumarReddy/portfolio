@@ -1,11 +1,12 @@
 import { motion } from "motion/react";
 import { HiArrowDownTray, HiAcademicCap, HiSparkles } from "react-icons/hi2";
 import { HiOutlineDesktopComputer, HiOutlineLightBulb } from "react-icons/hi";
-import { FaCoffee, FaPlane } from "react-icons/fa";
+import { FaCode, FaPlane } from "react-icons/fa";
 import { profile } from "@/data/profile";
 import { education, currentlyLearning } from "@/data/experience";
 import { SectionHeading } from "@/components/SectionHeading";
 import { GlassCard } from "@/components/GlassCard";
+import { downloadResumeFile } from "@/lib/utils";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -18,10 +19,10 @@ const stagger = {
 };
 
 const interestItems = [
-  { icon: HiOutlineDesktopComputer, label: "Gaming", desc: "Strategy & RPG enthusiast" },
-  { icon: FaCoffee, label: "Coffee", desc: "Specialty bean brewer" },
-  { icon: HiOutlineLightBulb, label: "System Design", desc: "Obsessing over structures" },
-  { icon: FaPlane, label: "Travel", desc: "Digital nomad at heart" },
+  { icon: HiOutlineLightBulb, label: "System Design", desc: "Clean architecture & scalable APIs" },
+  { icon: FaCode, label: "Full-Stack Building", desc: "Creating apps from idea to deployment" },
+  { icon: HiOutlineDesktopComputer, label: "Modern Web Tech", desc: "Exploring React 19, Angular & APIs" },
+  { icon: FaPlane, label: "Travel & Gaming", desc: "Exploring new places & strategy games" },
 ];
 
 export function AboutSection() {
@@ -49,15 +50,15 @@ export function AboutSection() {
           variants={fadeUp}
           className="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1]"
         >
-          Web Developer
+          Full Stack Developer
           <br />
           <span className="text-muted-foreground font-normal">
-            Turning complex problems into products people actually use
+            Building dependable web applications from idea to production
           </span>
         </motion.h1>
       </motion.section>
 
-      {/* ─── Career Objective ─── */}
+      {/* ─── Career Narrative (Jargon-free & grounded) ─── */}
       <motion.section
         variants={stagger}
         initial="hidden"
@@ -68,41 +69,29 @@ export function AboutSection() {
           variants={fadeUp}
           className="flex flex-col items-center text-center gap-6 max-w-4xl mx-auto"
         >
-          <div>
-            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight"></h2>
-            <p className="mt-4 text-foreground/85 leading-relaxed">
-              I am a Web Developer focused on building{" "}
-              <strong className="text-foreground">robust, scalable systems</strong> that solve
-              real-world problems. With hands-on experience in the JavaScript ecosystem, I bridge
-              the gap between high-performance backends and pixel-perfect user interfaces.
+          <div className="space-y-3 max-w-3xl">
+            <p className="text-foreground/90 leading-relaxed text-base sm:text-lg">
+              <strong className="text-foreground">2026 B.Tech Computer Science graduate</strong> with 3 months of Software Engineer internship experience in full-stack web development. Hands-on experience in <strong className="text-foreground">Java, React, Node.js, Angular, TypeScript, JavaScript, OOP, and SQL</strong>.
             </p>
-            <p className="mt-4 text-foreground/85 leading-relaxed">
-              My philosophy is simple: write clean, maintainable code that lasts. I thrive in
-              collaborative environments where technical excellence and user-centric design are the
-              priority. I don't just build features; I architect solutions.
+            <p className="text-foreground/80 leading-relaxed text-sm sm:text-base">
+              Proven track record of building production-ready projects like <strong className="text-foreground">Borrower Copilot</strong> (AI-powered loan advisor) and <strong className="text-foreground">Prescripto</strong> (healthcare management platform) — focused on building clean, fast, and user-centric software.
             </p>
           </div>
 
           <a
             href={profile.resumeUrl}
-            onClick={(e) => {
-              e.preventDefault();
-              const iframe = document.createElement("iframe");
-              iframe.style.display = "none";
-              iframe.src = profile.resumeUrl;
-              document.body.appendChild(iframe);
-              setTimeout(() => document.body.removeChild(iframe), 10000);
-            }}
-            className="inline-flex items-center gap-2 rounded-xl gradient-bg text-primary-foreground px-6 py-3 text-sm font-medium glow hover:opacity-95 transition-opacity w-fit"
+            download={profile.resumeFileName}
+            onClick={downloadResumeFile}
+            className="inline-flex items-center gap-2 rounded-xl gradient-bg text-primary-foreground px-6 py-3 text-sm font-medium glow hover:opacity-95 transition-opacity w-fit mt-2 cursor-pointer"
           >
             <HiArrowDownTray className="h-4 w-4" /> Download My Resume
           </a>
         </motion.div>
       </motion.section>
 
-      {/* ─── Education & Certifications ─── */}
+      {/* ─── Education & Academic Highlights ─── */}
       <section>
-        <SectionHeading eyebrow="Education" title="Education" />
+        <SectionHeading eyebrow="Education" title="Academic Background" />
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -111,18 +100,18 @@ export function AboutSection() {
           className="mt-12 flex justify-center flex-wrap gap-5"
         >
           {education.map((e, i) => (
-            <motion.div key={i} variants={fadeUp} className="w-full max-w-md">
+            <motion.div key={i} variants={fadeUp} className="w-full max-w-xl">
               <GlassCard className="h-full">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="h-9 w-9 rounded-lg gradient-bg flex items-center justify-center shrink-0">
                     <HiAcademicCap className="h-4 w-4 text-primary-foreground" />
                   </span>
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                  <span className="text-xs font-semibold text-primary uppercase tracking-wider">
                     {e.period}
                   </span>
                 </div>
-                <h3 className="font-display text-base font-semibold leading-snug">{e.title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{e.org}</p>
+                <h3 className="font-display text-lg font-semibold leading-snug">{e.title}</h3>
+                <p className="mt-1 text-sm font-medium text-foreground/85">{e.org}</p>
                 {e.description && (
                   <p className="mt-2 text-sm text-foreground/75 leading-relaxed">{e.description}</p>
                 )}
@@ -137,7 +126,7 @@ export function AboutSection() {
         <SectionHeading
           eyebrow="Personal"
           title="Beyond the Code"
-          description="When I'm not pushing pixels or optimizing database queries, you can find me exploring my other passions."
+          description="A few things that keep me curious, energized, and constantly learning outside of my daily development work."
         />
         <motion.div
           variants={stagger}
@@ -178,7 +167,7 @@ export function AboutSection() {
                 <span className="h-9 w-9 rounded-lg gradient-bg flex items-center justify-center">
                   <HiSparkles className="h-4 w-4 text-primary-foreground" />
                 </span>
-                <h3 className="font-display text-xl font-semibold">Currently Learning</h3>
+                <h3 className="font-display text-xl font-semibold">Currently Exploring & Learning</h3>
               </div>
               <ul className="flex flex-wrap gap-2">
                 {currentlyLearning.map((t) => (
@@ -192,7 +181,7 @@ export function AboutSection() {
         </motion.div>
       </section>
 
-      {/* ─── Built for Performance ─── */}
+      {/* ─── Engineering Principles & Profile Snapshot ─── */}
       <motion.section
         variants={stagger}
         initial="hidden"
@@ -205,20 +194,20 @@ export function AboutSection() {
             {/* Left content */}
             <motion.div variants={fadeUp}>
               <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">
-                Built for Performance
+                How I Approach Engineering
               </h2>
               <p className="mt-4 text-foreground/80 leading-relaxed">
-                My development environment is optimized for speed and reliability. I leverage modern
-                tooling to ensure your projects are delivered with the highest quality.
+                I believe good software is built by focusing on the fundamentals, writing predictable code, and putting user experience first.
               </p>
-              <ul className="mt-6 space-y-3">
+              <ul className="mt-6 space-y-3.5">
                 {[
-                  "TypeScript for Type Safety",
-                  "React.js for Fast & Rich UIs",
-                  "Tailwind for Scalable Design Systems",
+                  "Full-stack delivery from responsive React/Angular UIs to Node.js & MySQL/MongoDB backends",
+                  "Strong core fundamentals in data structures, OOP, DBMS, and system design",
+                  "Secure auth flows with JWT, Google OAuth 2.0, and role-based permissions",
+                  "Practical integrations including Razorpay payments, Gemini AI, and Cloud Firestore",
                 ].map((t) => (
-                  <li key={t} className="flex items-center gap-3 text-sm text-foreground/85">
-                    <span className="h-5 w-5 rounded-full gradient-bg flex items-center justify-center shrink-0">
+                  <li key={t} className="flex items-start gap-3 text-sm text-foreground/85">
+                    <span className="h-5 w-5 rounded-full gradient-bg flex items-center justify-center shrink-0 mt-0.5">
                       <svg
                         className="h-3 w-3 text-primary-foreground"
                         fill="none"
@@ -229,58 +218,60 @@ export function AboutSection() {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                     </span>
-                    {t}
+                    <span>{t}</span>
                   </li>
                 ))}
               </ul>
             </motion.div>
 
-            {/* Right: code snippet */}
+            {/* Right: Realistic Developer Code Card */}
             <motion.div variants={fadeUp}>
-              <div className="rounded-2xl bg-background/80 border border-border p-5 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto">
-                <p className="text-muted-foreground">{"// Turning challenges into code."}</p>
-                <p className="text-muted-foreground">
-                  {"// Portfolio.status = 'Ready for Impact';"}
-                </p>
-                <p className="mt-3">
-                  <span className="text-primary">const</span>{" "}
-                  <span className="text-accent">Portfolio</span>{" "}
-                  <span className="text-foreground/60">=</span>{" "}
-                  <span className="text-foreground">(</span>
-                  <span className="text-muted-foreground">
-                    {"{"}experience, passion{"}"}
-                  </span>
-                  <span className="text-foreground">)</span>{" "}
-                  <span className="text-primary">{"=>"}</span>{" "}
-                  <span className="text-foreground">{"{"}</span>
+              <div className="rounded-2xl bg-background/90 border border-border/80 p-5 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto shadow-inner">
+                <div className="flex items-center gap-2 pb-3 mb-3 border-b border-border/60 text-muted-foreground text-xs">
+                  <span className="h-3 w-3 rounded-full bg-red-500/80 inline-block" />
+                  <span className="h-3 w-3 rounded-full bg-yellow-500/80 inline-block" />
+                  <span className="h-3 w-3 rounded-full bg-green-500/80 inline-block" />
+                  <span className="ml-2 font-sans font-medium text-muted-foreground/80">developer.ts</span>
+                </div>
+                <p className="text-muted-foreground">{"// Profile snapshot"}</p>
+                <p className="mt-2">
+                  <span className="text-primary font-semibold">export const</span>{" "}
+                  <span className="text-accent font-semibold">ranjith</span> = {"{"}
                 </p>
                 <p className="pl-4">
-                  <span className="text-primary">return</span>{" "}
-                  <span className="text-foreground">{"{"}</span>
-                </p>
-                <p className="pl-8">
-                  <span className="text-accent">design</span>
-                  <span className="text-foreground/60">(</span>
-                  <span className="text-primary">'Web'</span>
-                  <span className="text-foreground/60">,</span>{" "}
-                  <span className="text-primary">'Next'</span>{" "}
-                  <span className="text-foreground/60">),</span>
-                </p>
-                <p className="pl-8">
-                  <span className="text-accent">develop</span>
-                  <span className="text-foreground/60">(</span>
-                  <span className="text-primary">'API'</span>
-                  <span className="text-foreground/60">)</span>{" "}
-                  <span className="text-foreground/60">=&gt;</span>{" "}
-                  <span className="text-accent">success</span>
-                  <span className="text-foreground/60">()</span>
+                  <span className="text-foreground/70">name:</span>{" "}
+                  <span className="text-emerald-400">"Kandati Ranjith Kumar Reddy"</span>,
                 </p>
                 <p className="pl-4">
-                  <span className="text-foreground">{"}"}</span>
+                  <span className="text-foreground/70">education:</span>{" "}
+                  <span className="text-emerald-400">"B.Tech CSE, 2026 (CGPA: 9.1)"</span>,
                 </p>
-                <p>
-                  <span className="text-foreground">{"}"}</span>
+                <p className="pl-4">
+                  <span className="text-foreground/70">internship:</span>{" "}
+                  <span className="text-emerald-400">"Software Engineer Intern @ Infosys"</span>,
                 </p>
+                <p className="pl-4">
+                  <span className="text-foreground/70">focus:</span>{" "}
+                  <span className="text-emerald-400">"Full-Stack Web & Scalable APIs"</span>,
+                </p>
+                <p className="pl-4">
+                  <span className="text-foreground/70">certifications:</span> [
+                  <span className="text-amber-300">"AWS Cloud Practitioner"</span>
+                  ],
+                </p>
+                <p className="pl-4">
+                  <span className="text-foreground/70">coreStack:</span> [
+                  <span className="text-amber-300">"React 19"</span>,{" "}
+                  <span className="text-amber-300">"TypeScript"</span>,{" "}
+                  <span className="text-amber-300">"Node.js"</span>,{" "}
+                  <span className="text-amber-300">"MySQL"</span>
+                  ],
+                </p>
+                <p className="pl-4">
+                  <span className="text-foreground/70">status:</span>{" "}
+                  <span className="text-emerald-400">"Open to Full-Time Roles"</span>
+                </p>
+                <p className="text-foreground">{"};"}</p>
               </div>
             </motion.div>
           </div>

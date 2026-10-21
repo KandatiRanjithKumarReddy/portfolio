@@ -18,33 +18,33 @@ export const experiences: TimelineEntry[] = [
   {
     kind: "internship",
     title: "Software Engineer Intern",
-    org: "Infosys Springboard",
+    org: "Infosys",
     period: "Feb 2026 — Apr 2026",
     location: "Remote",
     description:
-      "Designed and developed TripNest, a scalable travel booking platform supporting 100+ destinations. Leveraged Angular, Firebase, and Razorpay to create a secure and responsive booking experience while improving application performance by 50%.",
+      "Developed TripNest using Angular 21 and Firebase for 120+ destinations across 26 countries. Secured booking routes with Firebase Auth Guards, engineered real-time Cloud Firestore services with Cloud Functions, and integrated Razorpay payments with dark/light themes.",
     icon: HiBriefcase,
   },
 ];
 
-/* ── Certifications ── */
+/* ── Certifications & Achievements ── */
 export const certifications: TimelineEntry[] = [
+  {
+    kind: "certification",
+    title: "AWS Cloud Practitioner Essentials",
+    org: "Amazon Web Services (AWS)",
+    period: "2026",
+    description:
+      "Earned official accreditation covering AWS core cloud infrastructure, security, architecture, compute, networking, and cloud storage best practices.",
+    icon: HiAcademicCap,
+  },
   {
     kind: "certification",
     title: "The Complete Full-Stack Web Development Bootcamp",
     org: "Udemy",
     period: "2026",
     description:
-      "Completed hands-on training in modern web development, covering both frontend and backend technologies. Built full-stack applications using React, Node.js, Express, and MongoDB while strengthening API design, database management, and deployment skills.",
-    icon: HiAcademicCap,
-  },
-  {
-    kind: "certification",
-    title: "Java DSA — Master the Fundamentals and Beyond",
-    org: "Scaler",
-    period: "2026",
-    description:
-      "Strengthened core computer science fundamentals through structured learning and coding practice. Applied data structures and algorithms to solve complex problems efficiently and improve technical interview readiness..",
+      "Hands-on training building full-stack applications with React, Node.js, Express, and MongoDB while mastering API design and deployment.",
     icon: HiAcademicCap,
   },
 ];

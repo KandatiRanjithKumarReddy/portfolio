@@ -8,10 +8,10 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Get to know Kandati Ranjith Kumar Reddy: career objective, education, and what I'm building next.",
+          "Get to know Kandati Ranjith Kumar Reddy: full-stack developer background, education, and technical experience.",
       },
       { property: "og:title", content: "About — Kandati Ranjith Kumar Reddy" },
-      { property: "og:description", content: "Career objective, education, and current learning." },
+      { property: "og:description", content: "Full-stack development experience, education, and engineering principles." },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
