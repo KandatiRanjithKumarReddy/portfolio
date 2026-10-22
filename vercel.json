@@ -1,4 +1,15 @@
 {
+  "headers": [
+    {
+      "source": "/Kandati_Ranjith_Kumar_Reddy_Resume.pdf",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"Kandati_Ranjith_Kumar_Reddy_Resume.pdf\""
+        }
+      ]
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
