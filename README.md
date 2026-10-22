@@ -44,7 +44,7 @@
 
 ## 1. 👤 Who I Am
 
-Hi, I'm **Kandati Ranjith Kumar Reddy** — a final-year Computer Science student graduating in 2026 and a full-stack developer with 3 months of Software Engineer internship experience at **Infosys**.
+Hi, I'm **Kandati Ranjith Kumar Reddy** — 2026 BTech CS Graduate and a full-stack developer with 3 months of Software Engineer internship experience at **Infosys**.
 
 I love building things for the web. For me, there's nothing better than starting with an empty editor and turning an idea into a smooth, dependable product that people can actually use.
 
