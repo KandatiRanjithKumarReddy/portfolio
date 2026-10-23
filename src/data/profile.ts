@@ -5,6 +5,7 @@ export const profile = {
   firstName: "Ranjith",
   roles: [
     "Full Stack Developer",
+    "AI Integrated Full Stack Developer",
     "MERN Stack Developer",
     "I build from idea to production",
     "React Developer",
