@@ -33,8 +33,12 @@ scratch/
 *.tmp
 *.temp
 
-# Lovable internal plan logs (keep project.json)
-.lovable/*.md
+# Lovable internal folder
+.lovable/
+
+# Bun legacy files
+bun.lock
+bunfig.toml
 
 # Editor & OS files
 .vscode/*
