@@ -39,7 +39,6 @@ export const skillCategories: SkillCategoryT[] = [
       "Postman",
       "CI/CD",
       "Vercel",
-      "Render",
       "Cursor",
       "Lovable",
       "Antigravity",
@@ -47,7 +46,7 @@ export const skillCategories: SkillCategoryT[] = [
     ],
   },
   {
-    title: "Testing",
-    skills: ["Unit Testing", "API Testing", "End-to-End (E2E) Testing", "Automated Testing"],
+    title: "AI & LLM",
+    skills: ["Gemini AI", "LLM Integration", "Groq AI"],
   },
 ];

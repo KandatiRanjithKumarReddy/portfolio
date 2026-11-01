@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import React, { useEffect, type ReactNode } from "react";
 
@@ -42,7 +43,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -137,19 +138,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 "JavaScript",
                 "TypeScript",
                 "Java",
-                "React.js",
+                "SQL",
+                "React",
                 "Angular",
                 "Node.js",
-                "Express.js",
+                "Express",
                 "MongoDB",
-                "Firebase",
+                "MySQL",
+                "Firestore",
                 "Socket.IO",
                 "REST APIs",
                 "JWT Authentication",
+                "Groq LLMs",
+                "Gemini AI",
                 "Tailwind CSS",
                 "Razorpay",
               ],
-              sameAs: ["https://github.com/", "https://www.linkedin.com/"],
+              sameAs: [
+                "https://github.com/KandatiRanjithKumarReddy",
+                "https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/",
+                "https://leetcode.com/u/ranjith568/",
+              ],
               url: "/",
             },
             {

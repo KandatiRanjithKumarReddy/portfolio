@@ -74,7 +74,7 @@ export function AboutSection() {
               <strong className="text-foreground">2026 B.Tech Computer Science graduate</strong> with 3 months of Software Engineer internship experience in full-stack web development. Hands-on experience in <strong className="text-foreground">Java, React, Node.js, Angular, TypeScript, JavaScript, OOP, and SQL</strong>.
             </p>
             <p className="text-foreground/80 leading-relaxed text-sm sm:text-base">
-              Proven track record of building production-ready projects like <strong className="text-foreground">Borrower Copilot</strong> (AI-powered loan advisor) and <strong className="text-foreground">Prescripto</strong> (healthcare management platform) — focused on building clean, fast, and user-centric software.
+              Proven track record of building production-ready projects like <strong className="text-foreground">Borrower Copilot</strong> (AI-powered loan advisor) and <strong className="text-foreground">Prescripto</strong> (smart AI-healthcare platform) — focused on building clean, fast, and user-centric software.
             </p>
           </div>
 
@@ -236,7 +236,7 @@ export function AboutSection() {
                 <p className="text-muted-foreground">{"// Profile snapshot"}</p>
                 <p className="mt-2">
                   <span className="text-primary font-semibold">export const</span>{" "}
-                  <span className="text-accent font-semibold">ranjith</span> = {"{"}
+                  <span className="text-accent font-semibold">ranjit</span> = {"{"}
                 </p>
                 <p className="pl-4">
                   <span className="text-foreground/70">name:</span>{" "}

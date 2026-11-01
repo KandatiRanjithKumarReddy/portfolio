@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import type { ReactNode } from "react";
 
 export function GlassCard({
@@ -11,12 +10,12 @@ export function GlassCard({
   hover?: boolean;
 }) {
   return (
-    <motion.div
-      whileHover={hover ? { y: -4 } : undefined}
-      transition={{ type: "spring", stiffness: 300, damping: 24 }}
-      className={`glass rounded-2xl p-6 shadow-elegant ${hover ? "hover:glow transition-shadow" : ""} ${className}`}
+    <div
+      className={`glass rounded-2xl p-6 shadow-elegant ${
+        hover ? "hover:-translate-y-1 hover:glow transition-all duration-200 ease-out will-change-transform" : ""
+      } ${className}`}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

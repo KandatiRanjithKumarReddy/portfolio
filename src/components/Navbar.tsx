@@ -3,6 +3,7 @@ import { useEffect, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { HiBars3, HiXMark } from "react-icons/hi2";
 import { navItems } from "@/data/navigation";
+import { profile } from "@/data/profile";
 import { ThemeToggle } from "./ThemeToggle";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 
@@ -15,7 +16,16 @@ export function Navbar() {
   const activeSection = useScrollSpy(sectionPaths);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 8);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -32,7 +42,11 @@ export function Navbar() {
 
     if (targetEl) {
       e.preventDefault();
-      targetEl.scrollIntoView({ behavior: "smooth" });
+      if (window.__lenis) {
+        window.__lenis.scrollTo(targetEl as HTMLElement, { offset: -70, duration: 0.8 });
+      } else {
+        targetEl.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -50,7 +64,7 @@ export function Navbar() {
                 R
               </span>
               <span className="hidden sm:block font-display font-semibold text-base tracking-tight">
-                ranjith<span className="gradient-text">.dev</span>
+                {profile.firstName.toLowerCase()}<span className="gradient-text">.dev</span>
               </span>
             </div>
           </Link>

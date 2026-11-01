@@ -9,13 +9,32 @@ export function CustomCursor() {
     const mq = window.matchMedia("(pointer: fine)");
     if (!mq.matches) return;
 
-    let rafId: number;
+    let rafId: number = 0;
+    let scheduled = false;
     let mouseX = -100;
     let mouseY = -100;
     let isHovering = false;
     let hasMoved = false;
 
     document.documentElement.classList.add("has-custom-cursor");
+
+    const applyPosition = () => {
+      scheduled = false;
+      const scale = isHovering ? " scale(2.5)" : " scale(1)";
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)${scale}`;
+      }
+      if (glowRef.current) {
+        glowRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+      }
+    };
+
+    const scheduleUpdate = () => {
+      if (!scheduled) {
+        scheduled = true;
+        rafId = requestAnimationFrame(applyPosition);
+      }
+    };
 
     const onMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
@@ -25,6 +44,7 @@ export function CustomCursor() {
         if (dotRef.current) dotRef.current.style.opacity = "1";
         if (glowRef.current) glowRef.current.style.opacity = "0.4";
       }
+      scheduleUpdate();
     };
 
     const onMouseOver = (e: MouseEvent) => {
@@ -32,32 +52,20 @@ export function CustomCursor() {
       const hover = Boolean(t?.closest("a, button, [role='button'], input, textarea, select"));
       if (hover !== isHovering) {
         isHovering = hover;
-        if (dotRef.current) {
-          dotRef.current.style.width = hover ? "36px" : "12px";
-          dotRef.current.style.height = hover ? "36px" : "12px";
-        }
+        scheduleUpdate();
       }
-    };
-
-    const update = () => {
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
-      }
-      if (glowRef.current) {
-        glowRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
-      }
-      rafId = requestAnimationFrame(update);
     };
 
     window.addEventListener("mousemove", onMouseMove, { passive: true });
     window.addEventListener("mouseover", onMouseOver, { passive: true });
-    rafId = requestAnimationFrame(update);
 
     return () => {
       document.documentElement.classList.remove("has-custom-cursor");
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("mouseover", onMouseOver);
-      cancelAnimationFrame(rafId);
+      if (scheduled) {
+        cancelAnimationFrame(rafId);
+      }
     };
   }, []);
 
@@ -66,10 +74,8 @@ export function CustomCursor() {
       <div
         ref={dotRef}
         aria-hidden
-        className="pointer-events-none fixed top-0 left-0 z-[90] rounded-full mix-blend-difference opacity-0 transition-[width,height] duration-200 ease-out"
+        className="pointer-events-none fixed top-0 left-0 z-[90] h-3 w-3 rounded-full mix-blend-difference opacity-0 transition-transform duration-150 ease-out"
         style={{
-          width: 12,
-          height: 12,
           background: "white",
           willChange: "transform",
         }}
@@ -77,10 +83,8 @@ export function CustomCursor() {
       <div
         ref={glowRef}
         aria-hidden
-        className="pointer-events-none fixed top-0 left-0 z-[89] rounded-full opacity-0"
+        className="pointer-events-none fixed top-0 left-0 z-[89] h-10 w-10 rounded-full opacity-0"
         style={{
-          width: 40,
-          height: 40,
           background: "var(--gradient-primary)",
           filter: "blur(16px)",
           willChange: "transform",

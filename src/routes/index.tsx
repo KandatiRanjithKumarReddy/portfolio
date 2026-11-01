@@ -14,7 +14,7 @@ import { downloadResumeFile } from "@/lib/utils";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ranjith-Portfolio" },
+      { title: "Ranjit-Portfolio" },
       {
         name: "description",
         content:
@@ -50,6 +50,16 @@ const stagger = {
 const item = {
   hidden: { opacity: 0, y: 16 },
   show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] as const } },
+};
+
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (window.__lenis) {
+    window.__lenis.scrollTo(el, { offset: -70, duration: 0.8 });
+  } else {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
 };
 
 function HomePage() {
@@ -108,7 +118,7 @@ function HomePage() {
                   href="#projects"
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+                    scrollToSection("projects");
                   }}
                   className="inline-flex items-center gap-2 rounded-xl gradient-bg text-primary-foreground px-5 py-3 text-sm font-medium glow hover:opacity-95 transition-opacity"
                 >
@@ -126,7 +136,7 @@ function HomePage() {
                   href="#contact"
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                    scrollToSection("contact");
                   }}
                   className="inline-flex items-center gap-2 rounded-xl glass px-5 py-3 text-sm font-medium hover:bg-muted transition-colors"
                 >
@@ -141,12 +151,13 @@ function HomePage() {
 
             <motion.div variants={item} className="order-1 md:order-2 relative flex justify-center">
               <div className="relative group">
+                {/* Soft neutral ambient glow */}
                 <div
-                  className="absolute -inset-6 gradient-bg rounded-full blur-3xl opacity-30"
+                  className="absolute -inset-4 rounded-full bg-zinc-300/30 dark:bg-zinc-700/25 blur-2xl opacity-60"
                   aria-hidden
                 />
-                {/* Gradient border wrapper */}
-                <div className="relative rounded-full p-[2px] gradient-bg shadow-elegant">
+                {/* Elegant neutral border wrapper */}
+                <div className="relative rounded-full p-1 border-2 border-border/80 bg-card/80 shadow-elegant">
                   <div className="rounded-full overflow-hidden bg-background">
                     <img
                       src={profile.image}
@@ -156,6 +167,7 @@ function HomePage() {
                       loading="eager"
                       fetchPriority="high"
                       decoding="async"
+                      style={{ filter: "sepia(0.06) saturate(1.05) contrast(1.02)" }}
                       className="h-[260px] w-[260px] sm:h-[320px] sm:w-[320px] md:h-[400px] md:w-[400px] rounded-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>

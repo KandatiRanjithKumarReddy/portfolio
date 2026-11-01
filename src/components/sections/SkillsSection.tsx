@@ -2,6 +2,8 @@ import { motion } from "motion/react";
 import { skillCategories } from "@/data/skills";
 
 const CATEGORY_STYLES: Record<string, string> = {
+  "AI & LLM":
+    "border-indigo-600/30 text-indigo-800 bg-indigo-50/70 hover:border-indigo-500 hover:bg-indigo-100/70 dark:border-indigo-500/40 dark:text-indigo-400 dark:bg-indigo-950/20 dark:hover:border-indigo-400 dark:hover:bg-indigo-900/30",
   Testing:
     "border-emerald-600/30 text-emerald-800 bg-emerald-50/70 hover:border-emerald-500 hover:bg-emerald-100/70 dark:border-emerald-500/40 dark:text-emerald-400 dark:bg-emerald-950/20 dark:hover:border-emerald-400 dark:hover:bg-emerald-900/30",
   Backend:

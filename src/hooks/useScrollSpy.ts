@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 const DEFAULT_OPTIONS: IntersectionObserverInit = {
   root: null,
   rootMargin: "-25% 0px -40% 0px",
-  threshold: [0, 0.25, 0.5, 0.75, 1.0],
+  threshold: [0.1, 0.5],
 };
 
 export function useScrollSpy(
@@ -55,7 +55,7 @@ export function useScrollSpy(
         });
 
         if (bestSection) {
-          setActiveSection(bestSection);
+          setActiveSection((prev) => (prev !== bestSection ? bestSection : prev));
         }
       }
     };

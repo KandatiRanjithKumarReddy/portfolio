@@ -2,7 +2,7 @@ import profileImg from "@/assets/profile-photo.webp";
 
 export const profile = {
   name: "Kandati Ranjith Kumar Reddy",
-  firstName: "Ranjith",
+  firstName: "Ranjit",
   roles: [
     "Full Stack Developer",
     "AI Integrated Full Stack Developer",
@@ -23,9 +23,9 @@ export const profile = {
   email: "kandatiranjithkumarreddy@gmail.com",
   phone: "+91 75693 77080",
   location: "India,Andra Pradesh,Venkatagiri",
-  resumeUrl: "/Kandati_Ranjith_Kumar_Reddy_Resume.pdf",
-  resumeFileName: "Kandati_Ranjith_Kumar_Reddy_Resume.pdf",
+  resumeUrl: "/Ranjit_Resume.pdf",
+  resumeFileName: "Ranjit_Resume.pdf",
   resumeDriveUrl:
-    "https://drive.google.com/file/d/1sSxfee5abcbq4Ct6NtVeF8UjwrM4VDoP/view?usp=sharing",
+    "https://drive.google.com/file/d/1rtez_n7py5-aDXOKriXbiT9cvIJ3KI9h/view?usp=sharing",
   image: profileImg,
 };

@@ -26,7 +26,7 @@
 
 ---
 
-[🌐 Live Portfolio](https://doctor-frontend-eosin.vercel.app/) • [📫 Contact Me](mailto:kandatiranjithkumarreddy@gmail.com) • [📄 Resume](https://drive.google.com/file/d/1sSxfee5abcbq4Ct6NtVeF8UjwrM4VDoP/view?usp=sharing) • [💼 LinkedIn](https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/) • [🐙 GitHub](https://github.com/KandatiRanjithKumarReddy)
+[🌐 Live Portfolio](https://doctor-frontend-eosin.vercel.app/) • [📫 Contact Me](mailto:kandatiranjithkumarreddy@gmail.com) • [📄 Resume](https://drive.google.com/file/d/1rtez_n7py5-aDXOKriXbiT9cvIJ3KI9h/view?usp=sharing) • [💼 LinkedIn](https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/) • [🐙 GitHub](https://github.com/KandatiRanjithKumarReddy)
 
 </div>
 
@@ -54,13 +54,13 @@ My day-to-day stack revolves around **React, TypeScript, Node.js, Express, and A
 
 ## 2. 🛠️ Skills
 
-- **Frontend:** React, Angular, Next.js, TypeScript, JavaScript, Tailwind CSS, DaisyUI, HTML5, CSS3
+- **Languages:** Java, JavaScript (ES6+), TypeScript, SQL
+- **Frontend:** React, Angular, Tailwind CSS, DaisyUI, HTML, CSS
 - **Backend:** Node.js, Express, REST APIs, JWT Authentication
-- **Databases:** MySQL, MongoDB, Firebase / Firestore
-- **Languages:** JavaScript, TypeScript, Java, SQL
-- **Tools & Platforms:** Git, GitHub, Postman, Vercel, Render, Cursor, Claude
-- **Testing:** Unit Testing, API Testing, End-to-End (E2E) Testing, Playwright
-- **Core Fundamentals:** Data Structures & Algorithms, Object-Oriented Programming (OOP), DBMS, OS, Computer Networks
+- **Databases:** MongoDB, Firestore, MySQL
+- **Core Concepts:** Data Structures and Algorithms, OOP, DBMS, OS, CN, SDLC
+- **Tools & DevOps:** Git, GitHub, Postman, CI/CD, Vercel, Cursor, Lovable, Antigravity, Claude
+- **AI & LLM:** Gemini AI, LLM Integration, Groq AI
 
 ---
 
@@ -74,10 +74,10 @@ An intelligent financial tool that evaluates loan affordability and helps borrow
 
 ---
 
-### 2. 🏥 [Prescripto](https://doctor-frontend-eosin.vercel.app/) — Healthcare Appointment Booking Platform
-A full-stack healthcare web app that makes finding doctors and booking appointments fast and simple.
-- **Tech Stack:** React, Node.js, Express, MongoDB, JWT, Razorpay, Cloudinary, Tailwind CSS
-- **What it does:** Allows patients to browse doctors and book visits in under 2 minutes, with role-based dashboards for patients, doctors, and admins.
+### 2. 🏥 [Prescripto](https://doctor-frontend-eosin.vercel.app/) — Smart AI-Healthcare Platform
+A full-stack healthcare platform cutting appointment booking time from 15 minutes to under 2 minutes.
+- **Tech Stack:** React, Node.js, Express, MongoDB, Groq LLMs, Razorpay, Google OAuth, Tailwind CSS, Vercel
+- **What it does:** Features Vaidya AI with Groq LLMs for specialist routing, Google OAuth & JWT across 3 portals, and 16+ REST APIs with Razorpay and Cloudinary.
 - **Links:** [🔗 Live Demo](https://doctor-frontend-eosin.vercel.app/) • [🐙 GitHub](https://github.com/KandatiRanjithKumarReddy/doctor-frontend)
 
 ---
@@ -116,7 +116,7 @@ I am actively looking for **Software Engineer** and **Full-Stack Developer** rol
 | 📧 **Email** | [kandatiranjithkumarreddy@gmail.com](mailto:kandatiranjithkumarreddy@gmail.com) |
 | 📞 **Phone** | [+91 75693 77080](tel:+917569377080) |
 | 📍 **Location** | Venkatagiri, Andhra Pradesh, India |
-| 📄 **Resume** | [View / Download Resume](https://drive.google.com/file/d/1sSxfee5abcbq4Ct6NtVeF8UjwrM4VDoP/view?usp=sharing) |
+| 📄 **Resume** | [View / Download Resume](https://drive.google.com/file/d/1rtez_n7py5-aDXOKriXbiT9cvIJ3KI9h/view?usp=sharing) |
 | 💼 **LinkedIn** | [linkedin.com/in/kandati-ranjith-kumar-reddy](https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/) |
 | 🐙 **GitHub** | [github.com/KandatiRanjithKumarReddy](https://github.com/KandatiRanjithKumarReddy) |
 | 🌐 **Portfolio** | [doctor-frontend-eosin.vercel.app](https://doctor-frontend-eosin.vercel.app/) |

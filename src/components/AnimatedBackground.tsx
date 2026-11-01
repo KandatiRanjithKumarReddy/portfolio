@@ -1,11 +1,16 @@
 export function AnimatedBackground() {
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div
+      aria-hidden
+      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden transform-gpu"
+      style={{ contain: "strict" }}
+    >
       <div
         className="absolute -top-32 -left-32 h-[480px] w-[480px] rounded-full opacity-20 animate-blob"
         style={{
           background:
             "radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--primary) 55%, transparent), transparent 60%)",
+          willChange: "transform",
         }}
       />
       <div
@@ -14,6 +19,7 @@ export function AnimatedBackground() {
           background:
             "radial-gradient(circle at 70% 30%, color-mix(in srgb, var(--primary) 50%, transparent), transparent 60%)",
           animationDelay: "-4s",
+          willChange: "transform",
         }}
       />
       <div
@@ -22,6 +28,7 @@ export function AnimatedBackground() {
           background:
             "radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent) 35%, transparent), transparent 60%)",
           animationDelay: "-8s",
+          willChange: "transform",
         }}
       />
       <div
@@ -30,6 +37,7 @@ export function AnimatedBackground() {
           background:
             "radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--primary) 45%, transparent), transparent 60%)",
           animationDelay: "-12s",
+          willChange: "transform",
         }}
       />
     </div>

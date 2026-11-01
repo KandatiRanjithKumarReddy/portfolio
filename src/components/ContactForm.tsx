@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { z } from "zod";
 import { HiCheck, HiPaperAirplane } from "react-icons/hi2";
+import { profile } from "@/data/profile";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(80),
@@ -35,7 +36,13 @@ export function ContactForm() {
       return;
     }
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 900));
+    const subject = encodeURIComponent(`[Portfolio Contact] ${form.subject}`);
+    const body = encodeURIComponent(
+      `From: ${form.name} (${form.email})\n\nMessage:\n${form.message}`
+    );
+    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+
+    await new Promise((r) => setTimeout(r, 600));
     setSubmitting(false);
     setSent(true);
     setForm({ name: "", email: "", subject: "", message: "" });
@@ -109,16 +116,23 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="inline-flex items-center justify-center gap-2 w-full rounded-xl gradient-bg text-primary-foreground py-3 font-medium glow hover:opacity-95 transition-opacity disabled:opacity-60"
+        className="inline-flex items-center justify-center gap-2 w-full rounded-xl gradient-bg text-primary-foreground py-3 font-medium glow hover:opacity-95 transition-opacity disabled:opacity-60 cursor-pointer"
       >
         {submitting ? (
-          "Sending…"
+          "Opening mail client…"
         ) : (
           <>
             Send message <HiPaperAirplane className="h-4 w-4" />
           </>
         )}
       </button>
+
+      <p className="text-center text-xs text-muted-foreground pt-1">
+        Or reach out directly at{" "}
+        <a href={`mailto:${profile.email}`} className="text-primary hover:underline font-medium">
+          {profile.email}
+        </a>
+      </p>
     </form>
   );
 }
