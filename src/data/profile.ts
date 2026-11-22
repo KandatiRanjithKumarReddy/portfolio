@@ -26,6 +26,6 @@ export const profile = {
   resumeUrl: "/Ranjit_Resume.pdf",
   resumeFileName: "Ranjit_Resume.pdf",
   resumeDriveUrl:
-    "https://drive.google.com/file/d/1rtez_n7py5-aDXOKriXbiT9cvIJ3KI9h/view?usp=sharing",
+    "https://drive.google.com/file/d/19BgqwE3RPBCIUX7-Qtif3CJ0yhGFHfOf/view?usp=sharing",
   image: profileImg,
 };
