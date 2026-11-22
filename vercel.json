@@ -1,6 +1,15 @@
 {
   "headers": [
     {
+      "source": "/ranjith-k.pdf",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"ranjith-k.pdf\""
+        }
+      ]
+    },
+    {
       "source": "/Ranjit_Resume.pdf",
       "headers": [
         {

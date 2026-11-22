@@ -23,8 +23,8 @@ export const profile = {
   email: "kandatiranjithkumarreddy@gmail.com",
   phone: "+91 75693 77080",
   location: "India,Andra Pradesh,Venkatagiri",
-  resumeUrl: "/Ranjit_Resume.pdf",
-  resumeFileName: "Ranjit_Resume.pdf",
+  resumeUrl: "/ranjith-k.pdf",
+  resumeFileName: "ranjith-k.pdf",
   resumeDriveUrl:
     "https://drive.google.com/file/d/19BgqwE3RPBCIUX7-Qtif3CJ0yhGFHfOf/view?usp=sharing",
   image: profileImg,

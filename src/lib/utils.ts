@@ -13,8 +13,8 @@ export async function downloadResumeFile(e?: React.MouseEvent) {
   if (e) {
     e.preventDefault();
   }
-  const fileUrl = profile.resumeUrl || "/Ranjit_Resume.pdf";
-  const fileName = profile.resumeFileName || "Ranjit_Resume.pdf";
+  const fileUrl = profile.resumeUrl || "/ranjith-k.pdf";
+  const fileName = profile.resumeFileName || "ranjith-k.pdf";
 
   try {
     const response = await fetch(fileUrl, { cache: "no-store" });
