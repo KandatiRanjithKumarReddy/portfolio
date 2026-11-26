@@ -2,7 +2,7 @@
 
 Personal portfolio website showcasing my projects, skills, and software development experience.
 
-[Live Site](https://ranjith-portfolio-six.vercel.app/) | [Download Resume](https://ranjith-portfolio-six.vercel.app/ranjith-k.pdf) | [Google Drive Resume](https://drive.google.com/file/d/1q4ITrXmJYsaiBsRkeyhszDPHQn3q6A4M/view?usp=drive_link) | [LinkedIn](https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/) | [GitHub](https://github.com/KandatiRanjithKumarReddy)
+[Live Site](https://ranjith-portfolio-six.vercel.app/) | [Download Resume](https://ranjith-portfolio-six.vercel.app/ranjith-k.pdf) | [LinkedIn](https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/) | [GitHub](https://github.com/KandatiRanjithKumarReddy)
 
 ---
 
@@ -73,6 +73,6 @@ I'm open to **Software Engineer** and **Full-Stack Developer** opportunities. Fe
 - **Email:** [kandatiranjithkumarreddy@gmail.com](mailto:kandatiranjithkumarreddy@gmail.com)
 - **Phone:** [+91 75693 77080](tel:+917569377080)
 - **Portfolio:** [ranjith-portfolio-six.vercel.app](https://ranjith-portfolio-six.vercel.app/)
-- **Resume:** [Download `ranjith-k.pdf`](https://ranjith-portfolio-six.vercel.app/ranjith-k.pdf) ([Google Drive](https://drive.google.com/file/d/1q4ITrXmJYsaiBsRkeyhszDPHQn3q6A4M/view?usp=drive_link))
+- **Resume:** [Download `ranjith-k.pdf`](https://ranjith-portfolio-six.vercel.app/ranjith-k.pdf)
 - **LinkedIn:** [linkedin.com/in/kandati-ranjith-kumar-reddy](https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/)
 - **GitHub:** [github.com/KandatiRanjithKumarReddy](https://github.com/KandatiRanjithKumarReddy)
