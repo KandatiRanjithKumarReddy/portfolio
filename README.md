@@ -1,18 +1,17 @@
 # Kandati Ranjith Kumar Reddy
 
-Personal portfolio website showcasing my projects, skills, and software development experience.
+This is my personal portfolio website. It shares my projects, skills, and work experience.
 
-[Live Site](https://ranjith-portfolio-six.vercel.app/) | [Download Resume](https://ranjith-portfolio-six.vercel.app/ranjith-k.pdf) | [LinkedIn](https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/) | [GitHub](https://github.com/KandatiRanjithKumarReddy)
-
----
+- Website: https://ranjith-portfolio-six.vercel.app/
+- Resume: https://ranjith-portfolio-six.vercel.app/ranjith-k.pdf
+- LinkedIn: https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/
+- GitHub: https://github.com/KandatiRanjithKumarReddy
 
 ## About Me
 
-Hi, I'm **Ranjit** (Kandati Ranjith Kumar Reddy). I'm a 2026 B.Tech Computer Science graduate and full-stack developer. I previously worked as a Software Engineer Intern at **Infosys** (Feb 2026 - Apr 2026).
+Hi, I'm Ranjit (Kandati Ranjith Kumar Reddy). I'm a 2026 Computer Science graduate and full-stack developer. I worked as a Software Engineer Intern at Infosys from Feb 2026 to Apr 2026.
 
-I build web applications end to end, from database design and backend APIs to responsive user interfaces. Most of my work is with **React, TypeScript, Node.js, Express, and Angular**.
-
----
+I enjoy building web apps from start to finish, including the user interface, backend APIs, and databases. Most of my projects use React, TypeScript, Node.js, Express, and Angular.
 
 ## Skills
 
@@ -24,55 +23,52 @@ I build web applications end to end, from database design and backend APIs to re
 - **Tools & DevOps:** Git, GitHub, Postman, CI/CD, Vercel, Cursor, Lovable, Antigravity, Claude
 - **AI & LLM:** Gemini AI, LLM Integration, Groq AI
 
----
-
 ## Projects
 
-### 1. Borrower Copilot - AI Loan Advisor
-A full-stack loan assessment app that helps borrowers see what loan amounts they can safely afford across different employment types.
-- Calculates tiered FOIR limits (25%-55%) and stress-tests loan affordability under a 15% income drop.
-- Uses Google Gemini AI with an automatic 3-model fallback in case a model hits rate limits.
-- Built REST APIs backed by 5 MySQL tables on Aiven Cloud, secured with JWT and Google OAuth 2.0.
-- **Tech:** React 19, TypeScript, Node.js, Express, MySQL, Google Gemini AI, Tailwind CSS, Vercel
+### 1. Borrower Copilot
+A web app that helps people check how much loan they can safely afford.
+- Checks income and monthly expenses to find safe borrowing limits (25% to 55%) and tests if payments still work if income drops by 15%.
+- Uses Google Gemini AI with backup models so advice still loads if one model has issues.
+- Stores user and loan data in MySQL (Aiven Cloud) with Google sign-in.
+- Built with: React 19, TypeScript, Node.js, Express, MySQL, Gemini AI, Tailwind CSS, Vercel
 - [Live Demo](https://borrower-copilot-pi.vercel.app/) | [GitHub](https://github.com/KandatiRanjithKumarReddy/Borrower-Copilot)
 
-### 2. Prescripto - Healthcare Booking Platform
-A full-stack healthcare platform that simplifies finding doctors and brings appointment booking time down from 15 minutes to under 2 minutes.
-- Includes Vaidya AI (powered by Groq LLMs) to match symptoms to the right specialist, with automatic backup models.
-- Separate login portals for patients, doctors, and admins using Google OAuth and JWT.
-- 16+ Express REST APIs for bookings, Cloudinary image uploads, and Razorpay payment verification.
-- **Tech:** React, Node.js, Express, MongoDB, Groq LLMs, Razorpay, Google OAuth, Tailwind CSS, Vercel
+### 2. Prescripto
+A healthcare platform for finding doctors and booking appointments quickly.
+- Makes booking appointments faster (under 2 minutes instead of 15 minutes).
+- Includes Vaidya AI to suggest the right type of doctor based on symptoms, with backup AI models.
+- Separate login dashboards for patients, doctors, and admins.
+- Supports appointment booking, image uploads with Cloudinary, and online payments with Razorpay.
+- Built with: React, Node.js, Express, MongoDB, Groq AI, Razorpay, Google OAuth, Tailwind CSS, Vercel
 - [Live Demo](https://doctor-frontend-eosin.vercel.app/) | [GitHub](https://github.com/KandatiRanjithKumarReddy/doctor-frontend)
 
-### 3. Chatty - Real-Time Chat App
-A messaging app built for instant communication with live online/offline status updates.
-- Implemented live messaging and connection tracking with Socket.IO (~40% lower latency than polling).
-- Secured user sessions with JWT and stored chat history in MongoDB.
-- **Tech:** React, Node.js, Express, MongoDB, Socket.IO, JWT, Tailwind CSS
+### 3. Chatty
+A real-time chat app with instant messaging and online/offline status.
+- Sends messages live and shows who is online using Socket.IO.
+- Saves chat history in MongoDB and handles user login with JWT.
+- Built with: React, Node.js, Express, MongoDB, Socket.IO, JWT, Tailwind CSS
 - [Live Demo](https://chatapplication-8q6x.onrender.com/) | [GitHub](https://github.com/KandatiRanjithKumarReddy/ChatApplication)
 
-### 4. TripNest - Tourism Booking Platform
-A travel booking web app built during my Software Engineer internship at **Infosys**, covering 120+ destinations across 26 countries.
-- Built real-time booking tracking with Cloud Firestore and Cloud Functions.
-- Protected booking flows using Firebase Authentication and Angular Auth Guards.
-- Added Razorpay online checkout along with dark/light theme support.
-- **Tech:** Angular 21, TypeScript, Firebase Auth, Cloud Firestore, Razorpay, HTML5, CSS3
+### 4. TripNest
+A travel booking website I built during my Software Engineer internship at Infosys, covering 120+ destinations in 26 countries.
+- Saves and updates bookings live with Cloud Firestore.
+- Handles user login and protected pages with Firebase Authentication.
+- Supports Razorpay online checkout and dark/light mode.
+- Built with: Angular 21, TypeScript, Firebase Auth, Cloud Firestore, Razorpay, HTML, CSS
 
-### 5. GitHub User Finder - Tested React App
-A GitHub profile and repository search app written to demonstrate multi-layer frontend testing in React.
-- Includes 9 Playwright browser E2E tests, 4 React Testing Library component suites, and custom hook unit tests.
-- **Tech:** React 19, TypeScript, Vite, Vitest, Testing Library, Playwright
+### 5. GitHub User Finder
+A small app to search GitHub users and view their repositories, built to practice automated testing in React.
+- Tested using Playwright browser tests and Vitest unit tests.
+- Built with: React 19, TypeScript, Vite, Vitest, Testing Library, Playwright
 - [Live Demo](https://testing-react-sigma.vercel.app/) | [GitHub](https://github.com/KandatiRanjithKumarReddy/testing-react)
-
----
 
 ## Contact
 
-I'm open to **Software Engineer** and **Full-Stack Developer** opportunities. Feel free to reach out:
+I am looking for Software Engineer and Full-Stack Developer roles. You can reach me here:
 
-- **Email:** [kandatiranjithkumarreddy@gmail.com](mailto:kandatiranjithkumarreddy@gmail.com)
-- **Phone:** [+91 75693 77080](tel:+917569377080)
-- **Portfolio:** [ranjith-portfolio-six.vercel.app](https://ranjith-portfolio-six.vercel.app/)
-- **Resume:** [Download `ranjith-k.pdf`](https://ranjith-portfolio-six.vercel.app/ranjith-k.pdf)
-- **LinkedIn:** [linkedin.com/in/kandati-ranjith-kumar-reddy](https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/)
-- **GitHub:** [github.com/KandatiRanjithKumarReddy](https://github.com/KandatiRanjithKumarReddy)
+- Email: kandatiranjithkumarreddy@gmail.com
+- Phone: +91 75693 77080
+- Website: https://ranjith-portfolio-six.vercel.app/
+- Resume: https://ranjith-portfolio-six.vercel.app/ranjith-k.pdf
+- LinkedIn: https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/
+- GitHub: https://github.com/KandatiRanjithKumarReddy
