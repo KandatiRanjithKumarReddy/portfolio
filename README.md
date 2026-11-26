@@ -1,10 +1,10 @@
 <div align="center">
 
 # ⚡ Kandati Ranjith Kumar Reddy
-### Full-Stack Software Engineer • Distributed Web Systems • AI Integration
+### Full-Stack Software Engineer • Web Applications • AI Integration
 
 <p align="center">
-  Engineering high-performance, resilient, and user-centric web applications from ground zero to production.
+  Building fast, reliable, and user-friendly web applications from idea to production.
 </p>
 
 <p align="center">
@@ -42,182 +42,146 @@
 ## 📑 Table of Contents
 
 - [Executive Summary](#-executive-summary)
-- [Architecture & Performance Engineering](#-architecture--performance-engineering)
+- [Architecture & Performance](#-architecture--performance)
 - [Technical Competency Matrix](#-technical-competency-matrix)
 - [Production Systems & Case Studies](#-production-systems--case-studies)
   - [1. Borrower Copilot — AI-Powered Loan Advisor](#1-borrower-copilot--ai-powered-loan-advisor)
   - [2. Prescripto — Smart AI-Healthcare Platform](#2-prescripto--smart-ai-healthcare-platform)
   - [3. Chatty — Real-Time Communication Platform](#3-chatty--real-time-communication-platform)
-  - [4. TripNest — Enterprise Tourism Booking Engine](#4-tripnest--enterprise-tourism-booking-engine)
-  - [5. GitHub User Finder — Automated Testing Harness](#5-github-user-finder--automated-testing-harness)
+  - [4. TripNest — Tourism Booking Portal](#4-tripnest--tourism-booking-portal)
+  - [5. GitHub User Finder — Tested React Application](#5-github-user-finder--tested-react-application)
 - [Engineering Principles & Code Quality](#-engineering-principles--code-quality)
-- [Local Development & Verification](#-local-development--verification)
 - [Contact & Professional Profiles](#-contact--professional-profiles)
 
 ---
 
 ## 🏛️ Executive Summary
 
-I am **Kandati Ranjith Kumar Reddy**, a full-stack software engineer (2026 B.Tech Computer Science graduate) with internship experience at **Infosys**. 
+I am **Kandati Ranjith Kumar Reddy**, a 2026 Computer Science graduate and full-stack developer with internship experience at **Infosys**.
 
-I approach software engineering with a product-first, systems-driven perspective:
-- **Full Lifecycle Delivery:** Architecting systems from relational/document schema design and secure RESTful APIs to hardware-accelerated, accessible frontend interfaces.
-- **Resilience & Fault Tolerance:** Building with automated LLM fallback strategies, transactional consistency, and graceful degradation under high concurrency.
-- **Performance by Design:** Eliminating layout reflows, batching render cycles, isolating compositor layers, and ensuring direct in-memory binary asset delivery.
+I enjoy turning ideas into clean, dependable software that works smoothly for real users:
+- **End-to-End Building:** Designing clean databases, writing reliable backend APIs, and crafting responsive frontend interfaces.
+- **Built for Reliability:** Handling edge cases cleanly—such as automatic backup models for AI features so apps keep working under load.
+- **Speed & Smoothness:** Keeping pages fast, animations lightweight, and navigation responsive across desktop and mobile.
 
 ---
 
-## ⚡ Architecture & Performance Engineering
+## ⚡ Architecture & Performance
 
-This portfolio application serves as a benchmark for modern, production-grade frontend engineering:
+This portfolio is built with a focus on speed, clean structure, and zero visual lag:
 
 ```
 ┌────────────────────────────────────────────────────────┐
-│                   Vercel / Cloudflare Edge             │
-│   (Nitro Engine SSR + Custom Content-Disposition)      │
+│              Vercel Edge & Static Hosting              │
 └──────────────────────────┬─────────────────────────────┘
                            │
 ┌──────────────────────────▼─────────────────────────────┐
-│       TanStack Router Engine (File-Based Routes)       │
+│             TanStack Router + React 19 UI              │
 └──────┬───────────────────┬───────────────────┬─────────┘
        │                   │                   │
 ┌──────▼──────┐     ┌──────▼──────┐     ┌──────▼────────┐
-│  Compositor │     │    Lenis    │     │  Memory-Blob  │
-│ Layer Blobs │     │  RAF Scroll │     │ Direct Stream │
-│(contain:str)│     │(Snappy 0.75)│     │(Instant Cache)│
+│ Smooth GPU  │     │    Lenis    │     │  Direct PDF   │
+│ Animations  │     │  Scrolling  │     │   Download    │
 └─────────────┘     └─────────────┘     └───────────────┘
 ```
 
 ### Key Technical Implementations:
-1. **Coordinated Momentum Scrolling (Lenis):**
-   - Configured with calibrated duration (`0.75s`) and custom exponential easing (`1.001 - 2^(-10t)`).
-   - Touch-only coarse devices (`(pointer: coarse) and (hover: none)`) are automatically decoupled from software smoothing to preserve native 120Hz display refresh momentum.
-   - Anchor clicks are intercepted and synchronized via `window.__lenis.scrollTo(element, { offset: -70 })`, preventing native `scrollIntoView` thread fighting.
-2. **GPU Layer Isolation & Backdrop Fill-Rate Optimization:**
-   - Background animated blobs are completely isolated via `transform-gpu`, `will-change: transform`, and CSS `contain: strict`.
-   - Tuned `.glass` blur filters to `12px` / `16px` saturation thresholds, reducing GPU fragment shader re-rasterization load by >50% during scrolling.
-3. **On-Demand RAF Lifecycle (Custom Cursor):**
-   - Eliminated the common continuous `requestAnimationFrame` loop that drains CPU cycles when idle.
-   - Position updates and element hover states are batched via event-driven RAF scheduling with zero layout reflow (`transform: scale(...)` instead of `width/height` mutations).
-4. **Instant In-Memory Direct Asset Streaming:**
-   - Implemented an asynchronous Blob stream (`fetch` with `{ cache: "no-store" }` + `URL.createObjectURL(blob)`) for resume downloading (`ranjith-k.pdf`).
-   - Paired with server-side `Content-Disposition: attachment; filename="ranjith-k.pdf"` rules in both `vercel.json` and `_headers` to eliminate unwanted redirects or Google Drive interstitials.
+1. **Smooth Scrolling:**
+   - Tuned desktop scrolling for a crisp feel while keeping native touch scrolling untouched on mobile devices.
+   - Navigation buttons scroll smoothly directly to each section without fighting the browser's built-in scroll.
+2. **Lag-Free Visuals & Animations:**
+   - Simplified background animations and glass card blur effects so scrolling stays fluid without slowing down the browser.
+   - Replaced heavy JavaScript layout animations on project grids with simple CSS hover effects.
+3. **Efficient Custom Cursor:**
+   - Cursor position updates run only when the mouse actually moves, avoiding wasted CPU work when the page is idle.
+4. **Instant Direct Resume Download:**
+   - Clicking **Download Resume** saves `ranjith-k.pdf` straight to your device in one click without redirecting to Google Drive or opening extra tabs.
 
 ---
 
 ## 🛠️ Technical Competency Matrix
 
-| Domain | Technologies & Methodologies |
+| Domain | Technologies & Skills |
 | :--- | :--- |
 | **Languages** | Java, JavaScript (ES6+), TypeScript, SQL |
-| **Frontend Engineering** | React 19, Angular, Tailwind CSS v4, DaisyUI, HTML5, CSS3, Responsive Design |
-| **Backend & Microservices** | Node.js, Express.js, RESTful Architecture, JWT Authentication, WebSockets (Socket.IO) |
-| **Databases & Persistence** | MongoDB, MySQL, Google Cloud Firestore, Relational Schema Modeling |
-| **System Design & Core CS** | Data Structures & Algorithms, Object-Oriented Design (OOP), DBMS, OS, Computer Networks, SDLC |
-| **AI Systems & LLMs** | Google Gemini AI, Groq LLM Triage, Automated Multi-Model Fallbacks, Prompt Optimization |
-| **DevOps & Tooling** | Git, GitHub Actions, Postman, CI/CD, Vercel Edge, Cursor, Antigravity, Claude |
+| **Frontend** | React 19, Angular, Tailwind CSS v4, DaisyUI, HTML5, CSS3, Responsive Design |
+| **Backend & APIs** | Node.js, Express.js, REST APIs, JWT Authentication, Socket.IO |
+| **Databases** | MongoDB, MySQL, Google Cloud Firestore |
+| **Core CS** | Data Structures & Algorithms, OOP, DBMS, OS, Computer Networks, SDLC |
+| **AI & LLMs** | Google Gemini AI, Groq LLMs, Multi-Model Fallback Integration |
+| **Tools & DevOps** | Git, GitHub, Postman, CI/CD, Vercel, Cursor, Antigravity, Claude |
 
 ---
 
 ## 💼 Production Systems & Case Studies
 
 ### 1. [Borrower Copilot](https://borrower-copilot-pi.vercel.app/) — AI-Powered Loan Advisor
-> **Architectural Focus:** Financial risk assessment engine with multi-tier failover LLM integration.
+> **Focus:** Smart loan affordability evaluation with reliable AI fallback handling.
 
 - **Stack:** React 19, TypeScript, Node.js, Express, MySQL (Aiven Cloud), Google Gemini AI, Tailwind CSS, Vercel
-- **Engineered Core:**
-  - Designed a deterministic financial assessment engine calculating tiered FOIR (Fixed Obligation to Income Ratio) limits between **25%–55%** across 3 employment categories.
-  - Implemented stress-testing algorithms simulating repayment survival under simulated **15% income reductions**.
-  - Built an automated **3-model fallback strategy** around Google Gemini AI to guarantee 99.9% uptime for AI loan advice during API rate limits.
-  - Normalized schema across 5 relational MySQL tables on Aiven Cloud, secured with Google OAuth 2.0 & JWT.
-- **Artifacts:** [Live Platform](https://borrower-copilot-pi.vercel.app/) • [Source Code](https://github.com/KandatiRanjithKumarReddy/Borrower-Copilot)
+- **Highlights:**
+  - Built a financial rules engine calculating tiered FOIR (Fixed Obligation to Income Ratio) limits between **25%–55%** across 3 employment types.
+  - Added stress-testing simulations to check repayment safety under a **15% income drop**.
+  - Integrated Google Gemini AI with an automated **3-model fallback** so loan guidance stays available even during API rate limits.
+  - Structured data across 5 MySQL tables on Aiven Cloud, protected with Google OAuth 2.0 and JWT.
+- **Links:** [Live Demo](https://borrower-copilot-pi.vercel.app/) • [GitHub](https://github.com/KandatiRanjithKumarReddy/Borrower-Copilot)
 
 ---
 
 ### 2. [Prescripto](https://doctor-frontend-eosin.vercel.app/) — Smart AI-Healthcare Platform
-> **Architectural Focus:** High-throughput appointment scheduling, RBAC portal isolation, and Groq LLM clinical routing.
+> **Focus:** Fast appointment booking, 3 separate user portals, and AI-assisted specialist routing.
 
 - **Stack:** React, Node.js, Express, MongoDB, Groq LLMs, Razorpay, Cloudinary, Google OAuth, Tailwind CSS
-- **Engineered Core:**
-  - Reduced appointment scheduling turnaround from **15 minutes to under 2 minutes** via streamlined booking workflows.
-  - Architected **Vaidya AI** powered by ultra-low-latency Groq LLMs to perform automated symptom triage and medical specialty routing with failover model redundancy.
-  - Enforced strict Role-Based Access Control (RBAC) and JWT validation across 3 dedicated portals: Patient, Doctor, and Administrative Console.
-  - Designed **16+ transactional REST endpoints** in Express, handling atomic scheduling, Cloudinary image pipelines, and Razorpay webhook payment reconciliation.
-- **Artifacts:** [Live Platform](https://doctor-frontend-eosin.vercel.app/) • [Source Code](https://github.com/KandatiRanjithKumarReddy/doctor-frontend)
+- **Highlights:**
+  - Cut appointment booking time from **15 minutes to under 2 minutes** with a clean scheduling flow.
+  - Built **Vaidya AI** using Groq LLMs to match patient symptoms to the right medical specialist with backup model support.
+  - Set up Google OAuth and JWT authentication across 3 portals: Patient, Doctor, and Admin.
+  - Built **16+ REST APIs** in Express covering bookings, Cloudinary image uploads, and Razorpay payment verification.
+- **Links:** [Live Demo](https://doctor-frontend-eosin.vercel.app/) • [GitHub](https://github.com/KandatiRanjithKumarReddy/doctor-frontend)
 
 ---
 
 ### 3. [Chatty](https://chatapplication-8q6x.onrender.com/) — Real-Time Communication Platform
-> **Architectural Focus:** Sub-second bidirectional WebSocket event streaming and distributed presence tracking.
+> **Focus:** Instant messaging and live user presence using WebSockets.
 
 - **Stack:** React, Node.js, Express, MongoDB, Socket.IO, JWT, Tailwind CSS, Render
-- **Engineered Core:**
-  - Implemented bidirectional Socket.IO event buses, achieving **sub-second messaging** with a **~40% latency reduction** compared to traditional polling.
-  - Built live heartbeat presence monitoring for instant online/offline state broadcasts across active rooms.
-  - Secured connection handshakes with stateless JWT token verification and MongoDB persistent chat history.
-- **Artifacts:** [Live Platform](https://chatapplication-8q6x.onrender.com/) • [Source Code](https://github.com/KandatiRanjithKumarReddy/ChatApplication)
+- **Highlights:**
+  - Built real-time messaging with Socket.IO, achieving **sub-second message delivery** (~40% faster latency compared to standard polling).
+  - Added live online/offline status updates across active users.
+  - Secured user sessions with JWT authentication and persisted chat history in MongoDB.
+- **Links:** [Live Demo](https://chatapplication-8q6x.onrender.com/) • [GitHub](https://github.com/KandatiRanjithKumarReddy/ChatApplication)
 
 ---
 
-### 4. TripNest — Enterprise Tourism Booking Engine
-> **Architectural Focus:** Reactive Angular component architecture with real-time Cloud Firestore persistence.
+### 4. TripNest — Tourism Booking Portal
+> **Focus:** Responsive travel booking app backed by Cloud Firestore.
 
 - **Stack:** Angular, TypeScript, Firebase, Cloud Firestore, Razorpay, CSS3, HTML5
-- **Context:** Built during Software Engineer internship at **Infosys Springboard**.
-- **Engineered Core:**
-  - Designed an end-to-end holiday package marketplace supporting **100+ global destinations** with instantaneous client-side filtering.
-  - Leveraged Angular reactive forms with strict type validation, coupled with Firestore real-time snapshots for synchronized itinerary bookings.
-  - Integrated secure Razorpay checkout flows with client/server transaction reconciliation.
+- **Context:** Built during my Software Engineer internship at **Infosys Springboard**.
+- **Highlights:**
+  - Created a tour booking portal covering **100+ destinations** with quick search and package filtering.
+  - Connected Angular reactive forms with Cloud Firestore for live booking updates.
+  - Integrated Razorpay checkout for secure online payments.
 
 ---
 
-### 5. [GitHub User Finder](https://testing-react-sigma.vercel.app/) — Automated Testing Harness
-> **Architectural Focus:** Test-Driven Development (TDD), end-to-end browser automation, and strict CI validation.
+### 5. [GitHub User Finder](https://testing-react-sigma.vercel.app/) — Tested React Application
+> **Focus:** Automated end-to-end and unit testing in React.
 
 - **Stack:** React 19, TypeScript, Vite, Vitest, React Testing Library, Playwright, Tailwind CSS
-- **Engineered Core:**
-  - Established a comprehensive testing harness integrating **9 automated Playwright headless browser E2E test scenarios** covering edge cases, network delays, and API errors.
-  - Wrote modular unit tests using Vitest and React Testing Library, validating component contracts and API mock adapters.
-- **Artifacts:** [Live Platform](https://testing-react-sigma.vercel.app/) • [Source Code](https://github.com/KandatiRanjithKumarReddy/testing-react)
+- **Highlights:**
+  - Built a clean GitHub profile search app backed by **9 automated Playwright browser tests**.
+  - Added unit and component tests using Vitest and React Testing Library to cover loading, empty, and API error states.
+- **Links:** [Live Demo](https://testing-react-sigma.vercel.app/) • [GitHub](https://github.com/KandatiRanjithKumarReddy/testing-react)
 
 ---
 
 ## 🎯 Engineering Principles & Code Quality
 
-1. **Predictability Over Cleverness:** Write explicit, self-documenting code with comprehensive TypeScript type coverage. Avoid esoteric abstractions that impede team onboarding.
-2. **Defensive API Contracts:** All client-side inputs are sanitized and validated with Zod schemas before transmission; backend endpoints enforce strict schema adherence and sanitized error envelopes.
-3. **Compositor-First Animations:** Prioritize CSS `transform` and `opacity` to keep transitions off the main JavaScript thread, ensuring consistent 60–120 FPS render performance.
-4. **Git Hygiene & History Integrity:** Atomic commits following the Conventional Commits specification, zero tracked credentials or build artifacts, and strict `.gitignore` maintenance.
-
----
-
-## 💻 Local Development & Verification
-
-### Prerequisites
-- Node.js `>= 18.0.0`
-- npm `>= 9.0.0`
-
-### 1. Clone & Install
-```bash
-git clone https://github.com/KandatiRanjithKumarReddy/portfolio.git
-cd portfolio
-npm install
-```
-
-### 2. Run Local Development Server
-```bash
-npm run dev
-```
-Open `http://localhost:3000` to preview.
-
-### 3. Verification & Type Checking
-```bash
-# Type check without emitting files
-npx tsc --noEmit
-
-# Production build and asset generation
-npm run build
-```
+1. **Clarity Over Complexity:** Write clean, readable TypeScript code that any teammate can pick up and maintain quickly.
+2. **Input Safety:** Validate user inputs cleanly on the client with Zod before sending requests, and keep error messages clear and user-friendly.
+3. **Smooth Performance:** Prefer lightweight CSS transitions over heavy JavaScript animations to keep every scroll and interaction responsive.
+4. **Clean Git Practices:** Keep commits focused, avoid tracking unused assets or build files, and maintain a clean repository structure.
 
 ---
 
@@ -242,7 +206,7 @@ I am actively open to **Software Engineer** and **Full-Stack Developer** opportu
 
 <div align="center">
 
-Engineered with architectural discipline, performance obsession, and clean code principles.  
+Built with clean engineering, strong fundamentals, and attention to detail.  
 **© Kandati Ranjith Kumar Reddy**
 
 </div>
