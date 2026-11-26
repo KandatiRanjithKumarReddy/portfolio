@@ -10,7 +10,7 @@ export const skillCategories: SkillCategoryT[] = [
   },
   {
     title: "Frontend",
-    skills: ["React", "Angular", "Tailwind CSS", "DaisyUI", "HTML", "CSS"],
+    skills: ["React", "Angular", "Tailwind CSS", "HTML", "CSS"],
   },
   {
     title: "Backend",

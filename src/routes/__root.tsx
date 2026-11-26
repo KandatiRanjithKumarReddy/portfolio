@@ -146,7 +146,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 "MongoDB",
                 "MySQL",
                 "Firestore",
-                "Socket.IO",
                 "REST APIs",
                 "JWT Authentication",
                 "Groq LLMs",

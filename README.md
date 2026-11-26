@@ -5,7 +5,7 @@
 
 <p align="center">
   Building fast, reliable, and user-friendly web applications from idea to production.
-</p>
+</p> Architecture & Performance
 
 <p align="center">
   <a href="https://github.com/KandatiRanjithKumarReddy/portfolio">
@@ -42,7 +42,6 @@
 ## 📑 Table of Contents
 
 - [Executive Summary](#-executive-summary)
-- [Architecture & Performance](#-architecture--performance)
 - [Technical Competency Matrix](#-technical-competency-matrix)
 - [Production Systems & Case Studies](#-production-systems--case-studies)
   - [1. Borrower Copilot — AI-Powered Loan Advisor](#1-borrower-copilot--ai-powered-loan-advisor)
@@ -65,50 +64,17 @@ I enjoy turning ideas into clean, dependable software that works smoothly for re
 
 ---
 
-## ⚡ Architecture & Performance
-
-This portfolio is built with a focus on speed, clean structure, and zero visual lag:
-
-```
-┌────────────────────────────────────────────────────────┐
-│              Vercel Edge & Static Hosting              │
-└──────────────────────────┬─────────────────────────────┘
-                           │
-┌──────────────────────────▼─────────────────────────────┐
-│             TanStack Router + React 19 UI              │
-└──────┬───────────────────┬───────────────────┬─────────┘
-       │                   │                   │
-┌──────▼──────┐     ┌──────▼──────┐     ┌──────▼────────┐
-│ Smooth GPU  │     │    Lenis    │     │  Direct PDF   │
-│ Animations  │     │  Scrolling  │     │   Download    │
-└─────────────┘     └─────────────┘     └───────────────┘
-```
-
-### Key Technical Implementations:
-1. **Smooth Scrolling:**
-   - Tuned desktop scrolling for a crisp feel while keeping native touch scrolling untouched on mobile devices.
-   - Navigation buttons scroll smoothly directly to each section without fighting the browser's built-in scroll.
-2. **Lag-Free Visuals & Animations:**
-   - Simplified background animations and glass card blur effects so scrolling stays fluid without slowing down the browser.
-   - Replaced heavy JavaScript layout animations on project grids with simple CSS hover effects.
-3. **Efficient Custom Cursor:**
-   - Cursor position updates run only when the mouse actually moves, avoiding wasted CPU work when the page is idle.
-4. **Instant Direct Resume Download:**
-   - Clicking **Download Resume** saves `ranjith-k.pdf` straight to your device in one click without redirecting to Google Drive or opening extra tabs.
-
----
-
 ## 🛠️ Technical Competency Matrix
 
 | Domain | Technologies & Skills |
 | :--- | :--- |
 | **Languages** | Java, JavaScript (ES6+), TypeScript, SQL |
-| **Frontend** | React 19, Angular, Tailwind CSS v4, DaisyUI, HTML5, CSS3, Responsive Design |
-| **Backend & APIs** | Node.js, Express.js, REST APIs, JWT Authentication, Socket.IO |
-| **Databases** | MongoDB, MySQL, Google Cloud Firestore |
-| **Core CS** | Data Structures & Algorithms, OOP, DBMS, OS, Computer Networks, SDLC |
-| **AI & LLMs** | Google Gemini AI, Groq LLMs, Multi-Model Fallback Integration |
-| **Tools & DevOps** | Git, GitHub, Postman, CI/CD, Vercel, Cursor, Antigravity, Claude |
+| **Frontend** | React 19, Angular, Tailwind CSS v4, HTML5, CSS3, Responsive Design |
+| **Backend & APIs** | Node.js, Express.js, REST APIs, JWT Authentication |
+| **Databases** | MongoDB, Firestore, MySQL |
+| **Core Concepts** | Data Structures & Algorithms, OOP, DBMS, OS, CN, SDLC |
+| **Tools & DevOps** | Git, GitHub, Postman, CI/CD, Vercel, Cursor, Lovable, Antigravity, Claude |
+| **AI & LLM** | Gemini AI, LLM Integration, Groq AI |
 
 ---
 
