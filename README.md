@@ -33,7 +33,7 @@
 
 ---
 
-**[🌐 Live Portfolio](https://ranjith-portfolio-six.vercel.app/)** • **[📄 Direct Resume Download](https://ranjith-portfolio-six.vercel.app/ranjith-k.pdf)** • **[☁️ Google Drive Resume](https://drive.google.com/file/d/1q4ITrXmJYsaiBsRkeyhszDPHQn3q6A4M/view?usp=drive_link)** • **[💼 LinkedIn](https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/)** • **[🐙 GitHub](https://github.com/KandatiRanjithKumarReddy)** • **[🧩 LeetCode](https://leetcode.com/u/ranjith568/)**
+**[🌐 Live Portfolio](https://ranjith-portfolio-six.vercel.app/)** • **[📄 Direct Resume Download](https://ranjith-portfolio-six.vercel.app/ranjith-k.pdf)** • **[☁️ Google Drive Resume](https://drive.google.com/file/d/1q4ITrXmJYsaiBsRkeyhszDPHQn3q6A4M/view?usp=drive_link)** • **[💼 LinkedIn](https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/)** • **[🐙 GitHub](https://github.com/KandatiRanjithKumarReddy)**
 
 </div>
 
@@ -50,7 +50,6 @@
   - [3. Chatty — Real-Time Communication Platform](#3-chatty--real-time-communication-platform)
   - [4. TripNest — Tourism Booking Portal](#4-tripnest--tourism-booking-portal)
   - [5. GitHub User Finder — Tested React Application](#5-github-user-finder--tested-react-application)
-- [Engineering Principles & Code Quality](#-engineering-principles--code-quality)
 - [Contact & Professional Profiles](#-contact--professional-profiles)
 
 ---
@@ -176,15 +175,6 @@ This portfolio is built with a focus on speed, clean structure, and zero visual 
 
 ---
 
-## 🎯 Engineering Principles & Code Quality
-
-1. **Clarity Over Complexity:** Write clean, readable TypeScript code that any teammate can pick up and maintain quickly.
-2. **Input Safety:** Validate user inputs cleanly on the client with Zod before sending requests, and keep error messages clear and user-friendly.
-3. **Smooth Performance:** Prefer lightweight CSS transitions over heavy JavaScript animations to keep every scroll and interaction responsive.
-4. **Clean Git Practices:** Keep commits focused, avoid tracking unused assets or build files, and maintain a clean repository structure.
-
----
-
 ## 📬 Contact & Professional Profiles
 
 I am actively open to **Software Engineer** and **Full-Stack Developer** opportunities.
@@ -194,13 +184,10 @@ I am actively open to **Software Engineer** and **Full-Stack Developer** opportu
 | 👨‍💻 **Engineer** | **Kandati Ranjith Kumar Reddy** |
 | 📧 **Direct Email** | [kandatiranjithkumarreddy@gmail.com](mailto:kandatiranjithkumarreddy@gmail.com) |
 | 📞 **Direct Phone** | [+91 75693 77080](tel:+917569377080) |
-| 📍 **Location** | Andhra Pradesh, India |
 | 🌐 **Live Portfolio** | [ranjith-portfolio-six.vercel.app](https://ranjith-portfolio-six.vercel.app/) |
 | 📄 **Direct Resume** | [Download `ranjith-k.pdf`](https://ranjith-portfolio-six.vercel.app/ranjith-k.pdf) • [Google Drive Mirror](https://drive.google.com/file/d/1q4ITrXmJYsaiBsRkeyhszDPHQn3q6A4M/view?usp=drive_link) |
 | 💼 **LinkedIn** | [linkedin.com/in/kandati-ranjith-kumar-reddy](https://www.linkedin.com/in/kandati-ranjith-kumar-reddy/) |
 | 🐙 **GitHub** | [github.com/KandatiRanjithKumarReddy](https://github.com/KandatiRanjithKumarReddy) |
-| 🧩 **LeetCode** | [leetcode.com/u/ranjith568](https://leetcode.com/u/ranjith568/) |
-| 🏆 **HackerRank** | [hackerrank.com/profile/ranjithreddywo1](https://www.hackerrank.com/profile/ranjithreddywo1) |
 
 ---
 
